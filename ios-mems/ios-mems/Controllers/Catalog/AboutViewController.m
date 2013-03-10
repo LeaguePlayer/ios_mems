@@ -28,7 +28,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self initBackButtonWithTarget:self];
-    [self initPhotoItemWithTarget:self];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_papper.png"]];
+//    [self initPhotoItemWithTarget:self];
 }
 
 -(void)leftItemClicked:(id)sender{

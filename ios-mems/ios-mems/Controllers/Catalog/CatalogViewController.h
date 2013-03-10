@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseCollectionViewController.h"
+#import "BaseViewController.h"
 
-@interface CatalogViewController : BaseCollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate>{
+@interface CatalogViewController : BaseViewController<UICollectionViewDataSource,UICollectionViewDelegate>{
     NSDictionary *categories;
 }
 
