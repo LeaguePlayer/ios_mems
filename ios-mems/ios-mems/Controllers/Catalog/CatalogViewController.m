@@ -8,6 +8,7 @@
 
 #import "CatalogViewController.h"
 #import "BaseNavigationController.h"
+#import "CategoryMemsViewController.h"
 
 @interface CatalogViewController ()
 
@@ -43,10 +44,7 @@
 }
 
 -(void)initCategories{
-    UIImage *image1 = [UIImage imageNamed:@"mem1.png"];
-    UIImage *image2 = [UIImage imageNamed:@"mem2.png"];
-    UIImage *image3 = [UIImage imageNamed:@"mem3.png"];
-    categories = @{@"Раз":image1,@"Два":image2,@"Три":image3,@"Четыре":image1,@"Пять":image2,@"Шесть":image3,@"Семь":image1,@"Восемь":image2,@"Девять":image3};
+    categories = [MEMemCategory categoriesMock];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -62,12 +60,10 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     UILabel *textLbl = (UILabel *)[cell viewWithTag:1];
     UIImageView *imgView = (UIImageView *)[cell viewWithTag:2];
-    NSArray *keys = [categories allKeys];
-    NSInteger row = indexPath.row;
-    NSString *key = [keys objectAtIndex:row];
-    [textLbl setText:key];
+    MEMemCategory *cat = [categories objectAtIndex:indexPath.row];
+    [textLbl setText:cat.name];
     [textLbl setAdjustsFontSizeToFitWidth:YES];
-    UIImage *img = (UIImage *)[categories objectForKey:key];
+    UIImage *img = (UIImage *)cat.image;
     [imgView setImage:img];
     CGRect frame = imgView.frame;
     frame.size = img.size;
@@ -77,7 +73,8 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    selected = [categories objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"Mems" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,7 +84,10 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    if ([segue.identifier isEqualToString:@"Mems"]){
+        CategoryMemsViewController *controller = (CategoryMemsViewController *)segue.destinationViewController;
+        controller.category = selected;
+    }
 }
 
 @end

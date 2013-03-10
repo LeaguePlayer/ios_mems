@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "MEMemCategory.h"
 
 @interface CatalogViewController : BaseViewController<UICollectionViewDataSource,UICollectionViewDelegate>{
-    NSDictionary *categories;
+    MEMemCategory *selected;
+    NSArray *categories;
 }
 
 @end

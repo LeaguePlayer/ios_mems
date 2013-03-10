@@ -24,7 +24,6 @@
 		308D15DD16EB18E20095957B /* tab2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D15D316EB18E20095957B /* tab2@2x.png */; };
 		308D15DE16EB18E20095957B /* tab3.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D15D416EB18E20095957B /* tab3.png */; };
 		308D15DF16EB18E20095957B /* tab3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D15D516EB18E20095957B /* tab3@2x.png */; };
-		308D15E616EB28C60095957B /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D15E516EB28C60095957B /* BaseTabBarController.m */; };
 		308D15EA16EB30110095957B /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D15E916EB30110095957B /* CatalogViewController.m */; };
 		308D15F216EB312F0095957B /* mem1.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D15EC16EB312F0095957B /* mem1.png */; };
 		308D15F316EB312F0095957B /* mem1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D15ED16EB312F0095957B /* mem1@2x.png */; };
@@ -54,6 +53,14 @@
 		308D162816EC64D50095957B /* vk@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D162016EC64D50095957B /* vk@2x.png */; };
 		308D162B16EC68B30095957B /* bg_papper.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D162916EC68B30095957B /* bg_papper.png */; };
 		308D162C16EC68B30095957B /* bg_papper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D162A16EC68B30095957B /* bg_papper@2x.png */; };
+		308D162F16ECCF0B0095957B /* CategoryMemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D162E16ECCF0B0095957B /* CategoryMemsViewController.m */; };
+		308D163316ECD1410095957B /* MEMem.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D163216ECD1410095957B /* MEMem.m */; };
+		308D163616ECD3320095957B /* MEMemCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D163516ECD3320095957B /* MEMemCategory.m */; };
+		308D163916ECD9FF0095957B /* MemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D163816ECD9FF0095957B /* MemViewController.m */; };
+		308D163F16ECDAB50095957B /* button-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D163B16ECDAB50095957B /* button-background.png */; };
+		308D164016ECDAB50095957B /* button-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D163C16ECDAB50095957B /* button-background@2x.png */; };
+		308D164116ECDAB50095957B /* mem.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D163D16ECDAB50095957B /* mem.png */; };
+		308D164216ECDAB50095957B /* mem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D163E16ECDAB50095957B /* mem@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,8 +85,6 @@
 		308D15D316EB18E20095957B /* tab2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab2@2x.png"; sourceTree = "<group>"; };
 		308D15D416EB18E20095957B /* tab3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab3.png; sourceTree = "<group>"; };
 		308D15D516EB18E20095957B /* tab3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab3@2x.png"; sourceTree = "<group>"; };
-		308D15E416EB28C60095957B /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
-		308D15E516EB28C60095957B /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		308D15E816EB30110095957B /* CatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogViewController.h; sourceTree = "<group>"; };
 		308D15E916EB30110095957B /* CatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogViewController.m; sourceTree = "<group>"; };
 		308D15EC16EB312F0095957B /* mem1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mem1.png; sourceTree = "<group>"; };
@@ -114,6 +119,18 @@
 		308D162016EC64D50095957B /* vk@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vk@2x.png"; sourceTree = "<group>"; };
 		308D162916EC68B30095957B /* bg_papper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_papper.png; sourceTree = "<group>"; };
 		308D162A16EC68B30095957B /* bg_papper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_papper@2x.png"; sourceTree = "<group>"; };
+		308D162D16ECCF0B0095957B /* CategoryMemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMemsViewController.h; sourceTree = "<group>"; };
+		308D162E16ECCF0B0095957B /* CategoryMemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMemsViewController.m; sourceTree = "<group>"; };
+		308D163116ECD1410095957B /* MEMem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEMem.h; sourceTree = "<group>"; };
+		308D163216ECD1410095957B /* MEMem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEMem.m; sourceTree = "<group>"; };
+		308D163416ECD3320095957B /* MEMemCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEMemCategory.h; sourceTree = "<group>"; };
+		308D163516ECD3320095957B /* MEMemCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEMemCategory.m; sourceTree = "<group>"; };
+		308D163716ECD9FF0095957B /* MemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemViewController.h; sourceTree = "<group>"; };
+		308D163816ECD9FF0095957B /* MemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemViewController.m; sourceTree = "<group>"; };
+		308D163B16ECDAB50095957B /* button-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-background.png"; sourceTree = "<group>"; };
+		308D163C16ECDAB50095957B /* button-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-background@2x.png"; sourceTree = "<group>"; };
+		308D163D16ECDAB50095957B /* mem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mem.png; sourceTree = "<group>"; };
+		308D163E16ECDAB50095957B /* mem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mem@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +211,7 @@
 		308D15C916EB18E20095957B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				308D163A16ECDAB50095957B /* MemView */,
 				308D161816EC64D50095957B /* About */,
 				308D160916EB84E70095957B /* Fonts */,
 				308D15FB16EB3CF30095957B /* NavigationBar */,
@@ -247,6 +265,7 @@
 		308D15E216EB19540095957B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				308D163016ECD12F0095957B /* Mem */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,8 +273,6 @@
 		308D15E316EB19920095957B /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				308D15E416EB28C60095957B /* BaseTabBarController.h */,
-				308D15E516EB28C60095957B /* BaseTabBarController.m */,
 				308D15F816EB3BE90095957B /* BaseNavigationController.h */,
 				308D15F916EB3BE90095957B /* BaseNavigationController.m */,
 				308D160216EB803D0095957B /* BaseCollectionViewController.h */,
@@ -273,6 +290,10 @@
 				308D15E916EB30110095957B /* CatalogViewController.m */,
 				308D160E16EC5A570095957B /* AboutViewController.h */,
 				308D160F16EC5A570095957B /* AboutViewController.m */,
+				308D162D16ECCF0B0095957B /* CategoryMemsViewController.h */,
+				308D162E16ECCF0B0095957B /* CategoryMemsViewController.m */,
+				308D163716ECD9FF0095957B /* MemViewController.h */,
+				308D163816ECD9FF0095957B /* MemViewController.m */,
 			);
 			path = Catalog;
 			sourceTree = "<group>";
@@ -327,6 +348,28 @@
 				308D162016EC64D50095957B /* vk@2x.png */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		308D163016ECD12F0095957B /* Mem */ = {
+			isa = PBXGroup;
+			children = (
+				308D163116ECD1410095957B /* MEMem.h */,
+				308D163216ECD1410095957B /* MEMem.m */,
+				308D163416ECD3320095957B /* MEMemCategory.h */,
+				308D163516ECD3320095957B /* MEMemCategory.m */,
+			);
+			path = Mem;
+			sourceTree = "<group>";
+		};
+		308D163A16ECDAB50095957B /* MemView */ = {
+			isa = PBXGroup;
+			children = (
+				308D163B16ECDAB50095957B /* button-background.png */,
+				308D163C16ECDAB50095957B /* button-background@2x.png */,
+				308D163D16ECDAB50095957B /* mem.png */,
+				308D163E16ECDAB50095957B /* mem@2x.png */,
+			);
+			path = MemView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +460,10 @@
 				308D162816EC64D50095957B /* vk@2x.png in Resources */,
 				308D162B16EC68B30095957B /* bg_papper.png in Resources */,
 				308D162C16EC68B30095957B /* bg_papper@2x.png in Resources */,
+				308D163F16ECDAB50095957B /* button-background.png in Resources */,
+				308D164016ECDAB50095957B /* button-background@2x.png in Resources */,
+				308D164116ECDAB50095957B /* mem.png in Resources */,
+				308D164216ECDAB50095957B /* mem@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,12 +476,15 @@
 			files = (
 				308D15AD16EB185A0095957B /* main.m in Sources */,
 				308D15C816EB18A10095957B /* MEAppDelegate.m in Sources */,
-				308D15E616EB28C60095957B /* BaseTabBarController.m in Sources */,
 				308D15EA16EB30110095957B /* CatalogViewController.m in Sources */,
 				308D15FA16EB3BE90095957B /* BaseNavigationController.m in Sources */,
 				308D160416EB803E0095957B /* BaseCollectionViewController.m in Sources */,
 				308D161016EC5A570095957B /* AboutViewController.m in Sources */,
 				308D161316EC5AC20095957B /* BaseViewController.m in Sources */,
+				308D162F16ECCF0B0095957B /* CategoryMemsViewController.m in Sources */,
+				308D163316ECD1410095957B /* MEMem.m in Sources */,
+				308D163616ECD3320095957B /* MEMemCategory.m in Sources */,
+				308D163916ECD9FF0095957B /* MemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
