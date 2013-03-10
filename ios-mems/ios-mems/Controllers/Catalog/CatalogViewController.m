@@ -7,6 +7,7 @@
 //
 
 #import "CatalogViewController.h"
+#import "BaseNavigationController.h"
 
 @interface CatalogViewController ()
 
@@ -28,6 +29,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self initCategories];
+    [self initPhotoItemWithTarget:self];
+    [self initInfoItemWithTarget:self];
+    [self.navigationItem setTitle:@"Приложение"];
+}
+
+-(void)leftItemClicked:(id)sender{
+    [self performSegueWithIdentifier:@"About" sender:self];
+}
+
+-(void)rightItemClicked:(id)sender{
+    
 }
 
 -(void)initCategories{
@@ -64,12 +76,18 @@
     return cell;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+}
 
 @end

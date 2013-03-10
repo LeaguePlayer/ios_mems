@@ -19,12 +19,28 @@
             </objects>
             <point key="canvasLocation" x="506" y="115"/>
         </scene>
+        <!--Base Navigation Controller - Каталог-->
+        <scene sceneID="12d-sF-sgi">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="V35-Hg-ivq" customClass="BaseNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Каталог" image="tab1.png" id="Neo-9L-qtU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="goO-uX-ORx">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MY1-rK-L8j" kind="relationship" relationship="rootViewController" id="RbB-gG-x2Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EeE-pd-dO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="-1222"/>
+        </scene>
         <!--Catalog View Controller - Каталог-->
         <scene sceneID="w86-Ve-OAk">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="MY1-rK-L8j" customClass="CatalogViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="mnB-fK-bTa">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="1" id="cV0-UZ-Zjw">
@@ -67,10 +83,29 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Каталог" image="tab1.png" id="iwg-4G-bSx"/>
+                    <navigationItem key="navigationItem" id="bS3-Kk-nuh"/>
+                    <connections>
+                        <segue destination="E60-7t-zAZ" kind="push" identifier="About" id="YUN-5h-OVw"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yB3-Xq-0zI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="-1202"/>
+            <point key="canvasLocation" x="970" y="-1222"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="Bpa-ur-eQx">
+            <objects>
+                <viewController id="E60-7t-zAZ" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lNC-hA-iuY">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4rL-mo-0Wk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nqq-2c-n1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="970" y="-1956"/>
         </scene>
         <!--View Controller - Избранное-->
         <scene sceneID="Wy5-Ad-Zrf">
@@ -107,9 +142,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="MY1-rK-L8j" kind="relationship" relationship="viewControllers" id="BxA-mP-q7o"/>
-                        <segue destination="Pg5-4U-oCN" kind="relationship" relationship="viewControllers" id="4b2-OC-qV7"/>
-                        <segue destination="5nN-Y2-qYL" kind="relationship" relationship="viewControllers" id="te1-CX-tbn"/>
+                        <segue destination="V35-Hg-ivq" kind="relationship" relationship="viewControllers" id="OgX-Re-m3U"/>
+                        <segue destination="Pg5-4U-oCN" kind="relationship" relationship="viewControllers" id="hYL-q5-W7s"/>
+                        <segue destination="5nN-Y2-qYL" kind="relationship" relationship="viewControllers" id="rIQ-FZ-hsH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Onu-4f-MoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,6 +157,41 @@
         <image name="tab2.png" width="25" height="23"/>
         <image name="tab3.png" width="26" height="26"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+        </class>
+        <class className="BaseCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseCollectionViewController.h"/>
+        </class>
+        <class className="BaseNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseNavigationController.h"/>
+        </class>
+        <class className="BaseTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTabBarController.h"/>
+        </class>
+        <class className="BaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
+        </class>
+        <class className="CatalogViewController" superclassName="BaseCollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatalogViewController.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
