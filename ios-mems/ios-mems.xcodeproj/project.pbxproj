@@ -61,6 +61,8 @@
 		308D164016ECDAB50095957B /* button-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D163C16ECDAB50095957B /* button-background@2x.png */; };
 		308D164116ECDAB50095957B /* mem.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D163D16ECDAB50095957B /* mem.png */; };
 		308D164216ECDAB50095957B /* mem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D163E16ECDAB50095957B /* mem@2x.png */; };
+		308D164616ECE7450095957B /* SelectBackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D164516ECE7450095957B /* SelectBackgroundViewController.m */; };
+		308D164916ECEC090095957B /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D164816ECEC090095957B /* ColorPickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +133,10 @@
 		308D163C16ECDAB50095957B /* button-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-background@2x.png"; sourceTree = "<group>"; };
 		308D163D16ECDAB50095957B /* mem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mem.png; sourceTree = "<group>"; };
 		308D163E16ECDAB50095957B /* mem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mem@2x.png"; sourceTree = "<group>"; };
+		308D164416ECE7450095957B /* SelectBackgroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBackgroundViewController.h; sourceTree = "<group>"; };
+		308D164516ECE7450095957B /* SelectBackgroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBackgroundViewController.m; sourceTree = "<group>"; };
+		308D164716ECEC090095957B /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
+		308D164816ECEC090095957B /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +262,7 @@
 		308D15E116EB19540095957B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				308D164316ECE6BB0095957B /* Operations */,
 				308D15E716EB2FEA0095957B /* Catalog */,
 				308D15E316EB19920095957B /* Base */,
 			);
@@ -372,6 +379,17 @@
 			path = MemView;
 			sourceTree = "<group>";
 		};
+		308D164316ECE6BB0095957B /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				308D164416ECE7450095957B /* SelectBackgroundViewController.h */,
+				308D164516ECE7450095957B /* SelectBackgroundViewController.m */,
+				308D164716ECEC090095957B /* ColorPickerViewController.h */,
+				308D164816ECEC090095957B /* ColorPickerViewController.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,6 +503,8 @@
 				308D163316ECD1410095957B /* MEMem.m in Sources */,
 				308D163616ECD3320095957B /* MEMemCategory.m in Sources */,
 				308D163916ECD9FF0095957B /* MemViewController.m in Sources */,
+				308D164616ECE7450095957B /* SelectBackgroundViewController.m in Sources */,
+				308D164916ECEC090095957B /* ColorPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

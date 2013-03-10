@@ -145,11 +145,105 @@
                     <connections>
                         <segue destination="E60-7t-zAZ" kind="push" identifier="About" id="NbJ-a3-hrJ"/>
                         <segue destination="gJB-7x-XhT" kind="push" identifier="Mems" id="6ta-kh-9Gk"/>
+                        <segue destination="Rdr-Fn-g1q" kind="push" identifier="Background" id="UpH-fn-IBV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jnl-J9-roN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="970" y="-1222"/>
+        </scene>
+        <!--Select Background View Controller-->
+        <scene sceneID="OBW-sY-Xlg">
+            <objects>
+                <viewController id="Rdr-Fn-g1q" customClass="SelectBackgroundViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RG6-EC-Mnm">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dVn-PH-JjI">
+                                <rect key="frame" x="23" y="100" width="275" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Использовать камеру" backgroundImage="button-background.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="54l-N9-u7x" kind="push" id="Vkr-1P-Ong"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Wg-eL-0Qo">
+                                <rect key="frame" x="23" y="160" width="275" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Выбрать из галереи" backgroundImage="button-background.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="96J-jk-2S9" kind="push" id="hEj-2c-Or1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FEK-9C-Ipn">
+                                <rect key="frame" x="23" y="219" width="275" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Выбрать цвет" backgroundImage="button-background.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nrk-qp-koE" kind="push" id="Fh4-JQ-yMB"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bar-back.png" id="87L-Uk-m4C">
+                                <rect key="frame" x="0.0" y="478" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0qv-F3-CJr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMg-00-YRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1991" y="-2135"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cOm-hl-WPA">
+            <objects>
+                <viewController id="96J-jk-2S9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fZf-iy-eEA">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="E6y-yq-gJN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="At1-dh-NP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2541" y="-2135"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cms-nw-6n5">
+            <objects>
+                <viewController id="54l-N9-u7x" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zUr-vh-B3Z">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y19-mh-FNF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XoQ-sx-V9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2541" y="-2805"/>
         </scene>
         <!--Category Mems View Controller-->
         <scene sceneID="ihF-p6-mvW">
@@ -205,6 +299,7 @@
                     <navigationItem key="navigationItem" id="vYc-3T-OHZ"/>
                     <connections>
                         <segue destination="a8s-SV-dwB" kind="push" identifier="Mem" id="EYh-4Y-aSa"/>
+                        <segue destination="Rdr-Fn-g1q" kind="push" identifier="Background" id="lS9-1e-g3d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MvJ-8n-Yj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,10 +380,69 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="WsY-Lu-QNt"/>
+                    <connections>
+                        <segue destination="Rdr-Fn-g1q" kind="push" identifier="Background" id="B6T-ow-BOD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glT-hx-b0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1991" y="-1222"/>
+        </scene>
+        <!--Color Picker View Controller-->
+        <scene sceneID="crI-ll-9D5">
+            <objects>
+                <viewController id="Nrk-qp-koE" customClass="ColorPickerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cZP-5s-HRn">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="J2t-kx-JWh">
+                                <rect key="frame" x="30" y="91" width="260" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="3Cc-pm-Qpg">
+                                <rect key="frame" x="160" y="20" width="128" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="IUT-JB-kKg">
+                                        <rect key="frame" x="4" y="4" width="58" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="kNU-VV-V3g">
+                                        <rect key="frame" x="66" y="4" width="58" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="4gG-IW-lPn">
+                                <rect key="frame" x="30" y="20" width="128" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="TxD-3c-k9v">
+                                        <rect key="frame" x="4" y="4" width="58" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="rNc-Nz-aP6">
+                                        <rect key="frame" x="66" y="4" width="58" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6S8-yJ-PIU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ShM-Bc-uQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2541" y="-1455"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="Bpa-ur-eQx">
@@ -414,8 +568,14 @@
         <class className="CategoryMemsViewController" superclassName="BaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryMemsViewController.h"/>
         </class>
+        <class className="ColorPickerViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorPickerViewController.h"/>
+        </class>
         <class className="MemViewController" superclassName="BaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MemViewController.h"/>
+        </class>
+        <class className="SelectBackgroundViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectBackgroundViewController.h"/>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
@@ -432,4 +592,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="lS9-1e-g3d"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -40,7 +40,7 @@
 }
 
 -(void)rightItemClicked:(id)sender{
-    
+    [self performSegueWithIdentifier:@"Background" sender:self];
 }
 
 -(void)initCategories{

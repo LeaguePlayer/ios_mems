@@ -1,18 +1,18 @@
 //
-//  MemViewController.m
+//  ColorPickerViewController.m
 //  ios-mems
 //
 //  Created by Салахутдинов Данияр on 10.03.13.
 //  Copyright (c) 2013 Салахутдинов Данияр. All rights reserved.
 //
 
-#import "MemViewController.h"
+#import "ColorPickerViewController.h"
 
-@interface MemViewController ()
+@interface ColorPickerViewController ()
 
 @end
 
-@implementation MemViewController
+@implementation ColorPickerViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,22 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self initUI];
-}
-
--(void)initUI{
-    UIImage *image = [UIImage imageNamed:@"bg_papper.png"];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:image]];
-    [self initPhotoItemWithTarget:self];
-    [self initBackButtonWithTarget:self];
-}
-
--(void)rightItemClicked:(id)sender{
-    [self performSegueWithIdentifier:@"Background" sender:self];
-}
-
--(void)leftItemClicked:(id)sender{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

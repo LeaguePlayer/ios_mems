@@ -43,7 +43,7 @@
 }
 
 -(void)rightItemClicked:(id)sender{
-    
+    [self performSegueWithIdentifier:@"Background" sender:self];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
