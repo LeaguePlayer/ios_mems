@@ -37,13 +37,11 @@
 
 -(void)checkTheColor{
     NSMutableArray *colors = [NSMutableArray array];
-    for (UIView *view in self.colors){
-        [colors addObject:(id)view.backgroundColor.CGColor];
+    for (UIButton *button in self.colors){
+        [colors addObject:button.backgroundColor];
     }
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = self.display.bounds;
-    gradient.colors = colors;
-    [self.display.layer insertSublayer:gradient atIndex:0];
+    [self.display setColors:colors];
+    [self.display setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning

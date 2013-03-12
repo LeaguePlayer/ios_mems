@@ -64,6 +64,7 @@
 		308D164616ECE7450095957B /* SelectBackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D164516ECE7450095957B /* SelectBackgroundViewController.m */; };
 		308D164916ECEC090095957B /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D164816ECEC090095957B /* ColorPickerViewController.m */; };
 		308D16B116EE53E20095957B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308D16B016EE53E10095957B /* QuartzCore.framework */; };
+		308D16B516EF788E0095957B /* MEGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D16B416EF788E0095957B /* MEGradientView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +140,8 @@
 		308D164716ECEC090095957B /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
 		308D164816ECEC090095957B /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
 		308D16B016EE53E10095957B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		308D16B316EF788E0095957B /* MEGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEGradientView.h; sourceTree = "<group>"; };
+		308D16B416EF788E0095957B /* MEGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEGradientView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +190,7 @@
 		308D15A616EB185A0095957B /* ios-mems */ = {
 			isa = PBXGroup;
 			children = (
-				308D15E016EB19540095957B /* Classes */,
+				308D16B216EF787A0095957B /* Classes */,
 				308D15E116EB19540095957B /* Controllers */,
 				308D15E216EB19540095957B /* Model */,
 				308D15C316EB18A10095957B /* Application */,
@@ -254,13 +257,6 @@
 				308D15D516EB18E20095957B /* tab3@2x.png */,
 			);
 			path = TabBar;
-			sourceTree = "<group>";
-		};
-		308D15E016EB19540095957B /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		308D15E116EB19540095957B /* Controllers */ = {
@@ -394,6 +390,15 @@
 			path = Operations;
 			sourceTree = "<group>";
 		};
+		308D16B216EF787A0095957B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				308D16B316EF788E0095957B /* MEGradientView.h */,
+				308D16B416EF788E0095957B /* MEGradientView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -509,6 +514,7 @@
 				308D163916ECD9FF0095957B /* MemViewController.m in Sources */,
 				308D164616ECE7450095957B /* SelectBackgroundViewController.m in Sources */,
 				308D164916ECEC090095957B /* ColorPickerViewController.m in Sources */,
+				308D16B516EF788E0095957B /* MEGradientView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

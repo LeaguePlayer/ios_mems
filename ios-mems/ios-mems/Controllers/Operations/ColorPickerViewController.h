@@ -7,10 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "MEGradientView.h"
 
 @interface ColorPickerViewController : BaseViewController
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *colors;
 - (IBAction)chooseColor:(id)sender;
-@property (weak, nonatomic) IBOutlet UIView *display;
+@property (weak, nonatomic) IBOutlet MEGradientView *display;
 
 @end
