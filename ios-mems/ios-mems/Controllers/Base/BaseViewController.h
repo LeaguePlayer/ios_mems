@@ -16,5 +16,6 @@
 
 -(void)leftItemClicked:(id)sender;
 -(void)rightItemClicked:(id)sender;
+-(void)showAlertWithStatus:(NSString *)title;
 
 @end

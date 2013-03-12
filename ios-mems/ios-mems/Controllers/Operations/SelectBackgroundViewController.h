@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
-@interface SelectBackgroundViewController : BaseViewController
+@interface SelectBackgroundViewController : BaseViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+- (IBAction)selectFromCamera:(id)sender;
+- (IBAction)selectFromGallery:(id)sender;
 
 @end

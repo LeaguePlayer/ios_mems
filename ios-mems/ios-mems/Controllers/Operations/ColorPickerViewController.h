@@ -9,5 +9,8 @@
 #import "BaseViewController.h"
 
 @interface ColorPickerViewController : BaseViewController
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *colors;
+- (IBAction)chooseColor:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *display;
 
 @end

@@ -171,7 +171,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="54l-N9-u7x" kind="push" id="Vkr-1P-Ong"/>
+                                    <action selector="selectFromCamera:" destination="Rdr-Fn-g1q" eventType="touchUpInside" id="qMQ-Xk-aHh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Wg-eL-0Qo">
@@ -185,7 +185,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="96J-jk-2S9" kind="push" id="hEj-2c-Or1"/>
+                                    <action selector="selectFromGallery:" destination="Rdr-Fn-g1q" eventType="touchUpInside" id="oFB-zo-oQl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FEK-9C-Ipn">
@@ -199,7 +199,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Nrk-qp-koE" kind="push" id="Fh4-JQ-yMB"/>
+                                    <segue destination="Nrk-qp-koE" kind="modal" identifier="Custom" id="Fh4-JQ-yMB"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bar-back.png" id="87L-Uk-m4C">
@@ -210,17 +210,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0qv-F3-CJr"/>
+                    <connections>
+                        <segue destination="54l-N9-u7x" kind="modal" identifier="Camera" id="CGQ-ps-ZZA"/>
+                        <segue destination="96J-jk-2S9" kind="modal" identifier="Gallery" id="wzw-gX-5Jk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMg-00-YRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1991" y="-2135"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Picker Controller-->
         <scene sceneID="cOm-hl-WPA">
             <objects>
-                <viewController id="96J-jk-2S9" sceneMemberID="viewController">
+                <viewController id="96J-jk-2S9" customClass="UIImagePickerController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fZf-iy-eEA">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -230,12 +234,12 @@
             </objects>
             <point key="canvasLocation" x="2541" y="-2135"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Picker Controller-->
         <scene sceneID="cms-nw-6n5">
             <objects>
-                <viewController id="54l-N9-u7x" sceneMemberID="viewController">
+                <viewController id="54l-N9-u7x" customClass="UIImagePickerController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zUr-vh-B3Z">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -393,11 +397,11 @@
             <objects>
                 <viewController id="Nrk-qp-koE" customClass="ColorPickerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZP-5s-HRn">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="J2t-kx-JWh">
-                                <rect key="frame" x="30" y="91" width="260" height="320"/>
+                                <rect key="frame" x="30" y="91" width="260" height="263"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -435,10 +439,32 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Zc-lv-loS">
+                                <rect key="frame" x="30" y="475" width="265" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Ололо, выбрать">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseColor:" destination="Nrk-qp-koE" eventType="touchUpInside" id="ZGk-Hr-3qR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="6S8-yJ-PIU"/>
+                    <connections>
+                        <outlet property="display" destination="J2t-kx-JWh" id="0lo-8W-WCy"/>
+                        <outletCollection property="colors" destination="TxD-3c-k9v" id="r5t-Zm-cpt"/>
+                        <outletCollection property="colors" destination="rNc-Nz-aP6" id="cJK-Eb-SSp"/>
+                        <outletCollection property="colors" destination="IUT-JB-kKg" id="3tu-TY-tPL"/>
+                        <outletCollection property="colors" destination="kNU-VV-V3g" id="mPl-op-Y8a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ShM-Bc-uQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -552,41 +578,6 @@
         <image name="tab3.png" width="26" height="26"/>
         <image name="vk.png" width="133" height="45"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-        </class>
-        <class className="BaseNavigationController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseNavigationController.h"/>
-        </class>
-        <class className="BaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
-        </class>
-        <class className="CatalogViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatalogViewController.h"/>
-        </class>
-        <class className="CategoryMemsViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryMemsViewController.h"/>
-        </class>
-        <class className="ColorPickerViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorPickerViewController.h"/>
-        </class>
-        <class className="MemViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemViewController.h"/>
-        </class>
-        <class className="SelectBackgroundViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectBackgroundViewController.h"/>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

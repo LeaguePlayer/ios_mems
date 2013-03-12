@@ -63,6 +63,7 @@
 		308D164216ECDAB50095957B /* mem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D163E16ECDAB50095957B /* mem@2x.png */; };
 		308D164616ECE7450095957B /* SelectBackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D164516ECE7450095957B /* SelectBackgroundViewController.m */; };
 		308D164916ECEC090095957B /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D164816ECEC090095957B /* ColorPickerViewController.m */; };
+		308D16B116EE53E20095957B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308D16B016EE53E10095957B /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +138,7 @@
 		308D164516ECE7450095957B /* SelectBackgroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBackgroundViewController.m; sourceTree = "<group>"; };
 		308D164716ECEC090095957B /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
 		308D164816ECEC090095957B /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
+		308D16B016EE53E10095957B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308D16B116EE53E20095957B /* QuartzCore.framework in Frameworks */,
 				308D15A116EB185A0095957B /* UIKit.framework in Frameworks */,
 				308D15A316EB185A0095957B /* Foundation.framework in Frameworks */,
 				308D15A516EB185A0095957B /* CoreGraphics.framework in Frameworks */,
@@ -156,6 +159,7 @@
 		308D159416EB185A0095957B = {
 			isa = PBXGroup;
 			children = (
+				308D16B016EE53E10095957B /* QuartzCore.framework */,
 				308D15A616EB185A0095957B /* ios-mems */,
 				308D159F16EB185A0095957B /* Frameworks */,
 				308D159E16EB185A0095957B /* Products */,
@@ -619,6 +623,7 @@
 				308D15C216EB185A0095957B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
