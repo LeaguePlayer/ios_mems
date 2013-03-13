@@ -27,15 +27,26 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self initBar];
+    [self initNavigationBarWithType:BaseNavigationTypeNormal];
 }
 
--(void)initBar{
-    UIImage *background = [UIImage imageNamed:@"top_bar.png"];
+-(void)initNavigationBarWithType:(BaseNavigationType)type{
+    UIImage *background;
+    switch (type) {
+        case BaseNavigationTypeNormal:
+            background = [UIImage imageNamed:@"top_bar.png"];
+            break;
+        case BaseNavigationTypeEditPhoto:
+            background = [UIImage imageNamed:@"edit_photo_navbar.png"];
+            break;
+        default:
+            background = [UIImage imageNamed:@"top_bar.png"];
+            break;
+    }
     [self.navigationBar setBackgroundImage:background forBarMetrics:UIBarMetricsDefault];
     [self.navigationBar setBackgroundColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:
-    [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], UITextAttributeTextColor,[UIFont fontWithName:@"v_bd_cartoon_shout_cyr" size:16.0], UITextAttributeFont,nil]];
+     [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], UITextAttributeTextColor,[UIFont fontWithName:@"v_bd_cartoon_shout_cyr" size:16.0], UITextAttributeFont,nil]];
 }
 
 - (void)didReceiveMemoryWarning

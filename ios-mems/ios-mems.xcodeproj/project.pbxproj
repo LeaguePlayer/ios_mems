@@ -62,9 +62,31 @@
 		308D164116ECDAB50095957B /* mem.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D163D16ECDAB50095957B /* mem.png */; };
 		308D164216ECDAB50095957B /* mem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D163E16ECDAB50095957B /* mem@2x.png */; };
 		308D164616ECE7450095957B /* SelectBackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D164516ECE7450095957B /* SelectBackgroundViewController.m */; };
-		308D164916ECEC090095957B /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D164816ECEC090095957B /* ColorPickerViewController.m */; };
 		308D16B116EE53E20095957B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308D16B016EE53E10095957B /* QuartzCore.framework */; };
-		308D16B516EF788E0095957B /* MEGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D16B416EF788E0095957B /* MEGradientView.m */; };
+		308D16C616F0CBF80095957B /* InfColorBarPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D16B916F0CBF80095957B /* InfColorBarPicker.m */; };
+		308D16C716F0CBF80095957B /* InfColorIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D16BB16F0CBF80095957B /* InfColorIndicatorView.m */; };
+		308D16C816F0CBF80095957B /* InfColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D16BE16F0CBF80095957B /* InfColorPickerController.m */; };
+		308D16CA16F0CBF80095957B /* InfColorSquarePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D16C116F0CBF80095957B /* InfColorSquarePicker.m */; };
+		308D16CB16F0CBF80095957B /* InfHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D16C316F0CBF80095957B /* InfHSBSupport.m */; };
+		308D16CC16F0CBF80095957B /* InfSourceColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D16C516F0CBF80095957B /* InfSourceColorView.m */; };
+		308D16D016F0D93C0095957B /* UIImage+Blank.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D16CF16F0D93C0095957B /* UIImage+Blank.m */; };
+		308D16D316F0E01E0095957B /* EditPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308D16D216F0E01E0095957B /* EditPhotoViewController.m */; };
+		308D16E516F0E5020095957B /* add_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16D516F0E5020095957B /* add_text.png */; };
+		308D16E616F0E5020095957B /* add_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16D616F0E5020095957B /* add_text@2x.png */; };
+		308D16E716F0E5020095957B /* bg_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16D716F0E5020095957B /* bg_menu.png */; };
+		308D16E816F0E5020095957B /* bg_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16D816F0E5020095957B /* bg_menu@2x.png */; };
+		308D16E916F0E5020095957B /* edit_photo_footer.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16D916F0E5020095957B /* edit_photo_footer.png */; };
+		308D16EA16F0E5020095957B /* edit_photo_footer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16DA16F0E5020095957B /* edit_photo_footer@2x.png */; };
+		308D16EB16F0E5020095957B /* edit_photo_navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16DB16F0E5020095957B /* edit_photo_navbar.png */; };
+		308D16EC16F0E5020095957B /* edit_photo_navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16DC16F0E5020095957B /* edit_photo_navbar@2x.png */; };
+		308D16ED16F0E5020095957B /* open_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16DD16F0E5020095957B /* open_button.png */; };
+		308D16EE16F0E5020095957B /* open_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16DE16F0E5020095957B /* open_button@2x.png */; };
+		308D16EF16F0E5020095957B /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16DF16F0E5020095957B /* question.png */; };
+		308D16F016F0E5020095957B /* question@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16E016F0E5020095957B /* question@2x.png */; };
+		308D16F116F0E5020095957B /* recycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16E116F0E5020095957B /* recycle.png */; };
+		308D16F216F0E5020095957B /* recycle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16E216F0E5020095957B /* recycle@2x.png */; };
+		308D16F316F0E5020095957B /* refresh_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16E316F0E5020095957B /* refresh_icon.png */; };
+		308D16F416F0E5020095957B /* refresh_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16E416F0E5020095957B /* refresh_icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,11 +159,40 @@
 		308D163E16ECDAB50095957B /* mem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mem@2x.png"; sourceTree = "<group>"; };
 		308D164416ECE7450095957B /* SelectBackgroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBackgroundViewController.h; sourceTree = "<group>"; };
 		308D164516ECE7450095957B /* SelectBackgroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBackgroundViewController.m; sourceTree = "<group>"; };
-		308D164716ECEC090095957B /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
-		308D164816ECEC090095957B /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
 		308D16B016EE53E10095957B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		308D16B316EF788E0095957B /* MEGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEGradientView.h; sourceTree = "<group>"; };
-		308D16B416EF788E0095957B /* MEGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEGradientView.m; sourceTree = "<group>"; };
+		308D16B816F0CBF80095957B /* InfColorBarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorBarPicker.h; sourceTree = "<group>"; };
+		308D16B916F0CBF80095957B /* InfColorBarPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfColorBarPicker.m; sourceTree = "<group>"; };
+		308D16BA16F0CBF80095957B /* InfColorIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorIndicatorView.h; sourceTree = "<group>"; };
+		308D16BB16F0CBF80095957B /* InfColorIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfColorIndicatorView.m; sourceTree = "<group>"; };
+		308D16BC16F0CBF80095957B /* InfColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorPicker.h; sourceTree = "<group>"; };
+		308D16BD16F0CBF80095957B /* InfColorPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorPickerController.h; sourceTree = "<group>"; };
+		308D16BE16F0CBF80095957B /* InfColorPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfColorPickerController.m; sourceTree = "<group>"; };
+		308D16C016F0CBF80095957B /* InfColorSquarePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorSquarePicker.h; sourceTree = "<group>"; };
+		308D16C116F0CBF80095957B /* InfColorSquarePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfColorSquarePicker.m; sourceTree = "<group>"; };
+		308D16C216F0CBF80095957B /* InfHSBSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfHSBSupport.h; sourceTree = "<group>"; };
+		308D16C316F0CBF80095957B /* InfHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfHSBSupport.m; sourceTree = "<group>"; };
+		308D16C416F0CBF80095957B /* InfSourceColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfSourceColorView.h; sourceTree = "<group>"; };
+		308D16C516F0CBF80095957B /* InfSourceColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfSourceColorView.m; sourceTree = "<group>"; };
+		308D16CE16F0D93C0095957B /* UIImage+Blank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blank.h"; sourceTree = "<group>"; };
+		308D16CF16F0D93C0095957B /* UIImage+Blank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blank.m"; sourceTree = "<group>"; };
+		308D16D116F0E01E0095957B /* EditPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPhotoViewController.h; sourceTree = "<group>"; };
+		308D16D216F0E01E0095957B /* EditPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPhotoViewController.m; sourceTree = "<group>"; };
+		308D16D516F0E5020095957B /* add_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_text.png; sourceTree = "<group>"; };
+		308D16D616F0E5020095957B /* add_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_text@2x.png"; sourceTree = "<group>"; };
+		308D16D716F0E5020095957B /* bg_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_menu.png; sourceTree = "<group>"; };
+		308D16D816F0E5020095957B /* bg_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_menu@2x.png"; sourceTree = "<group>"; };
+		308D16D916F0E5020095957B /* edit_photo_footer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_photo_footer.png; sourceTree = "<group>"; };
+		308D16DA16F0E5020095957B /* edit_photo_footer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_photo_footer@2x.png"; sourceTree = "<group>"; };
+		308D16DB16F0E5020095957B /* edit_photo_navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_photo_navbar.png; sourceTree = "<group>"; };
+		308D16DC16F0E5020095957B /* edit_photo_navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_photo_navbar@2x.png"; sourceTree = "<group>"; };
+		308D16DD16F0E5020095957B /* open_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open_button.png; sourceTree = "<group>"; };
+		308D16DE16F0E5020095957B /* open_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open_button@2x.png"; sourceTree = "<group>"; };
+		308D16DF16F0E5020095957B /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		308D16E016F0E5020095957B /* question@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question@2x.png"; sourceTree = "<group>"; };
+		308D16E116F0E5020095957B /* recycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recycle.png; sourceTree = "<group>"; };
+		308D16E216F0E5020095957B /* recycle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recycle@2x.png"; sourceTree = "<group>"; };
+		308D16E316F0E5020095957B /* refresh_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh_icon.png; sourceTree = "<group>"; };
+		308D16E416F0E5020095957B /* refresh_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +241,7 @@
 		308D15A616EB185A0095957B /* ios-mems */ = {
 			isa = PBXGroup;
 			children = (
+				308D16B616F0CBF80095957B /* Vendor */,
 				308D16B216EF787A0095957B /* Classes */,
 				308D15E116EB19540095957B /* Controllers */,
 				308D15E216EB19540095957B /* Model */,
@@ -224,6 +276,7 @@
 		308D15C916EB18E20095957B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				308D16D416F0E5020095957B /* EditPhoto */,
 				308D163A16ECDAB50095957B /* MemView */,
 				308D161816EC64D50095957B /* About */,
 				308D160916EB84E70095957B /* Fonts */,
@@ -384,8 +437,8 @@
 			children = (
 				308D164416ECE7450095957B /* SelectBackgroundViewController.h */,
 				308D164516ECE7450095957B /* SelectBackgroundViewController.m */,
-				308D164716ECEC090095957B /* ColorPickerViewController.h */,
-				308D164816ECEC090095957B /* ColorPickerViewController.m */,
+				308D16D116F0E01E0095957B /* EditPhotoViewController.h */,
+				308D16D216F0E01E0095957B /* EditPhotoViewController.m */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -393,10 +446,69 @@
 		308D16B216EF787A0095957B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				308D16B316EF788E0095957B /* MEGradientView.h */,
-				308D16B416EF788E0095957B /* MEGradientView.m */,
+				308D16CD16F0D91A0095957B /* Categories */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		308D16B616F0CBF80095957B /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				308D16B716F0CBF80095957B /* InfColorPicker */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		308D16B716F0CBF80095957B /* InfColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				308D16B816F0CBF80095957B /* InfColorBarPicker.h */,
+				308D16B916F0CBF80095957B /* InfColorBarPicker.m */,
+				308D16BA16F0CBF80095957B /* InfColorIndicatorView.h */,
+				308D16BB16F0CBF80095957B /* InfColorIndicatorView.m */,
+				308D16BC16F0CBF80095957B /* InfColorPicker.h */,
+				308D16BD16F0CBF80095957B /* InfColorPickerController.h */,
+				308D16BE16F0CBF80095957B /* InfColorPickerController.m */,
+				308D16C016F0CBF80095957B /* InfColorSquarePicker.h */,
+				308D16C116F0CBF80095957B /* InfColorSquarePicker.m */,
+				308D16C216F0CBF80095957B /* InfHSBSupport.h */,
+				308D16C316F0CBF80095957B /* InfHSBSupport.m */,
+				308D16C416F0CBF80095957B /* InfSourceColorView.h */,
+				308D16C516F0CBF80095957B /* InfSourceColorView.m */,
+			);
+			path = InfColorPicker;
+			sourceTree = "<group>";
+		};
+		308D16CD16F0D91A0095957B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				308D16CE16F0D93C0095957B /* UIImage+Blank.h */,
+				308D16CF16F0D93C0095957B /* UIImage+Blank.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		308D16D416F0E5020095957B /* EditPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				308D16D516F0E5020095957B /* add_text.png */,
+				308D16D616F0E5020095957B /* add_text@2x.png */,
+				308D16D716F0E5020095957B /* bg_menu.png */,
+				308D16D816F0E5020095957B /* bg_menu@2x.png */,
+				308D16D916F0E5020095957B /* edit_photo_footer.png */,
+				308D16DA16F0E5020095957B /* edit_photo_footer@2x.png */,
+				308D16DB16F0E5020095957B /* edit_photo_navbar.png */,
+				308D16DC16F0E5020095957B /* edit_photo_navbar@2x.png */,
+				308D16DD16F0E5020095957B /* open_button.png */,
+				308D16DE16F0E5020095957B /* open_button@2x.png */,
+				308D16DF16F0E5020095957B /* question.png */,
+				308D16E016F0E5020095957B /* question@2x.png */,
+				308D16E116F0E5020095957B /* recycle.png */,
+				308D16E216F0E5020095957B /* recycle@2x.png */,
+				308D16E316F0E5020095957B /* refresh_icon.png */,
+				308D16E416F0E5020095957B /* refresh_icon@2x.png */,
+			);
+			path = EditPhoto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +603,22 @@
 				308D164016ECDAB50095957B /* button-background@2x.png in Resources */,
 				308D164116ECDAB50095957B /* mem.png in Resources */,
 				308D164216ECDAB50095957B /* mem@2x.png in Resources */,
+				308D16E516F0E5020095957B /* add_text.png in Resources */,
+				308D16E616F0E5020095957B /* add_text@2x.png in Resources */,
+				308D16E716F0E5020095957B /* bg_menu.png in Resources */,
+				308D16E816F0E5020095957B /* bg_menu@2x.png in Resources */,
+				308D16E916F0E5020095957B /* edit_photo_footer.png in Resources */,
+				308D16EA16F0E5020095957B /* edit_photo_footer@2x.png in Resources */,
+				308D16EB16F0E5020095957B /* edit_photo_navbar.png in Resources */,
+				308D16EC16F0E5020095957B /* edit_photo_navbar@2x.png in Resources */,
+				308D16ED16F0E5020095957B /* open_button.png in Resources */,
+				308D16EE16F0E5020095957B /* open_button@2x.png in Resources */,
+				308D16EF16F0E5020095957B /* question.png in Resources */,
+				308D16F016F0E5020095957B /* question@2x.png in Resources */,
+				308D16F116F0E5020095957B /* recycle.png in Resources */,
+				308D16F216F0E5020095957B /* recycle@2x.png in Resources */,
+				308D16F316F0E5020095957B /* refresh_icon.png in Resources */,
+				308D16F416F0E5020095957B /* refresh_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,8 +641,14 @@
 				308D163616ECD3320095957B /* MEMemCategory.m in Sources */,
 				308D163916ECD9FF0095957B /* MemViewController.m in Sources */,
 				308D164616ECE7450095957B /* SelectBackgroundViewController.m in Sources */,
-				308D164916ECEC090095957B /* ColorPickerViewController.m in Sources */,
-				308D16B516EF788E0095957B /* MEGradientView.m in Sources */,
+				308D16C616F0CBF80095957B /* InfColorBarPicker.m in Sources */,
+				308D16C716F0CBF80095957B /* InfColorIndicatorView.m in Sources */,
+				308D16C816F0CBF80095957B /* InfColorPickerController.m in Sources */,
+				308D16CA16F0CBF80095957B /* InfColorSquarePicker.m in Sources */,
+				308D16CB16F0CBF80095957B /* InfHSBSupport.m in Sources */,
+				308D16CC16F0CBF80095957B /* InfSourceColorView.m in Sources */,
+				308D16D016F0D93C0095957B /* UIImage+Blank.m in Sources */,
+				308D16D316F0E01E0095957B /* EditPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

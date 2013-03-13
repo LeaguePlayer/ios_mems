@@ -13,6 +13,7 @@
 -(void)initInfoItemWithTarget:(BaseViewController *)target;
 -(void)initPhotoItemWithTarget:(BaseViewController *)target;
 -(void)initBackButtonWithTarget:(BaseViewController *)target;
+-(void)initOptionsButtonWithTarget:(BaseViewController *)target;
 
 -(void)leftItemClicked:(id)sender;
 -(void)rightItemClicked:(id)sender;

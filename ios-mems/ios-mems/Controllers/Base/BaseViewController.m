@@ -57,6 +57,16 @@
     [self.navigationItem setLeftBarButtonItem:item];
 }
 
+-(void)initOptionsButtonWithTarget:(BaseViewController *)target{
+    UIImage *image = [UIImage imageNamed:@"open_button.png"];
+    CGRect frame = CGRectMake(0,0,image.size.width,image.size.height);
+    UIButton *button = [[UIButton alloc] initWithFrame:frame];
+    [button setBackgroundImage:image forState:UIControlStateNormal];
+    [button addTarget:target action:@selector(rightItemClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [self.navigationItem setRightBarButtonItem:item];
+}
+
 -(void)leftItemClicked:(id)sender{
     
 }

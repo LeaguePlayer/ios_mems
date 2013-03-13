@@ -7,6 +7,9 @@
 //
 
 #import "SelectBackgroundViewController.h"
+#import "UIImage+Blank.h"
+#import "BaseNavigationController.h"
+#import "EditPhotoViewController.h"
 
 @interface SelectBackgroundViewController ()
 
@@ -56,15 +59,35 @@
         picker.delegate = self;
         picker.allowsEditing = NO;
         picker.sourceType = sourceType;
-        NSString *ident = sourceType == UIImagePickerControllerSourceTypeCamera ? @"Camera" : @"Gallery";
-        [self performSegueWithIdentifier:ident sender:self];
+        [self performSegueWithIdentifier:@"Photo" sender:self];
     } else {
         [self showAlertWithStatus:@"Устройство не поддерживает этот тип содержимого"];
     }
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    resultImage = image;
+    [self performSegueWithIdentifier:@"Next" sender:self];
+}
+
+-(void)colorPickerControllerDidFinish:(InfColorPickerController *)controller{
+    UIColor *resultColor = controller.resultColor;
+    UIImage *image = [UIImage blankImage:self.view.bounds.size withColor:resultColor];
+    resultImage = image;
+    [self performSegueWithIdentifier:@"Next" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"Custom"]){
+        InfColorPickerController *controller = (InfColorPickerController *)segue.destinationViewController;
+        controller.sourceColor = [UIColor blueColor];
+        controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"Next"]){
+        [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeEditPhoto];
+        EditPhotoViewController *controller = (EditPhotoViewController *)segue.destinationViewController;
+        controller.image = resultImage;
+    }
 }
 
 @end

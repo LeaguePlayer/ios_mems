@@ -7,8 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "InfColorPickerController.h"
 
-@interface SelectBackgroundViewController : BaseViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface SelectBackgroundViewController : BaseViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate,InfColorPickerControllerDelegate>{
+    UIImage *resultImage;
+}
 - (IBAction)selectFromCamera:(id)sender;
 - (IBAction)selectFromGallery:(id)sender;
 

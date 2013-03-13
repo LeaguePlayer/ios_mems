@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    BaseNavigationTypeNormal,
+    BaseNavigationTypeEditPhoto
+} BaseNavigationType;
+
 @interface BaseNavigationController : UINavigationController
+
+-(void)initNavigationBarWithType:(BaseNavigationType)type;
 
 @end
