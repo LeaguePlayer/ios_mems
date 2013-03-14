@@ -8,7 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface EditPhotoViewController : BaseViewController
+@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate>{
+    UIActionSheet *actionSheet;
+}
 
 @property (nonatomic,retain) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;

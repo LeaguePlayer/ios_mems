@@ -31,6 +31,11 @@
     [self initOptionsButtonWithTarget:self];
     [self initImageView];
     [self initItems];
+    [self initActions];
+}
+
+-(void)initActions{
+    actionSheet = [[UIActionSheet alloc] initWithTitle:@"Выберите действие" delegate:self cancelButtonTitle:@"Отмена" destructiveButtonTitle:nil otherButtonTitles:@"Отправить ММС", @"Сохранить на телефон", nil];
 }
 
 -(void)initItems{
@@ -54,6 +59,10 @@
 }
 
 -(void)rightItemClicked:(id)sender{
+    [actionSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
 }
 
