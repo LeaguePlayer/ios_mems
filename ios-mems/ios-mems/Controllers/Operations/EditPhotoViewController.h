@@ -13,5 +13,7 @@
 @property (nonatomic,retain) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIScrollView *itemsScroll;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *items;
 
 @end

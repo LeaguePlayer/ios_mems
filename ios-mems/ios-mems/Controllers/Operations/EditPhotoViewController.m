@@ -29,7 +29,24 @@
 	// Do any additional setup after loading the view.
     [self initBackButtonWithTarget:self];
     [self initOptionsButtonWithTarget:self];
+    [self initImageView];
+    [self initItems];
+}
+
+-(void)initItems{
+    self.items = [self orderCollectionByTagWithArray:self.items];
+    UIButton *button = [self.items lastObject];
+    CGSize size = CGSizeMake(button.frame.origin.x + button.frame.size.width, self.itemsScroll.frame.size.height);
+    [self.itemsScroll setContentSize:size];
+}
+
+-(void)initImageView{
+    CGSize size = self.image.size;
+    CGRect frame = self.imageView.frame;
+    frame.size = size;
+    [self.imageView setFrame:frame];
     [self.imageView setImage:self.image];
+    [self.scroll setContentSize:size];
 }
 
 -(void)leftItemClicked:(id)sender{

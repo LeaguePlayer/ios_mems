@@ -86,4 +86,13 @@
     [alert show];
 }
 
+-(NSArray *)orderCollectionByTagWithArray:(NSArray *)array{
+    return [array sortedArrayUsingComparator:^NSComparisonResult(id objA, id objB){
+        return(
+               ([objA tag] < [objB tag]) ? NSOrderedAscending  :
+               ([objA tag] > [objB tag]) ? NSOrderedDescending :
+               NSOrderedSame);
+    }];
+}
+
 @end
