@@ -87,7 +87,7 @@
         [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeEditPhoto];
         EditPhotoViewController *controller = (EditPhotoViewController *)segue.destinationViewController;
         controller.image = resultImage;
-    }
+    } 
 }
 
 @end
