@@ -18,5 +18,5 @@
 -(void)leftItemClicked:(id)sender;
 -(void)rightItemClicked:(id)sender;
 -(void)showAlertWithStatus:(NSString *)title;
-
+-(NSArray *)orderCollectionByTagWithArray:(NSArray *)array;
 @end

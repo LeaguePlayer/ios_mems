@@ -55,10 +55,7 @@
 -(void)getMediaFromSource:(UIImagePickerControllerSourceType)sourceType{
     NSArray *mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:sourceType];
     if ([UIImagePickerController isSourceTypeAvailable:sourceType] && [mediaTypes count] > 0){
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.delegate = self;
-        picker.allowsEditing = NO;
-        picker.sourceType = sourceType;
+        selectedSourceType = sourceType;
         [self performSegueWithIdentifier:@"Photo" sender:self];
     } else {
         [self showAlertWithStatus:@"Устройство не поддерживает этот тип содержимого"];
@@ -74,7 +71,7 @@
 -(void)colorPickerControllerDidFinish:(InfColorPickerController *)controller{
     UIColor *resultColor = controller.resultColor;
     UIImage *image = [UIImage blankImage:self.view.bounds.size withColor:resultColor];
-    resultImage = image;
+    resultImage = [UIImage imageNamed:@"photo.png"];
     [self performSegueWithIdentifier:@"Next" sender:self];
 }
 
@@ -87,7 +84,15 @@
         [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeEditPhoto];
         EditPhotoViewController *controller = (EditPhotoViewController *)segue.destinationViewController;
         controller.image = resultImage;
+<<<<<<< HEAD
     } 
+=======
+    } else if ([segue.identifier isEqualToString:@"Photo"]){
+        UIImagePickerController *controller = (UIImagePickerController *)segue.destinationViewController;
+        controller.delegate = self;
+        controller.sourceType = selectedSourceType;
+    }
+>>>>>>> c4a8793007d4d2c32adc258acd050fe5dc20cc5a
 }
 
 @end

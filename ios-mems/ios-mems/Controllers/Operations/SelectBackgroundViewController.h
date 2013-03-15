@@ -11,7 +11,11 @@
 
 @interface SelectBackgroundViewController : BaseViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate,InfColorPickerControllerDelegate>{
     UIImage *resultImage;
+<<<<<<< HEAD
     
+=======
+    UIImagePickerControllerSourceType selectedSourceType;
+>>>>>>> c4a8793007d4d2c32adc258acd050fe5dc20cc5a
 }
 - (IBAction)selectFromCamera:(id)sender;
 - (IBAction)selectFromGallery:(id)sender;

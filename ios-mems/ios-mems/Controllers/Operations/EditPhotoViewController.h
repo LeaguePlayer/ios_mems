@@ -8,10 +8,15 @@
 
 #import "BaseViewController.h"
 
-@interface EditPhotoViewController : BaseViewController
+@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate, UIGestureRecognizerDelegate>{
+    UIActionSheet *actionSheet;
+    CGFloat firstX, firstY;
+}
 
 @property (nonatomic,retain) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIScrollView *itemsScroll;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *items;
 
 @end
