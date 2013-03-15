@@ -8,8 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate>{
+@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate, UIGestureRecognizerDelegate>{
     UIActionSheet *actionSheet;
+    CGFloat firstX, firstY;
 }
 
 @property (nonatomic,retain) UIImage *image;

@@ -71,7 +71,7 @@
 -(void)colorPickerControllerDidFinish:(InfColorPickerController *)controller{
     UIColor *resultColor = controller.resultColor;
     UIImage *image = [UIImage blankImage:self.view.bounds.size withColor:resultColor];
-    resultImage = image;
+    resultImage = [UIImage imageNamed:@"photo.png"];
     [self performSegueWithIdentifier:@"Next" sender:self];
 }
 
