@@ -44,13 +44,54 @@
 }
 
 -(void)initItems{
-    self.items = [self orderCollectionByTagWithArray:self.items];
-    for (UIButton *button in self.items){
-        [button addTarget:self action:@selector(addMem:) forControlEvents:UIControlEventTouchUpInside];
+    CGFloat content = 0;
+    for (int i = 0; i <= 50; i++){
+        NSString *name = [NSString stringWithFormat:@"mem-for-edit-%d.png",i];
+        UIImage *image = [UIImage imageNamed:name];
+//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [button setImage:image forState:UIControlStateNormal];
+//        [button setTag:i + 1];
+//        [button addTarget:self action:@selector(addMem:withEvent:) forControlEvents:UIControlEventTouchDragInside];
+//        CGSize size = CGSizeMake(44, 44);
+//        CGRect frame = CGRectMake(content, 3, 0, 0);
+//        frame.size = size;
+//        [button setFrame:frame];
+//        [self.itemsScroll addSubview:button];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        [imageView setTag:i + 1];
+        CGSize size = CGSizeMake(44, 44);
+        CGRect frame = CGRectMake(content, 3, 0, 0);
+        frame.size = size;
+        [imageView setFrame:frame];
+        [imageView setUserInteractionEnabled:YES];
+        [self.itemsScroll addSubview:imageView];
+        content += 44 + 5;
+        UIPanGestureRecognizer *panrec = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startDragging:)];
+        [imageView addGestureRecognizer:panrec];
     }
-    UIButton *button = [self.items lastObject];
-    CGSize size = CGSizeMake(button.frame.origin.x + button.frame.size.width, self.itemsScroll.frame.size.height);
+    content -= 5;
+    CGSize size = CGSizeMake(content, self.itemsScroll.frame.size.height);
     [self.itemsScroll setContentSize:size];
+}
+
+-(void)startDragging:(id)sender{
+    CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:self.view];
+    
+    if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
+        UIImageView *imageView = (UIImageView *)[sender view];
+        UIScrollView *superView = (UIScrollView *)[imageView superview];
+        firstX = [[sender view] center].x - superView.contentOffset.x + superView.frame.origin.x;
+        firstY = [[sender view] center].y - superView.contentOffset.y + superView.frame.origin.y;
+        CGRect frame = imageView.frame;
+        frame.origin = CGPointMake(firstX, firstY);
+        [imageView setFrame:frame];
+        [imageView removeFromSuperview];
+        [self.view addSubview:imageView];
+    }
+    
+    translatedPoint = CGPointMake(firstX+translatedPoint.x, firstY+translatedPoint.y);
+    [[sender view] setCenter:translatedPoint];
+    currentView = [sender view];
 }
 
 -(void)initImageView{
@@ -75,7 +116,7 @@
     [actionSheet showInView:self.view];
 }
 
--(void)addMem:(id)sender{
+-(void)addMem:(id)sender withEvent:(UIEvent *)event{
     UIButton *button = (UIButton *)sender;
     UIImage *image = button.imageView.image;
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
@@ -89,6 +130,7 @@
     [imageView addGestureRecognizer:moving];
     [imageView setUserInteractionEnabled:YES];
     [self.scroll addSubview:imageView];
+    currentView = imageView;
 }
 
 -(void)moveImage:(id)sender{
@@ -101,6 +143,21 @@
     
     translatedPoint = CGPointMake(firstX+translatedPoint.x, firstY+translatedPoint.y);
     [[sender view] setCenter:translatedPoint];
+    currentView = [sender view];
+}
+
+- (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer {
+    if (currentView){
+        currentView.transform = CGAffineTransformScale(currentView.transform, recognizer.scale, recognizer.scale);
+        recognizer.scale = 1;
+    }
+}
+
+- (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer {
+    if (currentView){
+        currentView.transform = CGAffineTransformRotate(currentView.transform, recognizer.rotation);
+        recognizer.rotation = 0;
+    }
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{

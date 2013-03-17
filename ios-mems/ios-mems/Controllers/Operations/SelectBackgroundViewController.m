@@ -64,14 +64,14 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    resultImage = image;
+    resultImage = [image imageCroppedToFitSize:CGSizeMake(600, 600)];
     [self performSegueWithIdentifier:@"Next" sender:self];
 }
 
 -(void)colorPickerControllerDidFinish:(InfColorPickerController *)controller{
     UIColor *resultColor = controller.resultColor;
     UIImage *image = [UIImage blankImage:self.view.bounds.size withColor:resultColor];
-    resultImage = [UIImage imageNamed:@"photo.png"];
+    resultImage = image;
     [self performSegueWithIdentifier:@"Next" sender:self];
 }
 
@@ -84,15 +84,11 @@
         [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeEditPhoto];
         EditPhotoViewController *controller = (EditPhotoViewController *)segue.destinationViewController;
         controller.image = resultImage;
-<<<<<<< HEAD
-    } 
-=======
     } else if ([segue.identifier isEqualToString:@"Photo"]){
         UIImagePickerController *controller = (UIImagePickerController *)segue.destinationViewController;
         controller.delegate = self;
         controller.sourceType = selectedSourceType;
     }
->>>>>>> c4a8793007d4d2c32adc258acd050fe5dc20cc5a
 }
 
 @end
