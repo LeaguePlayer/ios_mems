@@ -144,6 +144,7 @@
 		30DEA81B16F4675C00A0BDF3 /* mem-for-edit-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DEA7E816F4675C00A0BDF3 /* mem-for-edit-7.png */; };
 		30DEA81C16F4675C00A0BDF3 /* mem-for-edit-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DEA7E916F4675C00A0BDF3 /* mem-for-edit-8.png */; };
 		30DEA81D16F4675C00A0BDF3 /* mem-for-edit-9.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DEA7EA16F4675C00A0BDF3 /* mem-for-edit-9.png */; };
+		30DEA87A16F5D40300A0BDF3 /* DraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */; };
 		8B9DEB2A16F1F67F009ECD2F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9DEB2916F1F67F009ECD2F /* iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -308,6 +309,8 @@
 		30DEA7E816F4675C00A0BDF3 /* mem-for-edit-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mem-for-edit-7.png"; sourceTree = "<group>"; };
 		30DEA7E916F4675C00A0BDF3 /* mem-for-edit-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mem-for-edit-8.png"; sourceTree = "<group>"; };
 		30DEA7EA16F4675C00A0BDF3 /* mem-for-edit-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mem-for-edit-9.png"; sourceTree = "<group>"; };
+		30DEA87816F5D40300A0BDF3 /* DraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableImageView.h; sourceTree = "<group>"; };
+		30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableImageView.m; sourceTree = "<group>"; };
 		8B9DEB2916F1F67F009ECD2F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -563,6 +566,7 @@
 		308D16B216EF787A0095957B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				30DEA87716F5D27100A0BDF3 /* Draggable */,
 				308D16CD16F0D91A0095957B /* Categories */,
 			);
 			path = Classes;
@@ -691,6 +695,15 @@
 				30DEA7EA16F4675C00A0BDF3 /* mem-for-edit-9.png */,
 			);
 			path = Mems;
+			sourceTree = "<group>";
+		};
+		30DEA87716F5D27100A0BDF3 /* Draggable */ = {
+			isa = PBXGroup;
+			children = (
+				30DEA87816F5D40300A0BDF3 /* DraggableImageView.h */,
+				30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */,
+			);
+			path = Draggable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -889,6 +902,7 @@
 				308D16CC16F0CBF80095957B /* InfSourceColorView.m in Sources */,
 				308D16D016F0D93C0095957B /* UIImage+Blank.m in Sources */,
 				308D16D316F0E01E0095957B /* EditPhotoViewController.m in Sources */,
+				30DEA87A16F5D40300A0BDF3 /* DraggableImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

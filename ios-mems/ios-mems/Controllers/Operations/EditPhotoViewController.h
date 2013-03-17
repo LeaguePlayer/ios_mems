@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
+#import "DraggableImageView.h"
 
-@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate, UIGestureRecognizerDelegate>{
+@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate, UIGestureRecognizerDelegate,DraggableDelegate>{
     UIActionSheet *actionSheet;
     CGFloat firstX, firstY;
     UIView *currentView;
@@ -18,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *itemsScroll;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *items;
 - (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer;
 - (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer;
 @end

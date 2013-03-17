@@ -48,16 +48,8 @@
     for (int i = 0; i <= 50; i++){
         NSString *name = [NSString stringWithFormat:@"mem-for-edit-%d.png",i];
         UIImage *image = [UIImage imageNamed:name];
-//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [button setImage:image forState:UIControlStateNormal];
-//        [button setTag:i + 1];
-//        [button addTarget:self action:@selector(addMem:withEvent:) forControlEvents:UIControlEventTouchDragInside];
-//        CGSize size = CGSizeMake(44, 44);
-//        CGRect frame = CGRectMake(content, 3, 0, 0);
-//        frame.size = size;
-//        [button setFrame:frame];
-//        [self.itemsScroll addSubview:button];
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        DraggableImageView *imageView = [[DraggableImageView alloc] initWithImage:image];
+        [imageView setDelegate:self];
         [imageView setTag:i + 1];
         CGSize size = CGSizeMake(44, 44);
         CGRect frame = CGRectMake(content, 3, 0, 0);
@@ -65,9 +57,10 @@
         [imageView setFrame:frame];
         [imageView setUserInteractionEnabled:YES];
         [self.itemsScroll addSubview:imageView];
+        [imageView setScrollParent:self.itemsScroll];
+        [imageView setDestView:self.scroll];
+        [imageView setMainView:self.view];
         content += 44 + 5;
-        UIPanGestureRecognizer *panrec = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startDragging:)];
-        [imageView addGestureRecognizer:panrec];
     }
     content -= 5;
     CGSize size = CGSizeMake(content, self.itemsScroll.frame.size.height);
@@ -87,6 +80,10 @@
         [imageView setFrame:frame];
         [imageView removeFromSuperview];
         [self.view addSubview:imageView];
+    }
+    
+    if ([(UIPanGestureRecognizer *)sender state] == UIGestureRecognizerStateEnded){
+        
     }
     
     translatedPoint = CGPointMake(firstX+translatedPoint.x, firstY+translatedPoint.y);
@@ -116,13 +113,13 @@
     [actionSheet showInView:self.view];
 }
 
--(void)addMem:(id)sender withEvent:(UIEvent *)event{
-    UIButton *button = (UIButton *)sender;
-    UIImage *image = button.imageView.image;
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+-(void) touchEndedInRightWay:(DraggableImageView *)image{
+    CGPoint location = [self.scroll convertPoint:image.center fromView:self.view];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image.image];
     CGRect frame = imageView.frame;
-    frame.size = image.size;
+    frame.size = image.frame.size;
     [imageView setFrame:frame];
+    imageView.center = location;
     UIPanGestureRecognizer *moving = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveImage:)];
     [moving setMaximumNumberOfTouches:1];
     [moving setMinimumNumberOfTouches:1];
@@ -168,6 +165,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)isInsideDestinationView:(DraggableImageView *)image touching:(BOOL)finished{
+    return CGRectContainsPoint(self.scroll.frame, image.center);
+}
+
+-(void)touchDown{
+    
+}
+
+-(void)touchUp{
+    
 }
 
 @end
