@@ -145,6 +145,12 @@
 		30DEA81C16F4675C00A0BDF3 /* mem-for-edit-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DEA7E916F4675C00A0BDF3 /* mem-for-edit-8.png */; };
 		30DEA81D16F4675C00A0BDF3 /* mem-for-edit-9.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DEA7EA16F4675C00A0BDF3 /* mem-for-edit-9.png */; };
 		30DEA87A16F5D40300A0BDF3 /* DraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */; };
+		30DEA87E16F7828600A0BDF3 /* MECommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA87D16F7828600A0BDF3 /* MECommand.m */; };
+		30DEA88116F784AC00A0BDF3 /* MEMoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88016F784AC00A0BDF3 /* MEMoveCommand.m */; };
+		30DEA88416F78AF700A0BDF3 /* METransformCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88316F78AF700A0BDF3 /* METransformCommand.m */; };
+		30DEA88716F790F400A0BDF3 /* MEAddCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88616F790F400A0BDF3 /* MEAddCommand.m */; };
+		30DEA88A16F7916A00A0BDF3 /* MECommandReciever.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88916F7916A00A0BDF3 /* MECommandReciever.m */; };
+		30DEA88D16F7944F00A0BDF3 /* MERemoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88C16F7944F00A0BDF3 /* MERemoveCommand.m */; };
 		8B9DEB2A16F1F67F009ECD2F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9DEB2916F1F67F009ECD2F /* iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -311,6 +317,18 @@
 		30DEA7EA16F4675C00A0BDF3 /* mem-for-edit-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mem-for-edit-9.png"; sourceTree = "<group>"; };
 		30DEA87816F5D40300A0BDF3 /* DraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableImageView.h; sourceTree = "<group>"; };
 		30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableImageView.m; sourceTree = "<group>"; };
+		30DEA87C16F7828600A0BDF3 /* MECommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MECommand.h; sourceTree = "<group>"; };
+		30DEA87D16F7828600A0BDF3 /* MECommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MECommand.m; sourceTree = "<group>"; };
+		30DEA87F16F784AC00A0BDF3 /* MEMoveCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEMoveCommand.h; sourceTree = "<group>"; };
+		30DEA88016F784AC00A0BDF3 /* MEMoveCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEMoveCommand.m; sourceTree = "<group>"; };
+		30DEA88216F78AF700A0BDF3 /* METransformCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = METransformCommand.h; sourceTree = "<group>"; };
+		30DEA88316F78AF700A0BDF3 /* METransformCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = METransformCommand.m; sourceTree = "<group>"; };
+		30DEA88516F790F400A0BDF3 /* MEAddCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAddCommand.h; sourceTree = "<group>"; };
+		30DEA88616F790F400A0BDF3 /* MEAddCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAddCommand.m; sourceTree = "<group>"; };
+		30DEA88816F7916A00A0BDF3 /* MECommandReciever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MECommandReciever.h; sourceTree = "<group>"; };
+		30DEA88916F7916A00A0BDF3 /* MECommandReciever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MECommandReciever.m; sourceTree = "<group>"; };
+		30DEA88B16F7944F00A0BDF3 /* MERemoveCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MERemoveCommand.h; sourceTree = "<group>"; };
+		30DEA88C16F7944F00A0BDF3 /* MERemoveCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MERemoveCommand.m; sourceTree = "<group>"; };
 		8B9DEB2916F1F67F009ECD2F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -445,6 +463,7 @@
 		308D15E216EB19540095957B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30DEA87B16F7815E00A0BDF3 /* Commands */,
 				308D163016ECD12F0095957B /* Mem */,
 			);
 			path = Model;
@@ -706,6 +725,25 @@
 			path = Draggable;
 			sourceTree = "<group>";
 		};
+		30DEA87B16F7815E00A0BDF3 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				30DEA88816F7916A00A0BDF3 /* MECommandReciever.h */,
+				30DEA88916F7916A00A0BDF3 /* MECommandReciever.m */,
+				30DEA87C16F7828600A0BDF3 /* MECommand.h */,
+				30DEA87D16F7828600A0BDF3 /* MECommand.m */,
+				30DEA87F16F784AC00A0BDF3 /* MEMoveCommand.h */,
+				30DEA88016F784AC00A0BDF3 /* MEMoveCommand.m */,
+				30DEA88216F78AF700A0BDF3 /* METransformCommand.h */,
+				30DEA88316F78AF700A0BDF3 /* METransformCommand.m */,
+				30DEA88516F790F400A0BDF3 /* MEAddCommand.h */,
+				30DEA88616F790F400A0BDF3 /* MEAddCommand.m */,
+				30DEA88B16F7944F00A0BDF3 /* MERemoveCommand.h */,
+				30DEA88C16F7944F00A0BDF3 /* MERemoveCommand.m */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -903,6 +941,12 @@
 				308D16D016F0D93C0095957B /* UIImage+Blank.m in Sources */,
 				308D16D316F0E01E0095957B /* EditPhotoViewController.m in Sources */,
 				30DEA87A16F5D40300A0BDF3 /* DraggableImageView.m in Sources */,
+				30DEA87E16F7828600A0BDF3 /* MECommand.m in Sources */,
+				30DEA88116F784AC00A0BDF3 /* MEMoveCommand.m in Sources */,
+				30DEA88416F78AF700A0BDF3 /* METransformCommand.m in Sources */,
+				30DEA88716F790F400A0BDF3 /* MEAddCommand.m in Sources */,
+				30DEA88A16F7916A00A0BDF3 /* MECommandReciever.m in Sources */,
+				30DEA88D16F7944F00A0BDF3 /* MERemoveCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

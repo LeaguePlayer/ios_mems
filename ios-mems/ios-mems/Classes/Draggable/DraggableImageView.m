@@ -48,14 +48,14 @@
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
-	[UIView beginAnimations:@"stalk" context:nil];
-	[UIView setAnimationDuration:.001];
-	[UIView setAnimationBeginsFromCurrentState:YES];
+//	[UIView beginAnimations:@"stalk" context:nil];
+//	[UIView setAnimationDuration:.001];
+//	[UIView setAnimationBeginsFromCurrentState:YES];
     
 	UITouch *touch = [touches anyObject];
 	self.center = [touch locationInView: self.superview];
     
-	[UIView commitAnimations];
+//	[UIView commitAnimations];
     
 }
 
@@ -74,7 +74,6 @@
         self.center = _originalOutsidePosition;
         [UIView setAnimationDelegate:self];
         [UIView setAnimationDidStopSelector: @selector(animationDidStop:finished:context:)];
-        //        loadingView.frame = CGRectMake(rect.origin.x, rect.origin.y - 80, rect.size.width, rect.size.height);
         
         [UIView commitAnimations];
         

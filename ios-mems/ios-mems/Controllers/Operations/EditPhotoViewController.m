@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    started = NO;
+    undator = [[MECommandReciever alloc] init];
     [self initUI];
 }
 
@@ -128,9 +130,15 @@
     [imageView setUserInteractionEnabled:YES];
     [self.scroll addSubview:imageView];
     currentView = imageView;
+    [undator pushCommand:[[MEAddCommand alloc] initWithView:currentView]];
 }
 
 -(void)moveImage:(id)sender{
+    if (!started){
+        UIView *view = [sender view];
+        command = [[MEMoveCommand alloc] initWithView:view andPoint:view.center];
+        started = YES;
+    }
     CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:self.scroll];
     
     if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
@@ -145,13 +153,34 @@
 
 - (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer {
     if (currentView){
+        if (!started){
+            command = [[METransformCommand alloc] initWithView:currentView andScale:currentView.transform];
+            started = YES;
+        }
         currentView.transform = CGAffineTransformScale(currentView.transform, recognizer.scale, recognizer.scale);
         recognizer.scale = 1;
     }
 }
 
+- (IBAction)deleteControl:(id)sender {
+    if (!currentView) return;
+    [currentView removeFromSuperview];
+    [undator pushCommand:[[MERemoveCommand alloc] initWithView:currentView andSuperView:self.scroll]];
+}
+
+- (IBAction)undo:(id)sender {
+    [undator undo];
+}
+
+- (IBAction)addText:(id)sender {
+}
+
 - (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer {
     if (currentView){
+        if (!started){
+            command = [[METransformCommand alloc] initWithView:currentView andScale:currentView.transform];
+            started = YES;
+        }
         currentView.transform = CGAffineTransformRotate(currentView.transform, recognizer.rotation);
         recognizer.rotation = 0;
     }
@@ -177,6 +206,13 @@
 
 -(void)touchUp{
     
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (started){
+        started = NO;
+        [undator pushCommand:command];
+    }
 }
 
 @end
