@@ -7,12 +7,15 @@
 //
 
 #import "EditPhotoViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface EditPhotoViewController ()
 
 @end
 
 @implementation EditPhotoViewController
+
+@synthesize currentView = _currentView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +32,7 @@
 	// Do any additional setup after loading the view.
     started = NO;
     undator = [[MECommandReciever alloc] init];
+    images = [NSMutableArray array];
     [self initUI];
 }
 
@@ -90,7 +94,7 @@
     
     translatedPoint = CGPointMake(firstX+translatedPoint.x, firstY+translatedPoint.y);
     [[sender view] setCenter:translatedPoint];
-    currentView = [sender view];
+    self.currentView = [sender view];
 }
 
 -(void)initImageView{
@@ -129,8 +133,8 @@
     [imageView addGestureRecognizer:moving];
     [imageView setUserInteractionEnabled:YES];
     [self.scroll addSubview:imageView];
-    currentView = imageView;
-    [undator pushCommand:[[MEAddCommand alloc] initWithView:currentView]];
+    self.currentView = imageView;
+    [undator pushCommand:[[MEAddCommand alloc] initWithView:self.currentView]];
 }
 
 -(void)moveImage:(id)sender{
@@ -138,6 +142,10 @@
         UIView *view = [sender view];
         command = [[MEMoveCommand alloc] initWithView:view andPoint:view.center];
         started = YES;
+    }
+    if ([(UIPinchGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded){
+        started = NO;
+        [undator pushCommand:command];
     }
     CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:self.scroll];
     
@@ -148,24 +156,28 @@
     
     translatedPoint = CGPointMake(firstX+translatedPoint.x, firstY+translatedPoint.y);
     [[sender view] setCenter:translatedPoint];
-    currentView = [sender view];
+    self.currentView = [sender view];
 }
 
 - (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer {
-    if (currentView){
+    if (self.currentView){
         if (!started){
-            command = [[METransformCommand alloc] initWithView:currentView andScale:currentView.transform];
+            command = [[METransformCommand alloc] initWithView:self.currentView andScale:self.currentView.transform];
             started = YES;
         }
-        currentView.transform = CGAffineTransformScale(currentView.transform, recognizer.scale, recognizer.scale);
+        if (recognizer.state == UIGestureRecognizerStateEnded){
+            started = NO;
+            [undator pushCommand:command];
+        }
+        self.currentView.transform = CGAffineTransformScale(self.currentView.transform, recognizer.scale, recognizer.scale);
         recognizer.scale = 1;
     }
 }
 
 - (IBAction)deleteControl:(id)sender {
-    if (!currentView) return;
-    [currentView removeFromSuperview];
-    [undator pushCommand:[[MERemoveCommand alloc] initWithView:currentView andSuperView:self.scroll]];
+    if (!self.currentView) return;
+    [self.currentView removeFromSuperview];
+    [undator pushCommand:[[MERemoveCommand alloc] initWithView:self.currentView andSuperView:self.scroll]];
 }
 
 - (IBAction)undo:(id)sender {
@@ -176,12 +188,16 @@
 }
 
 - (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer {
-    if (currentView){
+    if (self.currentView){
         if (!started){
-            command = [[METransformCommand alloc] initWithView:currentView andScale:currentView.transform];
+            command = [[METransformCommand alloc] initWithView:self.currentView andScale:self.currentView.transform];
             started = YES;
         }
-        currentView.transform = CGAffineTransformRotate(currentView.transform, recognizer.rotation);
+        if (recognizer.state == UIGestureRecognizerStateEnded){
+            started = NO;
+            [undator pushCommand:command];
+        }
+        self.currentView.transform = CGAffineTransformRotate(self.currentView.transform, recognizer.rotation);
         recognizer.rotation = 0;
     }
 }
@@ -208,10 +224,20 @@
     
 }
 
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    if (started){
-        started = NO;
-        [undator pushCommand:command];
+#pragma mark - getters, setters
+
+-(UIView*)currentView{
+    return _currentView;
+}
+
+-(void)setCurrentView:(UIView *)currentView{
+    if (self.currentView){
+        _currentView.layer.borderColor = [UIColor clearColor].CGColor;
+    }
+    _currentView = currentView;
+    if (currentView){
+        _currentView.layer.borderColor = [UIColor redColor].CGColor;
+        _currentView.layer.borderWidth = 1.0f;
     }
 }
 

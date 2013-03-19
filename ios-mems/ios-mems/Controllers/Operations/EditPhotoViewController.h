@@ -13,7 +13,7 @@
 @interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate, UIGestureRecognizerDelegate,DraggableDelegate>{
     UIActionSheet *actionSheet;
     CGFloat firstX, firstY;
-    UIView *currentView;
+    NSMutableArray *images;
     MECommandReciever *undator;
     CGAffineTransform transform;
     CGPoint point;
@@ -21,6 +21,7 @@
     MECommand *command;
 }
 
+@property (nonatomic, retain) UIView *currentView;
 @property (nonatomic,retain) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

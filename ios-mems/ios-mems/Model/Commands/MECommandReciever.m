@@ -23,13 +23,10 @@
     if (list.count == 0) return;
     MECommand *command = [list objectAtIndex:current--];
     [command undo];
+    [list removeObject:command];
 }
 
 -(void)pushCommand:(MECommand *)command{
-    int i = current + 1;
-    while (i < list.count) {
-        [list removeObjectAtIndex:i];
-    }
     [list addObject:command];
     current++;
 }
