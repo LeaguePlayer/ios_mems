@@ -185,6 +185,7 @@
 }
 
 - (IBAction)addText:(id)sender {
+    [self performSegueWithIdentifier:@"AddText" sender:self];
 }
 
 - (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer {
@@ -239,6 +240,34 @@
         _currentView.layer.borderColor = [UIColor redColor].CGColor;
         _currentView.layer.borderWidth = 1.0f;
     }
+}
+
+#pragma mark - InfColorPickerController
+
+-(void)addTextPropertiesSelectedInController:(AddTextViewController *)controller{
+    UILabel *text = [[UILabel alloc] init];
+    [text setText:controller.text];
+    [text setTextColor:controller.color];
+    [text setFont:[UIFont systemFontOfSize:controller.size]];
+    [text sizeToFit];
+    [text setUserInteractionEnabled:YES];
+    [text setBackgroundColor:[UIColor clearColor]];
+    text.center = self.imageView.center;
+    UIPanGestureRecognizer *moving = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveImage:)];
+    [moving setMaximumNumberOfTouches:1];
+    [moving setMinimumNumberOfTouches:1];
+    [moving setDelegate:self];
+    [text addGestureRecognizer:moving];
+    [self.scroll addSubview:text];
+    self.currentView = text;
+    [undator pushCommand:[[MEAddCommand alloc] initWithView:self.currentView]];
+}
+
+#pragma mark - segue delegates
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    AddTextViewController *controller = (AddTextViewController *)segue.destinationViewController;
+    controller.delegate = self;
 }
 
 @end

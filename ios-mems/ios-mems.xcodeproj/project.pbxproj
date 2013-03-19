@@ -151,6 +151,7 @@
 		30DEA88716F790F400A0BDF3 /* MEAddCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88616F790F400A0BDF3 /* MEAddCommand.m */; };
 		30DEA88A16F7916A00A0BDF3 /* MECommandReciever.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88916F7916A00A0BDF3 /* MECommandReciever.m */; };
 		30DEA88D16F7944F00A0BDF3 /* MERemoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88C16F7944F00A0BDF3 /* MERemoveCommand.m */; };
+		30DEA89316F8BEA600A0BDF3 /* AddTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA89216F8BEA600A0BDF3 /* AddTextViewController.m */; };
 		8B9DEB2A16F1F67F009ECD2F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9DEB2916F1F67F009ECD2F /* iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -329,6 +330,8 @@
 		30DEA88916F7916A00A0BDF3 /* MECommandReciever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MECommandReciever.m; sourceTree = "<group>"; };
 		30DEA88B16F7944F00A0BDF3 /* MERemoveCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MERemoveCommand.h; sourceTree = "<group>"; };
 		30DEA88C16F7944F00A0BDF3 /* MERemoveCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MERemoveCommand.m; sourceTree = "<group>"; };
+		30DEA89116F8BEA600A0BDF3 /* AddTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTextViewController.h; sourceTree = "<group>"; };
+		30DEA89216F8BEA600A0BDF3 /* AddTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTextViewController.m; sourceTree = "<group>"; };
 		8B9DEB2916F1F67F009ECD2F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -578,6 +581,8 @@
 				308D164516ECE7450095957B /* SelectBackgroundViewController.m */,
 				308D16D116F0E01E0095957B /* EditPhotoViewController.h */,
 				308D16D216F0E01E0095957B /* EditPhotoViewController.m */,
+				30DEA89116F8BEA600A0BDF3 /* AddTextViewController.h */,
+				30DEA89216F8BEA600A0BDF3 /* AddTextViewController.m */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -947,6 +952,7 @@
 				30DEA88716F790F400A0BDF3 /* MEAddCommand.m in Sources */,
 				30DEA88A16F7916A00A0BDF3 /* MECommandReciever.m in Sources */,
 				30DEA88D16F7944F00A0BDF3 /* MERemoveCommand.m in Sources */,
+				30DEA89316F8BEA600A0BDF3 /* AddTextViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
