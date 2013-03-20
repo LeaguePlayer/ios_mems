@@ -108,7 +108,6 @@
     frame.size.height = MIN(size.height, frame.size.height);
     frame.origin.x = self.view.frame.size.width/2 - frame.size.width/2;
     [self.scroll setFrame:frame];
-    [self.scroll setContentSize:size];
 }
 
 -(void)leftItemClicked:(id)sender{
@@ -126,10 +125,12 @@
     frame.size = image.frame.size;
     [imageView setFrame:frame];
     imageView.center = location;
-    UIPanGestureRecognizer *moving = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveImage:)];
-    [moving setMaximumNumberOfTouches:1];
-    [moving setMinimumNumberOfTouches:1];
-    [moving setDelegate:self];
+    UILongPressGestureRecognizer *moving = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(moveImage:)];
+    [moving setMinimumPressDuration:0.1];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTap:)];
+    [tap setNumberOfTapsRequired:1];
+    tap.delegate = self;
+    [imageView addGestureRecognizer:tap];
     [imageView addGestureRecognizer:moving];
     [imageView setUserInteractionEnabled:YES];
     [self.scroll addSubview:imageView];
@@ -147,14 +148,14 @@
         started = NO;
         [undator pushCommand:command];
     }
-    CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:self.scroll];
+    CGPoint translatedPoint = [(UILongPressGestureRecognizer*)sender locationInView:self.scroll];
     
     if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
         firstX = [[sender view] center].x;
         firstY = [[sender view] center].y;
     }
     
-    translatedPoint = CGPointMake(firstX+translatedPoint.x, firstY+translatedPoint.y);
+    translatedPoint = CGPointMake(translatedPoint.x, translatedPoint.y);
     [[sender view] setCenter:translatedPoint];
     self.currentView = [sender view];
 }
@@ -257,10 +258,20 @@
     [moving setMaximumNumberOfTouches:1];
     [moving setMinimumNumberOfTouches:1];
     [moving setDelegate:self];
+    [moving setDelaysTouchesBegan:NO];
     [text addGestureRecognizer:moving];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTap:)];
+    [tap setNumberOfTapsRequired:1];
+    tap.delegate = self;
+    [text addGestureRecognizer:tap];
     [self.scroll addSubview:text];
     self.currentView = text;
     [undator pushCommand:[[MEAddCommand alloc] initWithView:self.currentView]];
+}
+
+-(void)imageTap:(UITapGestureRecognizer *)sender{
+    UIView *view = [sender view];
+    [self setCurrentView:view];
 }
 
 #pragma mark - segue delegates

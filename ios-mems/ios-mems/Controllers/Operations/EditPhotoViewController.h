@@ -24,7 +24,7 @@
 
 @property (nonatomic, retain) UIView *currentView;
 @property (nonatomic,retain) UIImage *image;
-@property (weak, nonatomic) IBOutlet UIScrollView *scroll;
+@property (weak, nonatomic) IBOutlet UIView *scroll;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *itemsScroll;
 - (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer;

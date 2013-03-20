@@ -24,7 +24,7 @@
 
 @property (nonatomic,retain) UIView *mainView;
 @property (nonatomic,retain) UIScrollView *scrollParent;
-@property (nonatomic,retain) UIScrollView *destView;
+@property (nonatomic,retain) UIView *destView;
 @property (nonatomic) CGPoint originalPosition;
 @property (nonatomic,retain) id<DraggableDelegate> delegate;
 

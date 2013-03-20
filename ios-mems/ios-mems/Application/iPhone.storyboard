@@ -299,22 +299,22 @@
                                 <rect key="frame" x="0.0" y="329" width="320" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="v6n-97-DZb">
-                                <rect key="frame" x="0.0" y="37" width="320" height="293"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" id="4Ym-i0-Go4">
+                                <rect key="frame" x="0.0" y="37" width="320" height="292"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="lyk-Ii-9MR">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="293"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="292"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="9SG-b1-SaY" appends="YES" id="4m1-8S-Bhr"/>
-                                    <outletCollection property="gestureRecognizers" destination="Etu-Ub-cQ2" appends="YES" id="Pkw-nS-WwW"/>
+                                    <outletCollection property="gestureRecognizers" destination="Etu-Ub-cQ2" appends="YES" id="403-Wy-jFH"/>
+                                    <outletCollection property="gestureRecognizers" destination="9SG-b1-SaY" appends="YES" id="1Il-xE-6dx"/>
                                 </connections>
-                            </scrollView>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="5nX-N6-Wue">
                                 <rect key="frame" x="0.0" y="364" width="320" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -327,21 +327,21 @@
                     <connections>
                         <outlet property="imageView" destination="lyk-Ii-9MR" id="2VS-9k-9Q9"/>
                         <outlet property="itemsScroll" destination="5nX-N6-Wue" id="YKQ-7Z-Kxc"/>
-                        <outlet property="scroll" destination="v6n-97-DZb" id="TKj-yu-SGz"/>
+                        <outlet property="scroll" destination="4Ym-i0-Go4" id="YQj-xK-pIz"/>
                         <segue destination="2Wp-Zc-75c" kind="modal" identifier="AddText" id="Cdu-LM-uOj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAI-6Q-SQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="9SG-b1-SaY">
-                    <connections>
-                        <action selector="handlePinch:" destination="3e4-DO-hLL" id="WfX-Wm-qTz"/>
-                    </connections>
-                </pinchGestureRecognizer>
                 <rotationGestureRecognizer id="Etu-Ub-cQ2">
                     <connections>
                         <action selector="handleRotate:" destination="3e4-DO-hLL" id="hdW-Ea-QZT"/>
                     </connections>
                 </rotationGestureRecognizer>
+                <pinchGestureRecognizer id="9SG-b1-SaY">
+                    <connections>
+                        <action selector="handlePinch:" destination="3e4-DO-hLL" id="WfX-Wm-qTz"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2533" y="-2135"/>
         </scene>
@@ -855,100 +855,6 @@
         <image name="tab3.png" width="26" height="26"/>
         <image name="vk.png" width="133" height="45"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-        </class>
-        <class className="AddTextViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTextViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="selectColor:"/>
-                <relationship kind="action" name="selectProperties:"/>
-                <relationship kind="outlet" name="fontSize" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectColorButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="BaseNavigationController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseNavigationController.h"/>
-        </class>
-        <class className="BaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
-        </class>
-        <class className="CatalogViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatalogViewController.h"/>
-        </class>
-        <class className="CategoryMemsViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryMemsViewController.h"/>
-        </class>
-        <class className="EditPhotoViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditPhotoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addText:"/>
-                <relationship kind="action" name="deleteControl:"/>
-                <relationship kind="action" name="handlePinch:" candidateClass="UIPinchGestureRecognizer"/>
-                <relationship kind="action" name="handleRotate:" candidateClass="UIRotationGestureRecognizer"/>
-                <relationship kind="action" name="undo:"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="itemsScroll" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="scroll" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="InfColorBarPicker" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorBarPicker.h"/>
-        </class>
-        <class className="InfColorBarView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorBarView.h"/>
-        </class>
-        <class className="InfColorPickerController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorPickerController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="doneClicked:"/>
-                <relationship kind="action" name="takeBackgroundColor:" candidateClass="UIView"/>
-                <relationship kind="action" name="takeBarValue:"/>
-                <relationship kind="action" name="takeSquareValue:"/>
-                <relationship kind="outlet" name="barPicker" candidateClass="InfColorBarPicker"/>
-                <relationship kind="outlet" name="barView" candidateClass="InfColorBarView"/>
-                <relationship kind="outlet" name="navController" candidateClass="UINavigationController"/>
-                <relationship kind="outlet" name="resultColorView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sourceColorView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="squarePicker" candidateClass="InfColorSquarePicker"/>
-                <relationship kind="outlet" name="squareView" candidateClass="InfColorSquareView"/>
-            </relationships>
-        </class>
-        <class className="InfColorSquarePicker" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorSquarePicker.h"/>
-        </class>
-        <class className="InfColorSquareView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorSquareView.h"/>
-        </class>
-        <class className="InfSourceColorView" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfSourceColorView.h"/>
-        </class>
-        <class className="MemViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemViewController.h"/>
-        </class>
-        <class className="SelectBackgroundViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectBackgroundViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="selectFromCamera:"/>
-                <relationship kind="action" name="selectFromGallery:"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
