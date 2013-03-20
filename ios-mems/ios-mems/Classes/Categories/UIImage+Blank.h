@@ -23,10 +23,6 @@ typedef enum {
 
 + (UIImage*)blankImage:(CGSize)_size;
 + (UIImage*)blankImage:(CGSize)_size withColor:(UIColor*)_color;
-<<<<<<< HEAD
 +(UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;
-=======
 + (UIImage*)screenShotView:(UIView*)view;
-
->>>>>>> 746f7c13dc9742072820ada71a5cb18a7d434c43
 @end

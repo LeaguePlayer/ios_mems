@@ -153,6 +153,7 @@
 		30DEA88D16F7944F00A0BDF3 /* MERemoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88C16F7944F00A0BDF3 /* MERemoveCommand.m */; };
 		30DEA89316F8BEA600A0BDF3 /* AddTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA89216F8BEA600A0BDF3 /* AddTextViewController.m */; };
 		8B9DEB2A16F1F67F009ECD2F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9DEB2916F1F67F009ECD2F /* iPhone.storyboard */; };
+		A448CDE916F9D89700767ADA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A448CDE816F9D89700767ADA /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -333,6 +334,7 @@
 		30DEA89116F8BEA600A0BDF3 /* AddTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTextViewController.h; sourceTree = "<group>"; };
 		30DEA89216F8BEA600A0BDF3 /* AddTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTextViewController.m; sourceTree = "<group>"; };
 		8B9DEB2916F1F67F009ECD2F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		A448CDE816F9D89700767ADA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +355,7 @@
 		308D159416EB185A0095957B = {
 			isa = PBXGroup;
 			children = (
+				A448CDE816F9D89700767ADA /* Default-568h@2x.png */,
 				308D16B016EE53E10095957B /* QuartzCore.framework */,
 				308D15A616EB185A0095957B /* ios-mems */,
 				308D159F16EB185A0095957B /* Frameworks */,
@@ -915,6 +918,7 @@
 				30DEA81B16F4675C00A0BDF3 /* mem-for-edit-7.png in Resources */,
 				30DEA81C16F4675C00A0BDF3 /* mem-for-edit-8.png in Resources */,
 				30DEA81D16F4675C00A0BDF3 /* mem-for-edit-9.png in Resources */,
+				A448CDE916F9D89700767ADA /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

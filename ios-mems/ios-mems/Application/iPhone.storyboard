@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="V35-Hg-ivq">
-=======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="V35-Hg-ivq">
->>>>>>> 746f7c13dc9742072820ada71a5cb18a7d434c43
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -863,8 +859,6 @@
         <class className="AboutViewController" superclassName="BaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
         </class>
-<<<<<<< HEAD
-=======
         <class className="AddTextViewController" superclassName="BaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTextViewController.h"/>
             <relationships>
@@ -875,7 +869,6 @@
                 <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
             </relationships>
         </class>
->>>>>>> 746f7c13dc9742072820ada71a5cb18a7d434c43
         <class className="BaseNavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseNavigationController.h"/>
         </class>
@@ -891,12 +884,10 @@
         <class className="EditPhotoViewController" superclassName="BaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditPhotoViewController.h"/>
             <relationships>
-<<<<<<< HEAD
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="itemsScroll" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="scroll" candidateClass="UIScrollView"/>
                 <relationship kind="outletCollection" name="items" candidateClass="UIButton"/>
-=======
                 <relationship kind="action" name="addText:"/>
                 <relationship kind="action" name="deleteControl:"/>
                 <relationship kind="action" name="handlePinch:" candidateClass="UIPinchGestureRecognizer"/>
@@ -905,7 +896,6 @@
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="itemsScroll" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="scroll" candidateClass="UIScrollView"/>
->>>>>>> 746f7c13dc9742072820ada71a5cb18a7d434c43
             </relationships>
         </class>
         <class className="InfColorBarPicker" superclassName="UIControl">
@@ -959,12 +949,9 @@
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
-<<<<<<< HEAD
-=======
         <class className="UICollectionViewLayout" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
->>>>>>> 746f7c13dc9742072820ada71a5cb18a7d434c43
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

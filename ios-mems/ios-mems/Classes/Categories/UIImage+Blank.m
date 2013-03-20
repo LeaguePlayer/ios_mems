@@ -144,7 +144,6 @@
     return outputImage;
 }
 
-<<<<<<< HEAD
 +(UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize {
     
     UIGraphicsBeginImageContext(newSize);
@@ -153,7 +152,7 @@
     UIGraphicsEndImageContext();
     
     return newImage;
-=======
+}
 + (UIImage*)screenShotView:(UIView*)view{
     UIGraphicsBeginImageContext(view.bounds.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -161,7 +160,6 @@
     UIImage *screenShot = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return screenShot;
->>>>>>> 746f7c13dc9742072820ada71a5cb18a7d434c43
 }
 
 @end
