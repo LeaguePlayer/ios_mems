@@ -1,0 +1,11 @@
+
+DEPENDENCIES: 
+- SSToolkit (= 1.0.2)
+
+SPEC CHECKSUMS: 
+  SSToolkit: 9751b7ec0d068dc1dc46c8121dfeff808f9e3d35
+
+COCOAPODS: 0.16.0
+
+PODS: 
+- SSToolkit (1.0.2)

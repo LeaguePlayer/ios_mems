@@ -181,8 +181,16 @@
     [undator pushCommand:[[MERemoveCommand alloc] initWithView:self.currentView andSuperView:self.scroll]];
 }
 
-- (IBAction)undo:(id)sender {
-    [undator undo];
+- (IBAction)undo:(id)sender { //оказывается, это горизонтальное зеркальное отображение объекта
+//    [undator undo]; //оставим шаблон Команда до лучших времен
+    if ([self.currentView isKindOfClass:[UIImageView class]]){
+        UIImageView *imageView = (UIImageView *)self.currentView;
+        UIImage *image = imageView.image;
+        UIImageOrientation orientation = image.imageOrientation;
+        UIImageOrientation newOrientation = orientation == UIImageOrientationUp ? UIImageOrientationUpMirrored : UIImageOrientationUp;
+        UIImage *newImage = [UIImage imageWithCGImage:image.CGImage scale:image.scale orientation:newOrientation];
+        [imageView setImage:newImage];
+    }
 }
 
 - (IBAction)addText:(id)sender {
