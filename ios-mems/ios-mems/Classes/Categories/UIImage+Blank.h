@@ -12,5 +12,5 @@
 
 + (UIImage*)blankImage:(CGSize)_size;
 + (UIImage*)blankImage:(CGSize)_size withColor:(UIColor*)_color;
-
++(UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;
 @end

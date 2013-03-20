@@ -64,7 +64,7 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    resultImage = image;
+    resultImage = [UIImage imageWithImage:image scaledToSize:CGSizeMake(640, 960)];
     [self performSegueWithIdentifier:@"Next" sender:self];
 }
 
@@ -90,5 +90,7 @@
         controller.sourceType = selectedSourceType;
     }
 }
+
+
 
 @end

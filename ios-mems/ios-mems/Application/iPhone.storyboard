@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="V35-Hg-ivq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="V35-Hg-ivq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -858,6 +858,83 @@
         <image name="tab3.png" width="26" height="26"/>
         <image name="vk.png" width="133" height="45"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+        </class>
+        <class className="BaseNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseNavigationController.h"/>
+        </class>
+        <class className="BaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
+        </class>
+        <class className="CatalogViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatalogViewController.h"/>
+        </class>
+        <class className="CategoryMemsViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryMemsViewController.h"/>
+        </class>
+        <class className="EditPhotoViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditPhotoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="itemsScroll" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="scroll" candidateClass="UIScrollView"/>
+                <relationship kind="outletCollection" name="items" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="InfColorBarPicker" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorBarPicker.h"/>
+        </class>
+        <class className="InfColorBarView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorBarView.h"/>
+        </class>
+        <class className="InfColorPickerController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorPickerController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="doneClicked:"/>
+                <relationship kind="action" name="takeBackgroundColor:" candidateClass="UIView"/>
+                <relationship kind="action" name="takeBarValue:"/>
+                <relationship kind="action" name="takeSquareValue:"/>
+                <relationship kind="outlet" name="barPicker" candidateClass="InfColorBarPicker"/>
+                <relationship kind="outlet" name="barView" candidateClass="InfColorBarView"/>
+                <relationship kind="outlet" name="navController" candidateClass="UINavigationController"/>
+                <relationship kind="outlet" name="resultColorView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sourceColorView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="squarePicker" candidateClass="InfColorSquarePicker"/>
+                <relationship kind="outlet" name="squareView" candidateClass="InfColorSquareView"/>
+            </relationships>
+        </class>
+        <class className="InfColorSquarePicker" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorSquarePicker.h"/>
+        </class>
+        <class className="InfColorSquareView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorSquareView.h"/>
+        </class>
+        <class className="InfSourceColorView" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfSourceColorView.h"/>
+        </class>
+        <class className="MemViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemViewController.h"/>
+        </class>
+        <class className="SelectBackgroundViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectBackgroundViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectFromCamera:"/>
+                <relationship kind="action" name="selectFromGallery:"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
