@@ -9,9 +9,7 @@
 #import "BaseViewController.h"
 #import "MEMemCategory.h"
 
-@interface CategoryMemsViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>{
-    NSArray *mems;
-}
+@interface CategoryMemsViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic,retain) MEMemCategory *category;
 

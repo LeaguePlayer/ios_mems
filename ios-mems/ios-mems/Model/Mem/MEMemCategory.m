@@ -7,6 +7,7 @@
 //
 
 #import "MEMemCategory.h"
+#import "MEMem.h"
 
 @implementation MEMemCategory
 
@@ -15,7 +16,7 @@
     if (self){
         self.id = 0;
         self.name = @"";
-        self.image = [[UIImage alloc] init];
+        self.mainImage = [[UIImage alloc] init];
     }
     return self;
 }
@@ -24,25 +25,36 @@
     self = [self init];
     if (self){
         self.name = name;
-        self.image = image;
+        self.mainImage = image;
     }
     return self;
 }
 
-+(NSArray *)categoriesMock{
-    UIImage *image1 = [UIImage imageNamed:@"mem1.png"];
-    UIImage *image2 = [UIImage imageNamed:@"mem2.png"];
-    UIImage *image3 = [UIImage imageNamed:@"mem3.png"];
-    MEMemCategory *car0 = [[MEMemCategory alloc] initWithName:@"Один" image:image1];
-    MEMemCategory *car1 = [[MEMemCategory alloc] initWithName:@"Два" image:image2];
-    MEMemCategory *car2 = [[MEMemCategory alloc] initWithName:@"Три" image:image3];
-    MEMemCategory *car3 = [[MEMemCategory alloc] initWithName:@"Четыре" image:image1];
-    MEMemCategory *car4 = [[MEMemCategory alloc] initWithName:@"Пять" image:image2];
-    MEMemCategory *car5 = [[MEMemCategory alloc] initWithName:@"Шесть" image:image3];
-    MEMemCategory *car6 = [[MEMemCategory alloc] initWithName:@"Семь" image:image1];
-    MEMemCategory *car7 = [[MEMemCategory alloc] initWithName:@"Восемь" image:image2];
-    MEMemCategory *car8 = [[MEMemCategory alloc] initWithName:@"Девять" image:image3];
-    return @[car0,car1,car2,car3,car4,car5,car6,car7,car8];
++(NSArray *)allCategories{
+    NSArray *names = [MEMemCategory categoryNames];
+    NSMutableArray *result = [NSMutableArray array];
+    for (int i = 0; i < 17; i++){
+        NSMutableArray *images = [NSMutableArray array];
+        int j = 0;
+        NSString *file = [NSString stringWithFormat:@"%d_%d.png",i,j];
+        UIImage *image = [UIImage imageNamed:file];
+        UIImage *mainImage = image;
+        while (image){
+            MEMem *mem = [[MEMem alloc] initWithName:file image:j];
+            [images addObject:mem];
+            file = [NSString stringWithFormat:@"%d_%d.png",i,++j];
+            image = [UIImage imageNamed:file];
+        }
+        MEMemCategory *category = [[MEMemCategory alloc] initWithName:[names objectAtIndex:i] image:mainImage];
+        category.id = i;
+        category.mems = images;
+        [result addObject:category];
+    }
+    return result;
+}
+
++(NSArray *)categoryNames{
+    return @[@"Yeah",@"Trollface",@"Yao Ming",@"Faces",@"Facepalm",@"Oh God why",@"You don't say",@"Forever alone",@"Like a sir",@"Cereal guy",@"Me gusta",@"Freddie",@"Not bad",@"OMFG",@"PC user",@"True story",@"Angry dad"];
 }
 
 @end

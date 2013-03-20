@@ -12,10 +12,11 @@
 
 @property (nonatomic) int id;
 @property (nonatomic,retain) NSString *name;
-@property (nonatomic,retain) UIImage *image;
+@property (nonatomic,retain) UIImage *mainImage;
+@property (nonatomic,retain) NSArray *mems;
 
 -(id)initWithName:(NSString *)name image:(UIImage *)image;
-
-+(NSArray *)categoriesMock;
++(NSArray *)allCategories;
++(NSArray *)categoryNames;
 
 @end

@@ -33,6 +33,21 @@
     [self initPhotoItemWithTarget:self];
     [self initInfoItemWithTarget:self];
     [self.navigationItem setTitle:@"Приложение"];
+    [self initUI];
+}
+
+-(void)initUI{
+    [self initCollectionView];
+}
+
+-(void)initCollectionView{
+    collectionView = [[SSCollectionView alloc] init];
+    [collectionView setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 55)];
+    collectionView.backgroundColor = [UIColor clearColor];
+    collectionView.dataSource = self;
+    collectionView.delegate = self;
+    collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+    [self.view addSubview:collectionView];
 }
 
 -(void)leftItemClicked:(id)sender{
@@ -44,35 +59,41 @@
 }
 
 -(void)initCategories{
-    categories = [MEMemCategory categoriesMock];
+    categories = [MEMemCategory allCategories];
 }
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+-(NSUInteger)numberOfSectionsInCollectionView:(SSCollectionView *)aCollectionView{
     return 1;
 }
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+-(NSUInteger)collectionView:(SSCollectionView *)aCollectionView numberOfItemsInSection:(NSUInteger)section{
     return categories.count;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIdentifier = @"MemCell";
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    UILabel *textLbl = (UILabel *)[cell viewWithTag:1];
-    UIImageView *imgView = (UIImageView *)[cell viewWithTag:2];
-    MEMemCategory *cat = [categories objectAtIndex:indexPath.row];
-    [textLbl setText:cat.name];
-    [textLbl setAdjustsFontSizeToFitWidth:YES];
-    UIImage *img = (UIImage *)cat.image;
-    [imgView setImage:img];
-    CGRect frame = imgView.frame;
-    frame.size = img.size;
-    frame.origin.x = cell.frame.size.width/2 - img.size.width/2;
-    [imgView setFrame:frame];
-    return cell;
+- (SSCollectionViewItem *)collectionView:(SSCollectionView *)aCollectionView itemForIndexPath:(NSIndexPath *)indexPath {
+    static NSString *const itemIdentifier = @"itemIdentifier";
+    
+    SSCollectionViewItem *item = [aCollectionView dequeueReusableItemWithIdentifier:itemIdentifier];
+    if (!item) {
+		item = [[SSCollectionViewItem alloc] initWithStyle:SSCollectionViewItemStyleDefault reuseIdentifier:itemIdentifier];
+	}
+    MEMemCategory *category = categories[indexPath.row];
+    [item setBackgroundColor:[UIColor clearColor]];
+    item.textLabel.text = category.name;
+    [item.imageView setImage:category.mainImage];
+    return item;
 }
 
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+#pragma mark - SSCollectionViewDelegate
+
+- (CGSize)collectionView:(SSCollectionView *)aCollectionView itemSizeForSection:(NSUInteger)section {
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+        return CGSizeMake(116.0f, 119.0f);
+    else
+        return CGSizeMake(85.0f, 86.0f);
+}
+
+-(void)collectionView:(SSCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     selected = [categories objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"Mems" sender:self];
 }

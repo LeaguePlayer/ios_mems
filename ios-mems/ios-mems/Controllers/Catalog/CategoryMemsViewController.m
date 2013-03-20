@@ -30,7 +30,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self initUI];
-    mems = [MEMem memsMock];
 }
 
 -(void)initUI{
@@ -51,18 +50,19 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return mems.count;
+    return self.category.mems.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"MemCell";
     UICollectionViewCell *cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    MEMem *mem = [mems objectAtIndex:indexPath.row];
-    [imageView setImage:mem.image];
+    MEMem *mem = [self.category.mems objectAtIndex:indexPath.row];
+    UIImage *image = [UIImage imageNamed:mem.fileName];
+    [imageView setImage:image];
     CGRect frame = imageView.frame;
-    frame.size = mem.image.size;
-    frame.origin.x = cell.frame.size.width/2 - mem.image.size.width/2;
+    frame.size = image.size;
+    frame.origin.x = cell.frame.size.width/2 - image.size.width/2;
     [imageView setFrame:frame];
     return cell;
 }

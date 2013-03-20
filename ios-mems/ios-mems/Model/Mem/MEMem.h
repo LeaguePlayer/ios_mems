@@ -11,11 +11,8 @@
 @interface MEMem : NSObject
 
 @property (nonatomic) int id;
-@property (nonatomic,retain) UIImage *image;
-@property (nonatomic,retain) NSString *name;
+@property (nonatomic,retain) NSString *fileName;
 
--(id)initWithName:(NSString *)name image:(UIImage *)image;
-
-+(NSArray *)memsMock;
+-(id)initWithName:(NSString *)fileName image:(int)id;
 
 @end
