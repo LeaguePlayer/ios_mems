@@ -7,15 +7,30 @@
 //
 
 #import "BaseViewController.h"
+#import "DraggableImageView.h"
+#import "MECommandReciever.h"
+#import "AddTextViewController.h"
 
-@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate>{
+@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate, UIGestureRecognizerDelegate,DraggableDelegate,MEAddTextDelegate>{
     UIActionSheet *actionSheet;
+    CGFloat firstX, firstY;
+    NSMutableArray *images;
+    MECommandReciever *undator;
+    CGAffineTransform transform;
+    CGPoint point;
+    BOOL started;
+    MECommand *command;
 }
 
+@property (nonatomic, retain) UIView *currentView;
 @property (nonatomic,retain) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *itemsScroll;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *items;
+- (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer;
+- (IBAction)deleteControl:(id)sender;
+- (IBAction)undo:(id)sender;
+- (IBAction)addText:(id)sender;
 
+- (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer;
 @end

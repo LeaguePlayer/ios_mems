@@ -64,7 +64,11 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+<<<<<<< HEAD
     resultImage = [UIImage imageWithImage:image scaledToSize:CGSizeMake(640, 960)];
+=======
+    resultImage = [image imageCroppedToFitSize:CGSizeMake(600, 600)];
+>>>>>>> 746f7c13dc9742072820ada71a5cb18a7d434c43
     [self performSegueWithIdentifier:@"Next" sender:self];
 }
 
