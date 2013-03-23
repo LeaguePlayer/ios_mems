@@ -8,8 +8,13 @@
 
 #import "BaseViewController.h"
 #import "MEMemCategory.h"
+#import "MEMem.h"
+#import <SSToolkit/SSCollectionView.h>
 
-@interface CategoryMemsViewController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface CategoryMemsViewController : BaseViewController <SSCollectionViewDelegate, SSCollectionViewDataSource>{
+    SSCollectionView *collectionView;
+    MEMem *selected;
+}
 
 @property (nonatomic,retain) MEMemCategory *category;
 

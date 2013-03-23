@@ -35,6 +35,9 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:image]];
     [self initPhotoItemWithTarget:self];
     [self initBackButtonWithTarget:self];
+    image = [UIImage imageNamed:self.mem.fileName];
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.imageView setImage:image];
 }
 
 -(void)rightItemClicked:(id)sender{

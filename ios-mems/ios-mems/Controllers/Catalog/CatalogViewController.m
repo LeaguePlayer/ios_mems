@@ -75,22 +75,19 @@
     
     SSCollectionViewItem *item = [aCollectionView dequeueReusableItemWithIdentifier:itemIdentifier];
     if (!item) {
-		item = [[SSCollectionViewItem alloc] initWithStyle:SSCollectionViewItemStyleDefault reuseIdentifier:itemIdentifier];
+		item = [[SSCollectionViewItem alloc] initWithStyle:SSCollectionViewItemStyleImage reuseIdentifier:itemIdentifier];
 	}
     MEMemCategory *category = categories[indexPath.row];
     [item setBackgroundColor:[UIColor clearColor]];
-    item.textLabel.text = category.name;
     [item.imageView setImage:category.mainImage];
+    [item.imageView setContentMode:UIViewContentModeScaleAspectFit];
     return item;
 }
 
 #pragma mark - SSCollectionViewDelegate
 
 - (CGSize)collectionView:(SSCollectionView *)aCollectionView itemSizeForSection:(NSUInteger)section {
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
-        return CGSizeMake(116.0f, 119.0f);
-    else
-        return CGSizeMake(85.0f, 86.0f);
+    return CGSizeMake(85.0f, 86.0f);
 }
 
 -(void)collectionView:(SSCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

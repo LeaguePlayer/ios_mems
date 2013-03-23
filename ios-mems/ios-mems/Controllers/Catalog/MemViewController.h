@@ -7,7 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "MEMem.h"
 
 @interface MemViewController : BaseViewController
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic,retain) MEMem *mem;
 
 @end

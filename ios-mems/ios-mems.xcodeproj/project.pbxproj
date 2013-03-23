@@ -908,6 +908,7 @@
 		308D16B216EF787A0095957B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				30DEAAF516FDA07200A0BDF3 /* SSCollectinViewItems */,
 				30DEA87716F5D27100A0BDF3 /* Draggable */,
 				308D16CD16F0D91A0095957B /* Categories */,
 			);
@@ -1362,6 +1363,13 @@
 				30DEA97416FA290500A0BDF3 /* 17_9.png */,
 			);
 			path = Mems;
+			sourceTree = "<group>";
+		};
+		30DEAAF516FDA07200A0BDF3 /* SSCollectinViewItems */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SSCollectinViewItems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

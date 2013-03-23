@@ -9,6 +9,7 @@
 #import "CategoryMemsViewController.h"
 #import "MemViewController.h"
 #import "MEMem.h"
+#import "MemViewController.h"
 
 @interface CategoryMemsViewController ()
 
@@ -35,6 +36,17 @@
 -(void)initUI{
     [self initBackButtonWithTarget:self];
     [self initPhotoItemWithTarget:self];
+    [self initCollectionView];
+}
+
+-(void)initCollectionView{
+    collectionView = [[SSCollectionView alloc] init];
+    [collectionView setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 30)];
+    collectionView.backgroundColor = [UIColor clearColor];
+    collectionView.dataSource = self;
+    collectionView.delegate = self;
+    collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+    [self.view addSubview:collectionView];
 }
 
 -(void)leftItemClicked:(id)sender{
@@ -45,34 +57,43 @@
     [self performSegueWithIdentifier:@"Background" sender:self];
 }
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
-}
-
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+-(NSUInteger)collectionView:(SSCollectionView *)aCollectionView numberOfItemsInSection:(NSUInteger)section{
     return self.category.mems.count;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIdentifier = @"MemCell";
-    UICollectionViewCell *cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    MEMem *mem = [self.category.mems objectAtIndex:indexPath.row];
-    UIImage *image = [UIImage imageNamed:mem.fileName];
-    [imageView setImage:image];
-    CGRect frame = imageView.frame;
-    frame.size = image.size;
-    frame.origin.x = cell.frame.size.width/2 - image.size.width/2;
-    [imageView setFrame:frame];
-    return cell;
+-(NSUInteger)numberOfSectionsInCollectionView:(SSCollectionView *)aCollectionView{
+    return 1;
 }
 
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+-(SSCollectionViewItem *)collectionView:(SSCollectionView *)aCollectionView itemForIndexPath:(NSIndexPath *)indexPath{
+    static NSString *const itemIdentifier = @"itemIdentifier";
+    
+    SSCollectionViewItem *item = [aCollectionView dequeueReusableItemWithIdentifier:itemIdentifier];
+    if (!item) {
+		item = [[SSCollectionViewItem alloc] initWithStyle:SSCollectionViewItemStyleImage reuseIdentifier:itemIdentifier];
+	}
+    MEMem *mem = self.category.mems[indexPath.row];
+    [item setBackgroundColor:[UIColor clearColor]];
+    UIImage *image = [UIImage imageNamed:mem.fileName];
+    [item.imageView setImage:image];
+    [item.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    return item;
+}
+
+#pragma mark - SSCollectionViewDelegate
+
+- (CGSize)collectionView:(SSCollectionView *)aCollectionView itemSizeForSection:(NSUInteger)section {
+    return CGSizeMake(85.0f, 86.0f);
+}
+
+-(void)collectionView:(SSCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    selected = [self.category.mems objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"Mem" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    MemViewController *controller = (MemViewController *)segue.destinationViewController;
+    controller.mem = selected;
 }
 
 - (void)didReceiveMemoryWarning
