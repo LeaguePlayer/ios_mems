@@ -307,6 +307,9 @@
 		30DEAA3F16FA290600A0BDF3 /* 17_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DEA97216FA290500A0BDF3 /* 17_7.png */; };
 		30DEAA4016FA290600A0BDF3 /* 17_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DEA97316FA290500A0BDF3 /* 17_8.png */; };
 		30DEAA4116FA290600A0BDF3 /* 17_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DEA97416FA290500A0BDF3 /* 17_9.png */; };
+		30DEAAF916FF0BCE00A0BDF3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30DEAAF716FF0BCE00A0BDF3 /* Model.xcdatamodeld */; };
+		30DEAAFF16FF11B700A0BDF3 /* FavouriteMem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEAAFE16FF11B700A0BDF3 /* FavouriteMem.m */; };
+		30DEAB0416FF17D300A0BDF3 /* MEUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEAB0316FF17D300A0BDF3 /* MEUtils.m */; };
 		8B9DEB2A16F1F67F009ECD2F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9DEB2916F1F67F009ECD2F /* iPhone.storyboard */; };
 		A448CDE916F9D89700767ADA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A448CDE816F9D89700767ADA /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
@@ -643,6 +646,12 @@
 		30DEA97216FA290500A0BDF3 /* 17_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17_7.png; sourceTree = "<group>"; };
 		30DEA97316FA290500A0BDF3 /* 17_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17_8.png; sourceTree = "<group>"; };
 		30DEA97416FA290500A0BDF3 /* 17_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17_9.png; sourceTree = "<group>"; };
+		30DEAAF816FF0BCE00A0BDF3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		30DEAAFD16FF11B700A0BDF3 /* FavouriteMem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouriteMem.h; sourceTree = "<group>"; };
+		30DEAAFE16FF11B700A0BDF3 /* FavouriteMem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouriteMem.m; sourceTree = "<group>"; };
+		30DEAB0116FF171F00A0BDF3 /* GeneralDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralDefines.h; sourceTree = "<group>"; };
+		30DEAB0216FF17D300A0BDF3 /* MEUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEUtils.h; sourceTree = "<group>"; };
+		30DEAB0316FF17D300A0BDF3 /* MEUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEUtils.m; sourceTree = "<group>"; };
 		51F86B86283C42B0888E4938 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8B9DEB2916F1F67F009ECD2F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		A448CDE816F9D89700767ADA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -668,7 +677,6 @@
 			isa = PBXGroup;
 			children = (
 				A448CDE816F9D89700767ADA /* Default-568h@2x.png */,
-				308D16B016EE53E10095957B /* QuartzCore.framework */,
 				308D15A616EB185A0095957B /* ios-mems */,
 				308D159F16EB185A0095957B /* Frameworks */,
 				308D159E16EB185A0095957B /* Products */,
@@ -687,6 +695,7 @@
 		308D159F16EB185A0095957B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				308D16B016EE53E10095957B /* QuartzCore.framework */,
 				308D15A016EB185A0095957B /* UIKit.framework */,
 				308D15A216EB185A0095957B /* Foundation.framework */,
 				308D15A416EB185A0095957B /* CoreGraphics.framework */,
@@ -712,6 +721,7 @@
 		308D15A716EB185A0095957B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				30DEAB0116FF171F00A0BDF3 /* GeneralDefines.h */,
 				308D15A816EB185A0095957B /* ios-mems-Info.plist */,
 				308D15A916EB185A0095957B /* InfoPlist.strings */,
 				308D15AC16EB185A0095957B /* main.m */,
@@ -784,6 +794,7 @@
 		308D15E216EB19540095957B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30DEAAF616FF0BC000A0BDF3 /* Managed */,
 				30DEA87B16F7815E00A0BDF3 /* Commands */,
 				308D163016ECD12F0095957B /* Mem */,
 			);
@@ -911,6 +922,8 @@
 				30DEAAF516FDA07200A0BDF3 /* SSCollectinViewItems */,
 				30DEA87716F5D27100A0BDF3 /* Draggable */,
 				308D16CD16F0D91A0095957B /* Categories */,
+				30DEAB0216FF17D300A0BDF3 /* MEUtils.h */,
+				30DEAB0316FF17D300A0BDF3 /* MEUtils.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1372,6 +1385,16 @@
 			path = SSCollectinViewItems;
 			sourceTree = "<group>";
 		};
+		30DEAAF616FF0BC000A0BDF3 /* Managed */ = {
+			isa = PBXGroup;
+			children = (
+				30DEAAF716FF0BCE00A0BDF3 /* Model.xcdatamodeld */,
+				30DEAAFD16FF11B700A0BDF3 /* FavouriteMem.h */,
+				30DEAAFE16FF11B700A0BDF3 /* FavouriteMem.m */,
+			);
+			path = Managed;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1749,6 +1772,9 @@
 				30DEA88A16F7916A00A0BDF3 /* MECommandReciever.m in Sources */,
 				30DEA88D16F7944F00A0BDF3 /* MERemoveCommand.m in Sources */,
 				30DEA89316F8BEA600A0BDF3 /* AddTextViewController.m in Sources */,
+				30DEAAF916FF0BCE00A0BDF3 /* Model.xcdatamodeld in Sources */,
+				30DEAAFF16FF11B700A0BDF3 /* FavouriteMem.m in Sources */,
+				30DEAB0416FF17D300A0BDF3 /* MEUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1868,6 +1894,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30DEAAF716FF0BCE00A0BDF3 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30DEAAF816FF0BCE00A0BDF3 /* Model.xcdatamodel */,
+			);
+			currentVersion = 30DEAAF816FF0BCE00A0BDF3 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 308D159516EB185A0095957B /* Project object */;
 }

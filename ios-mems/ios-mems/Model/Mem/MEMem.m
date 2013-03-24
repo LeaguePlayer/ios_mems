@@ -19,13 +19,18 @@
     return self;
 }
 
--(id)initWithName:(NSString *)fileName image:(int)id{
+-(id)initWithName:(NSString *)fileName id:(int)id{
     self = [self init];
     if (self){
         self.id = id;
         self.fileName = fileName;
     }
     return self;
+}
+
++(id)memFromManagedOne:(FavouriteMem *)mem{
+    MEMem *item = [[MEMem alloc] initWithName:mem.fileName id:mem.id.intValue];
+    return item;
 }
 
 @end

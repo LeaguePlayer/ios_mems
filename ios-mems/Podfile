@@ -1,3 +1,4 @@
 platform :ios, '4.3'
 
 pod 'SSToolkit', '1.0.2'
+pod 'MagicalRecord', '2.1'

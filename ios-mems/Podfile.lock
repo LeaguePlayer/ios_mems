@@ -1,11 +1,14 @@
 
+COCOAPODS: 0.16.0
+
 DEPENDENCIES: 
+- MagicalRecord (= 2.1)
 - SSToolkit (= 1.0.2)
 
 SPEC CHECKSUMS: 
   SSToolkit: 9751b7ec0d068dc1dc46c8121dfeff808f9e3d35
-
-COCOAPODS: 0.16.0
+  MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
 
 PODS: 
+- MagicalRecord (2.1)
 - SSToolkit (1.0.2)

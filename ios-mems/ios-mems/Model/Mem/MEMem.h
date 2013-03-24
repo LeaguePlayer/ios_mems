@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FavouriteMem.h"
 
 @interface MEMem : NSObject
 
 @property (nonatomic) int id;
 @property (nonatomic,retain) NSString *fileName;
 
--(id)initWithName:(NSString *)fileName image:(int)id;
+-(id)initWithName:(NSString *)fileName id:(int)id;
++(id)memFromManagedOne:(FavouriteMem *)mem;
 
 @end
