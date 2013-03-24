@@ -4,7 +4,7 @@
         <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="isFavourite" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="isLast" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isRecent" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <elements>
         <element name="FavouriteMem" positionX="160" positionY="192" width="128" height="105"/>

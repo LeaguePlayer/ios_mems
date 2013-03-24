@@ -15,17 +15,22 @@
 @dynamic id;
 @dynamic fileName;
 @dynamic isFavourite;
-@dynamic isLast;
+@dynamic isRecent;
 
 @end
 
 @implementation FavouriteMem (Map)
 
+-(void)removeFromFavourites{
+    [self MR_deleteEntity];
+    [CurrentContext MR_saveWithOptions:MRSaveSynchronously completion:nil];
+}
+
 +(void)createFromMem:(MEMem *)mem withType:(FavouriteMemType)type{
     FavouriteMem *fmem = [FavouriteMem MR_createInContext:CurrentContext];
     fmem.id = @(mem.id);
     fmem.fileName = mem.fileName;
-    fmem.isLast = @(type == FavouriteMemTypeLast);
+    fmem.isRecent = @(type == FavouriteMemTypeRecent);
     fmem.isFavourite = @(type == FavouriteMemTypeFavourite);
     [CurrentContext MR_saveWithOptions:MRSaveSynchronously completion:nil];
 }
@@ -35,8 +40,8 @@
     return mems;
 }
 
-+(NSArray *)lastMems{
-    NSArray *mems = [FavouriteMem MR_findByAttribute:@"isLast" withValue:@(YES)];
++(NSArray *)recentMems{
+    NSArray *mems = [FavouriteMem MR_findByAttribute:@"isRecent" withValue:@(YES)];
     return mems;
 }
 

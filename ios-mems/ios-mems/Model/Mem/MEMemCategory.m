@@ -40,7 +40,7 @@
         UIImage *image = [UIImage imageNamed:file];
         UIImage *mainImage = image;
         while (image){
-            MEMem *mem = [[MEMem alloc] initWithName:file id:j];
+            MEMem *mem = [[MEMem alloc] initWithName:file id:(i*10+j)];
             [images addObject:mem];
             file = [NSString stringWithFormat:@"%d_%d.png",i,++j];
             image = [UIImage imageNamed:file];

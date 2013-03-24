@@ -11,11 +11,24 @@
 #import <SSToolkit/SSLabel.h>
 #import "BaseViewController.h"
 #import "MEMemCategory.h"
+#import "MEMem.h"
+
+typedef enum {
+    CatalogOutputModeCatalog,
+    CatalogOutputModeFavourites,
+    CatalogOutputModeRecents
+} CatalogOutputMode;
 
 @interface CatalogViewController : BaseViewController<SSCollectionViewDataSource,SSCollectionViewDelegate>{
-    MEMemCategory *selected;
+    MEMemCategory *selectedCategory;
+    MEMem *selectedMem;
     NSArray *categories;
+    NSArray *favourites;
+    NSArray *recents;
     SSCollectionView *collectionView;
+    CatalogOutputMode currentMode;
 }
+- (IBAction)tabBarClicked:(id)sender;
+
 
 @end

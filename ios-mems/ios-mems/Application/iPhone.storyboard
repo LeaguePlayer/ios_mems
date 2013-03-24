@@ -35,7 +35,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dix-aB-NIi">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dix-aB-NIi">
                                         <rect key="frame" x="31" y="15" width="71" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -46,8 +46,11 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tabBarClicked:" destination="rgc-Zb-Y6e" eventType="touchUpInside" id="4RQ-Cl-vRG"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SQn-tb-3Zh">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SQn-tb-3Zh">
                                         <rect key="frame" x="125" y="15" width="71" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -58,8 +61,11 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tabBarClicked:" destination="rgc-Zb-Y6e" eventType="touchUpInside" id="dLf-9c-Vig"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vhf-7B-W35">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vhf-7B-W35">
                                         <rect key="frame" x="225" y="15" width="66" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -70,6 +76,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tabBarClicked:" destination="rgc-Zb-Y6e" eventType="touchUpInside" id="kZA-Ew-MM7"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Каталог" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f81-a4-cgu">
                                         <rect key="frame" x="31" y="34" width="71" height="21"/>
@@ -103,11 +112,12 @@
                         <segue destination="E60-7t-zAZ" kind="push" identifier="About" id="NbJ-a3-hrJ"/>
                         <segue destination="gJB-7x-XhT" kind="push" identifier="Mems" id="6ta-kh-9Gk"/>
                         <segue destination="Rdr-Fn-g1q" kind="push" identifier="Background" id="UpH-fn-IBV"/>
+                        <segue destination="a8s-SV-dwB" kind="push" identifier="Mem" id="bW7-2b-3BO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jnl-J9-roN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="-1222"/>
+            <point key="canvasLocation" x="984" y="-1046"/>
         </scene>
         <!--Select Background View Controller-->
         <scene sceneID="OBW-sY-Xlg">
@@ -501,6 +511,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="toFavourite:" destination="a8s-SV-dwB" eventType="touchUpInside" id="S9p-KA-Fdi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -510,6 +523,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WsY-Lu-QNt"/>
                     <connections>
+                        <outlet property="favouriteBtn" destination="h8t-ZY-Jld" id="bPb-Cu-KI0"/>
                         <outlet property="imageView" destination="O1g-5e-7ON" id="ubS-cb-Kbu"/>
                         <segue destination="Rdr-Fn-g1q" kind="push" identifier="Background" id="B6T-ow-BOD"/>
                     </connections>
@@ -783,7 +797,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="B6T-ow-BOD"/>
+        <segue reference="UpH-fn-IBV"/>
+        <segue reference="bW7-2b-3BO"/>
         <segue reference="9YV-os-2gd"/>
     </inferredMetricsTieBreakers>
 </document>

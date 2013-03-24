@@ -16,19 +16,20 @@
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString *fileName;
 @property (nonatomic, retain) NSNumber *isFavourite;
-@property (nonatomic, retain) NSNumber *isLast;
+@property (nonatomic, retain) NSNumber *isRecent;
 
 @end
 
 typedef enum {
     FavouriteMemTypeFavourite,
-    FavouriteMemTypeLast
+    FavouriteMemTypeRecent
 }FavouriteMemType;
 
 @interface FavouriteMem (Map)
 
+-(void)removeFromFavourites;
 +(void)createFromMem:(MEMem *)mem withType:(FavouriteMemType)type;
 +(NSArray *)favouriteMems;
-+(NSArray *)lastMems;
++(NSArray *)recentMems;
 
 @end

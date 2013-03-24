@@ -9,6 +9,8 @@
 #import "CatalogViewController.h"
 #import "BaseNavigationController.h"
 #import "CategoryMemsViewController.h"
+#import "MemViewController.h"
+#import "FavouriteMem.h"
 
 @interface CatalogViewController ()
 
@@ -25,15 +27,27 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    favourites = [FavouriteMem favouriteMems];
+    recents = [FavouriteMem recentMems];
+    [collectionView reloadData];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self initCategories];
+    [self initContent];
     [self initPhotoItemWithTarget:self];
     [self initInfoItemWithTarget:self];
     [self.navigationItem setTitle:@"Приложение"];
+    currentMode = CatalogOutputModeCatalog;
     [self initUI];
+}
+
+-(void)initContent{
+    categories = [MEMemCategory allCategories];
 }
 
 -(void)initUI{
@@ -58,16 +72,27 @@
     [self performSegueWithIdentifier:@"Background" sender:self];
 }
 
--(void)initCategories{
-    categories = [MEMemCategory allCategories];
-}
-
 -(NSUInteger)numberOfSectionsInCollectionView:(SSCollectionView *)aCollectionView{
     return 1;
 }
 
 -(NSUInteger)collectionView:(SSCollectionView *)aCollectionView numberOfItemsInSection:(NSUInteger)section{
-    return categories.count;
+    int count = 0;
+    switch (currentMode) {
+        case CatalogOutputModeCatalog:
+            count = categories.count;
+            break;
+        case CatalogOutputModeFavourites:
+            count = favourites.count;
+            break;
+        case CatalogOutputModeRecents:
+            count = recents.count;
+            break;
+        default:
+            count = categories.count;
+            break;
+    }
+    return count;
 }
 
 - (SSCollectionViewItem *)collectionView:(SSCollectionView *)aCollectionView itemForIndexPath:(NSIndexPath *)indexPath {
@@ -77,9 +102,16 @@
     if (!item) {
 		item = [[SSCollectionViewItem alloc] initWithStyle:SSCollectionViewItemStyleImage reuseIdentifier:itemIdentifier];
 	}
-    MEMemCategory *category = categories[indexPath.row];
+    if (currentMode == CatalogOutputModeCatalog){
+        MEMemCategory *category = categories[indexPath.row];
+        [item.imageView setImage:category.mainImage];
+    } else {
+        NSArray *array = (currentMode == CatalogOutputModeFavourites) ? favourites : recents;
+        MEMem *mem = [array objectAtIndex:indexPath.row];
+        UIImage *image = [UIImage imageNamed:mem.fileName];
+        [item.imageView setImage:image];
+    }
     [item setBackgroundColor:[UIColor clearColor]];
-    [item.imageView setImage:category.mainImage];
     [item.imageView setContentMode:UIViewContentModeScaleAspectFit];
     return item;
 }
@@ -91,8 +123,14 @@
 }
 
 -(void)collectionView:(SSCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    selected = [categories objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"Mems" sender:self];
+    if (currentMode == CatalogOutputModeCatalog){
+        selectedCategory = [categories objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"Mems" sender:self];
+    } else {
+        NSArray *array = (currentMode == CatalogOutputModeFavourites) ? favourites : recents;
+        selectedMem = [array objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"Mem" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,8 +142,35 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"Mems"]){
         CategoryMemsViewController *controller = (CategoryMemsViewController *)segue.destinationViewController;
-        controller.category = selected;
+        controller.category = selectedCategory;
+    } else {
+        MemViewController *controller = (MemViewController *)segue.destinationViewController;
+        controller.mem = selectedMem;
     }
+}
+
+- (IBAction)tabBarClicked:(id)sender {
+    int tag = [sender tag];
+    CatalogOutputMode newMode;
+    switch (tag) {
+        case 1:
+            newMode = CatalogOutputModeCatalog;
+            break;
+        case 2:
+            newMode = CatalogOutputModeFavourites;
+            favourites = [FavouriteMem favouriteMems];
+            break;
+        case 3:
+            newMode = CatalogOutputModeRecents;
+            recents = [FavouriteMem recentMems];
+            break;
+        default:
+            newMode = CatalogOutputModeCatalog;
+            break;
+    }
+    if (newMode == currentMode) return;
+    currentMode = newMode;
+    [collectionView reloadData];
 }
 
 @end

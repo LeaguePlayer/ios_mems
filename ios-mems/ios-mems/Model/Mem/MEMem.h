@@ -15,6 +15,12 @@
 @property (nonatomic,retain) NSString *fileName;
 
 -(id)initWithName:(NSString *)fileName id:(int)id;
+-(BOOL)isFavourite;
+-(BOOL)isRecent;
+-(void)addToFavourites;
+-(void)removeFromFavourites;
+-(void)addToRecent;
+-(void)removeFromRecent;
 +(id)memFromManagedOne:(FavouriteMem *)mem;
 
 @end

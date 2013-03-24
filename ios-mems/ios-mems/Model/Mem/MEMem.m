@@ -33,4 +33,52 @@
     return item;
 }
 
+-(BOOL)isFavourite{
+    NSArray *mems = [FavouriteMem MR_findByAttribute:@"id" withValue:@(self.id)];
+    BOOL having = NO;
+    for (FavouriteMem *mem in mems){
+        if (mem.isFavourite.boolValue){
+            having = YES;
+            break;
+        }
+    }
+    return having;
+}
+
+-(BOOL)isRecent{
+    NSArray *mems = [FavouriteMem MR_findByAttribute:@"id" withValue:@(self.id)];
+    BOOL having = NO;
+    for (FavouriteMem *mem in mems){
+        if (mem.isRecent.boolValue){
+            having = YES;
+            break;
+        }
+    }
+    return having;
+}
+
+-(void)addToFavourites{
+    [FavouriteMem createFromMem:self withType:FavouriteMemTypeFavourite];
+}
+
+-(void)removeFromFavourites{
+    NSArray *mems = [FavouriteMem MR_findByAttribute:@"id" withValue:@(self.id)];
+    for (FavouriteMem *mem in mems){
+        if (mem.isFavourite)
+            [mem removeFromFavourites];
+    }
+}
+
+-(void)addToRecent{
+    [FavouriteMem createFromMem:self withType:FavouriteMemTypeRecent];
+}
+
+-(void)removeFromRecent{
+    NSArray *mems = [FavouriteMem MR_findByAttribute:@"id" withValue:@(self.id)];
+    for (FavouriteMem *mem in mems){
+        if (mem.isRecent)
+            [mem removeFromFavourites];
+    }
+}
+
 @end

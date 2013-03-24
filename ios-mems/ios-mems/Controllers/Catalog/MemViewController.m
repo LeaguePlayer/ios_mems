@@ -27,7 +27,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self addToRecents];
     [self initUI];
+}
+
+-(void)addToRecents{
+    if (![self.mem isRecent]){
+        [self.mem addToRecent];
+    }
 }
 
 -(void)initUI{
@@ -38,6 +45,8 @@
     image = [UIImage imageNamed:self.mem.fileName];
     [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.imageView setImage:image];
+    NSString *title = [self.mem isFavourite] ? @"Удалить из избранного" : @"Добавить в избранное";
+    [self.favouriteBtn setTitle:title forState:UIControlStateNormal];
 }
 
 -(void)rightItemClicked:(id)sender{
@@ -52,6 +61,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)toFavourite:(id)sender {
+    if ([self.mem isFavourite]){
+        [self.mem removeFromFavourites];
+    } else {
+        [self.mem addToFavourites];
+    }
+    NSString *title = [self.mem isFavourite] ? @"Удалить из избранного" : @"Добавить в избранное";
+    [self.favouriteBtn setTitle:title forState:UIControlStateNormal];
 }
 
 @end

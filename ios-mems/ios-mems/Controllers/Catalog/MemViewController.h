@@ -13,5 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic,retain) MEMem *mem;
+@property (weak, nonatomic) IBOutlet UIButton *favouriteBtn;
+- (IBAction)toFavourite:(id)sender;
 
 @end
