@@ -8,6 +8,7 @@
 
 #import "EditPhotoViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIImage+Blank.h"
 
 @interface EditPhotoViewController ()
 
@@ -52,7 +53,7 @@
 -(void)initItems{
     CGFloat content = 0;
     for (int i = 0; i <= 50; i++){
-        NSString *name = [NSString stringWithFormat:@"mem-for-edit-%d.png",i];
+        NSString *name = [NSString stringWithFormat:@"17_%d.png",i];
         UIImage *image = [UIImage imageNamed:name];
         DraggableImageView *imageView = [[DraggableImageView alloc] initWithImage:image];
         [imageView setDelegate:self];
@@ -98,11 +99,12 @@
 }
 
 -(void)initImageView{
+    self.image =[self.image imageScaledToFitSize:self.imageView.frame.size];
     CGSize size = self.image.size;
     CGRect frame = self.imageView.frame;
     frame.size = size;
     [self.imageView setImage:self.image];
-    [self.imageView setFrame:frame];
+//    [self.imageView setFrame:frame];
     frame = self.scroll.frame;
     frame.size.width = MIN(size.width, frame.size.width);
     frame.size.height = MIN(size.height, frame.size.height);

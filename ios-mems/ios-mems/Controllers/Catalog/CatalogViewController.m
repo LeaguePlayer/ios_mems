@@ -160,7 +160,7 @@
     if ([segue.identifier isEqualToString:@"Mems"]){
         CategoryMemsViewController *controller = (CategoryMemsViewController *)segue.destinationViewController;
         controller.category = selectedCategory;
-    } else {
+    } else if ([segue.identifier isEqualToString:@"Mem"]){
         MemViewController *controller = (MemViewController *)segue.destinationViewController;
         controller.mem = selectedMem;
     }
