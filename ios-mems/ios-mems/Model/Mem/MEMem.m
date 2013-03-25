@@ -64,7 +64,7 @@
 -(void)removeFromFavourites{
     NSArray *mems = [FavouriteMem MR_findByAttribute:@"id" withValue:@(self.id)];
     for (FavouriteMem *mem in mems){
-        if (mem.isFavourite)
+        if (mem.isFavourite.boolValue)
             [mem removeFromFavourites];
     }
 }
@@ -76,7 +76,7 @@
 -(void)removeFromRecent{
     NSArray *mems = [FavouriteMem MR_findByAttribute:@"id" withValue:@(self.id)];
     for (FavouriteMem *mem in mems){
-        if (mem.isRecent)
+        if (mem.isRecent.boolValue)
             [mem removeFromFavourites];
     }
 }
