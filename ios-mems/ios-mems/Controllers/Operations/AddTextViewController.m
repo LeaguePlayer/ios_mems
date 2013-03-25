@@ -53,10 +53,18 @@
 }
 
 - (IBAction)selectProperties:(id)sender {
+    [currentView resignFirstResponder];
+    self.text = self.textField.text;
+    self.size = self.fontSize.text.floatValue;
     if ([self.delegate respondsToSelector:@selector(addTextPropertiesSelectedInController:)] && ![self.text isEqualToString:@""]){
         [self.delegate addTextPropertiesSelectedInController:self];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
+}
+
+- (IBAction)discardView:(id)sender {
+    [currentView resignFirstResponder];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -69,17 +77,8 @@
     [self.selectColorButton setBackgroundColor:self.color];
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    return YES;
-}
-
--(void)textFieldDidEndEditing:(UITextField *)textField{
-    [textField resignFirstResponder];
-    if (textField == self.textField){
-        self.text = textField.text;
-    } else if (textField == self.fontSize){
-        self.size = textField.text.floatValue;
-    }
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    currentView = textField;
 }
 
 @end

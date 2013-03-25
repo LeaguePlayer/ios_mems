@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseViewController : UIViewController
+@interface BaseViewController : UIViewController{
+    UIView *currentView;
+}
 
 -(void)initInfoItemWithTarget:(BaseViewController *)target;
 -(void)initPhotoItemWithTarget:(BaseViewController *)target;

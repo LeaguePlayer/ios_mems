@@ -99,37 +99,39 @@
     self.currentView = [sender view];
 }
 
--(void)resizeToFit{
-    float hfactor = self.image.size.width / self.imageView.frame.size.width;
-    float vfactor = self.image.size.height / self.imageView.frame.size.height;
-    
-    float factor = fmax(hfactor, vfactor);
-    
-    // Divide the size by the greater of the vertical or horizontal shrinkage factor
-    float newWidth = self.image.size.width / factor;
-    float newHeight = self.image.size.height / factor;
-    
-    // Then figure out if you need to offset it to center vertically or horizontally
-    float leftOffset = (self.imageView.frame.size.width - newWidth) / 2;
-    float topOffset = (self.imageView.frame.size.height - newHeight) / 2;
-    
-    CGRect newRect = CGRectMake(leftOffset, topOffset, newWidth, newHeight);
-    self.image = [self.image imageScaledToFitSize:newRect.size];
-}
-
 -(void)initImageView{
-    [self resizeToFit];
-//    self.image =[self.image imageScaledToFitSize:self.imageView.frame.size];
-    CGSize size = self.image.size;
-    CGRect frame = self.imageView.frame;
-    frame.size = size;
     [self.imageView setImage:self.image];
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    CGSize size = [self sizeWithImage:(UIImage *)self.image constrainedToSize:(CGSize)self.imageView.frame.size];
+    self.image = [self.image imageToFitSize:size method:MGImageResizeScale];
+    CGRect frame = self.imageView.frame;
+    frame.size = self.image.size;
     [self.imageView setFrame:frame];
     frame = self.scroll.frame;
-    frame.size.width = MIN(size.width, frame.size.width);
-    frame.size.height = MIN(size.height, frame.size.height);
+    frame.size = self.image.size;
     frame.origin.x = self.view.frame.size.width/2 - frame.size.width/2;
+    [self.scroll setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_papper.png"]]];
     [self.scroll setFrame:frame];
+}
+
+-(CGSize)sizeWithImage:(UIImage *)image constrainedToSize:(CGSize)maxSize{
+    CGSize size = image.size;
+    CGFloat newHeight = size.height;
+    CGFloat newWidth = size.width;
+    CGFloat factor = 1;
+    if (newHeight > maxSize.height){
+        factor = maxSize.height/newHeight;
+    }
+    newHeight *= factor;
+    newWidth *= factor;
+    factor = 1;
+    if (newWidth > maxSize.width){
+        factor = maxSize.width/newWidth;
+    }
+    CGSize newSize;
+    newSize.width = newWidth*factor;
+    newSize.height = newHeight*factor;
+    return newSize;
 }
 
 -(void)leftItemClicked:(id)sender{
@@ -272,14 +274,15 @@
     return _currentView;
 }
 
--(void)setCurrentView:(UIView *)currentView{
+-(void)setCurrentView:(UIView *)acurrentView{
     if (self.currentView){
         _currentView.layer.borderColor = [UIColor clearColor].CGColor;
     }
-    _currentView = currentView;
-    if (currentView){
+    _currentView = acurrentView;
+    if (acurrentView){
         _currentView.layer.borderColor = [UIColor redColor].CGColor;
         _currentView.layer.borderWidth = 1.0f;
+        [self.scroll bringSubviewToFront:_currentView];
     }
 }
 

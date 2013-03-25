@@ -28,5 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectColorButton;
 - (IBAction)selectColor:(id)sender;
 - (IBAction)selectProperties:(id)sender;
+- (IBAction)discardView:(id)sender;
+
 
 @end
