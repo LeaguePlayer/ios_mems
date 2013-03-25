@@ -7,6 +7,9 @@
 //
 
 #import "AboutViewController.h"
+#import "SHK.h"
+#import "SHKFacebook.h"
+#import "SHKVkontakte.h"
 
 @interface AboutViewController ()
 
@@ -42,4 +45,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)fbShare:(id)sender {
+	UIImage *image = [UIImage imageNamed:@"mem.png"];
+	SHKItem *item = [SHKItem image:image title:@"Приложение для iPhone"];
+    
+    [SHKFacebook shareItem:item];
+}
+
+- (IBAction)vkShare:(id)sender {
+    UIImage *image = [UIImage imageNamed:@"mem.png"];
+    SHKItem *item = [SHKItem image:image title:@"Приложение для iPhone"];
+    
+    [SHKVkontakte shareItem:item];
+}
 @end

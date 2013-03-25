@@ -1,14 +1,99 @@
 
-PODS:
+PODS: 
+- Evernote-SDK-iOS (1.0.1)
+- Facebook-iOS-SDK (3.1.1)
+- JSONKit (1.5pre)
 - MagicalRecord (2.1)
+- Reachability (3.1.0)
+- SBJson (3.2)
+- SSKeychain (1.0.2)
 - SSToolkit (1.0.2)
+- ShareKit (2.2): 
+  - Reachability
+  - SSKeychain
+  - ShareKit/Evernote (= 2.2)
+  - ShareKit/Facebook (= 2.2)
+  - ShareKit/Flickr (= 2.2)
+  - ShareKit/Foursquare (= 2.2)
+  - ShareKit/GoogleReader (= 2.2)
+  - ShareKit/Instapaper (= 2.2)
+  - ShareKit/LinkedIn (= 2.2)
+  - ShareKit/Pinboard (= 2.2)
+  - ShareKit/ReadItLater (= 2.2)
+  - ShareKit/Tumblr (= 2.2)
+  - ShareKit/Twitter (= 2.2)
+  - ShareKit/Vkontakte (= 2.2)
+- ShareKit/Evernote (2.2): 
+  - Evernote-SDK-iOS (= 1.0.1)
+  - Reachability
+  - SSKeychain
+- ShareKit/Facebook (2.2): 
+  - Facebook-iOS-SDK (= 3.1.1)
+  - Reachability
+  - SSKeychain
+- ShareKit/Flickr (2.2): 
+  - Reachability
+  - SSKeychain
+  - objectiveflickr (= 2.0.2)
+- ShareKit/Foursquare (2.2): 
+  - Reachability
+  - SBJson
+  - SSKeychain
+- ShareKit/GoogleReader (2.2): 
+  - Reachability
+  - SSKeychain
+- ShareKit/Instapaper (2.2): 
+  - Reachability
+  - SSKeychain
+- ShareKit/LinkedIn (2.2): 
+  - Reachability
+  - SSKeychain
+- ShareKit/Pinboard (2.2): 
+  - Reachability
+  - SSKeychain
+- ShareKit/ReadItLater (2.2): 
+  - Reachability
+  - SSKeychain
+- ShareKit/Tumblr (2.2): 
+  - Reachability
+  - SSKeychain
+- ShareKit/Twitter (2.2): 
+  - JSONKit
+  - Reachability
+  - SSKeychain
+- ShareKit/Vkontakte (2.2): 
+  - JSONKit
+  - Reachability
+  - SSKeychain
+- objectiveflickr (2.0.2)
 
-DEPENDENCIES:
-- MagicalRecord (= 2.1)
-- SSToolkit (= 1.0.2)
-
-SPEC CHECKSUMS:
-  MagicalRecord: aedbebe987d02d1215718a904c93d7965e48e398
+SPEC CHECKSUMS: 
+  ShareKit/GoogleReader: 9b52657846623dddc22df198ebb674687c644b19
+  ShareKit/Instapaper: 9b52657846623dddc22df198ebb674687c644b19
   SSToolkit: 9751b7ec0d068dc1dc46c8121dfeff808f9e3d35
+  ShareKit/Evernote: 9b52657846623dddc22df198ebb674687c644b19
+  SBJson: 4971016670e7b3fa04a36d4e72ab0fb1ad3a9f69
+  objectiveflickr: 17f5f1fd4b9b9d6761a9545493c79221f65604c3
+  ShareKit/Twitter: 9b52657846623dddc22df198ebb674687c644b19
+  ShareKit/ReadItLater: 9b52657846623dddc22df198ebb674687c644b19
+  ShareKit/Flickr: 9b52657846623dddc22df198ebb674687c644b19
+  ShareKit/Facebook: 9b52657846623dddc22df198ebb674687c644b19
+  Facebook-iOS-SDK: 5fc068ebfd8c8c9b0fad476bc36dbbf1fffeebc8
+  ShareKit/Foursquare: 9b52657846623dddc22df198ebb674687c644b19
+  Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
+  Evernote-SDK-iOS: 761bd53842b44426de79f60721e636e6cb2bc8bb
+  ShareKit/Tumblr: 9b52657846623dddc22df198ebb674687c644b19
+  MagicalRecord: 64e7184c240087a45e9588a722eaf05b0ad837f7
+  ShareKit/Vkontakte: 9b52657846623dddc22df198ebb674687c644b19
+  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
+  ShareKit/Pinboard: 9b52657846623dddc22df198ebb674687c644b19
+  ShareKit: 9b52657846623dddc22df198ebb674687c644b19
+  ShareKit/LinkedIn: 9b52657846623dddc22df198ebb674687c644b19
+  SSKeychain: 17a88f9e90d046ab17bd7c25b9758bac2461827c
 
 COCOAPODS: 0.16.0
+
+DEPENDENCIES: 
+- MagicalRecord (= 2.1)
+- SSToolkit (= 1.0.2)
+- ShareKit

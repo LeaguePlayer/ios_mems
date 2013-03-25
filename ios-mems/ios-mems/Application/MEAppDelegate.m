@@ -7,6 +7,8 @@
 //
 
 #import "MEAppDelegate.h"
+#import "SHKConfiguration.h"
+#import "MESHKConfiguration.h"
 
 @implementation MEAppDelegate
 
@@ -14,7 +16,16 @@
 {
     // Override point for customization after application launch.
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"Model.sqlite"];
+    [self configureShareKit];
     return YES;
+}
+
+/**
+ Конфигурирование ShareKit для шаринга в соц сети VK,FB
+ */
+-(void)configureShareKit {
+    DefaultSHKConfigurator *configurator = [[MESHKConfiguration alloc] init];
+    [SHKConfiguration sharedInstanceWithConfigurator:configurator];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

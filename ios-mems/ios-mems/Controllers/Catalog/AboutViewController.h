@@ -10,5 +10,8 @@
 #import "BaseViewController.h"
 
 @interface AboutViewController : BaseViewController
+- (IBAction)fbShare:(id)sender;
+- (IBAction)vkShare:(id)sender;
+
 
 @end
