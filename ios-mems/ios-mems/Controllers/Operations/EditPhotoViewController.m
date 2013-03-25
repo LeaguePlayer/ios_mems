@@ -98,13 +98,32 @@
     self.currentView = [sender view];
 }
 
+-(void)resizeToFit{
+    float hfactor = self.image.size.width / self.imageView.frame.size.width;
+    float vfactor = self.image.size.height / self.imageView.frame.size.height;
+    
+    float factor = fmax(hfactor, vfactor);
+    
+    // Divide the size by the greater of the vertical or horizontal shrinkage factor
+    float newWidth = self.image.size.width / factor;
+    float newHeight = self.image.size.height / factor;
+    
+    // Then figure out if you need to offset it to center vertically or horizontally
+    float leftOffset = (self.imageView.frame.size.width - newWidth) / 2;
+    float topOffset = (self.imageView.frame.size.height - newHeight) / 2;
+    
+    CGRect newRect = CGRectMake(leftOffset, topOffset, newWidth, newHeight);
+    self.image = [self.image imageScaledToFitSize:newRect.size];
+}
+
 -(void)initImageView{
-    self.image =[self.image imageScaledToFitSize:self.imageView.frame.size];
+    [self resizeToFit];
+//    self.image =[self.image imageScaledToFitSize:self.imageView.frame.size];
     CGSize size = self.image.size;
     CGRect frame = self.imageView.frame;
     frame.size = size;
     [self.imageView setImage:self.image];
-//    [self.imageView setFrame:frame];
+    [self.imageView setFrame:frame];
     frame = self.scroll.frame;
     frame.size.width = MIN(size.width, frame.size.width);
     frame.size.height = MIN(size.height, frame.size.height);
