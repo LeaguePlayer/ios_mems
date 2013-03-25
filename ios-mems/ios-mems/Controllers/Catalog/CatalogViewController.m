@@ -29,8 +29,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    favourites = [FavouriteMem favouriteMems];
-    recents = [FavouriteMem recentMems];
+    [self createStored];
     [collectionView reloadData];
 }
 
@@ -48,6 +47,23 @@
 
 -(void)initContent{
     categories = [MEMemCategory allCategories];
+}
+
+-(void)createStored{
+    NSArray *favs = [FavouriteMem favouriteMems];
+    NSMutableArray *mfa = [NSMutableArray array];
+    for (FavouriteMem *mem in favs){
+        MEMem *new = [MEMem memFromManagedOne:mem];
+        [mfa addObject:new];
+    }
+    favourites = mfa;
+    NSArray *rec = [FavouriteMem recentMems];
+    NSMutableArray *mrec = [NSMutableArray array];
+    for (FavouriteMem *mem in rec){
+        MEMem *new = [MEMem memFromManagedOne:mem];
+        [mrec addObject:new];
+    }
+    recents = mrec;
 }
 
 -(void)initUI{
@@ -158,17 +174,16 @@
             break;
         case 2:
             newMode = CatalogOutputModeFavourites;
-            favourites = [FavouriteMem favouriteMems];
             break;
         case 3:
             newMode = CatalogOutputModeRecents;
-            recents = [FavouriteMem recentMems];
             break;
         default:
             newMode = CatalogOutputModeCatalog;
             break;
     }
     if (newMode == currentMode) return;
+    [self createStored];
     currentMode = newMode;
     [collectionView reloadData];
 }
