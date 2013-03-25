@@ -9,6 +9,7 @@
 #import "EditPhotoViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+Blank.h"
+#import "MEUtils.h"
 
 @interface EditPhotoViewController ()
 
@@ -234,7 +235,17 @@
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
+    if (buttonIndex == 2) return;
+    [self setCurrentView:nil];
+    UIGraphicsBeginImageContext(self.scroll.bounds.size);
+    [self.scroll.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    if (buttonIndex == 0){
+        
+    } else {
+        [MEUtils saveImageToGallery:image];
+    }
 }
 
 - (void)didReceiveMemoryWarning

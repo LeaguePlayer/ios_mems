@@ -28,4 +28,8 @@
     return [UIImage imageWithData:(NSData *)value];
 }
 
++(void)saveImageToGallery:(UIImage *)image{
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+}
+
 @end

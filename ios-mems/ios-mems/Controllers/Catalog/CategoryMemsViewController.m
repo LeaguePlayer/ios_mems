@@ -92,8 +92,10 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    MemViewController *controller = (MemViewController *)segue.destinationViewController;
-    controller.mem = selected;
+    if ([segue.identifier isEqualToString:@"Mem"]){
+        MemViewController *controller = (MemViewController *)segue.destinationViewController;
+        controller.mem = selected;
+    }
 }
 
 - (void)didReceiveMemoryWarning
