@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIView *scroll;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *itemsScroll;
+@property (weak, nonatomic) IBOutlet UIImageView *botomView;
+@property (weak, nonatomic) IBOutlet UIView *topView;
 - (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer;
 - (IBAction)deleteControl:(id)sender;
 - (IBAction)undo:(id)sender;

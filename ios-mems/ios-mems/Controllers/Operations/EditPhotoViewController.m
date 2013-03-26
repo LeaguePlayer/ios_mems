@@ -100,18 +100,45 @@
 }
 
 -(void)initImageView{
+    CGFloat startY = self.topView.frame.origin.y + self.topView.frame.size.height;
+    CGRect required = CGRectMake(0, startY, self.view.bounds.size.width, self.botomView.frame.origin.y - startY);
+    NSLog (@"Required height is %f", required.size.height);
+//    self.image = [self scaleImage:self.image toSize:required.size];
+    CGSize size = [self sizeWithImage:self.image constrainedToSize:required.size];
+    CGRect frame = self.imageView.frame;
+    frame.size = size;
+    [self.imageView setFrame:frame];
     [self.imageView setImage:self.image];
     [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    CGSize size = [self sizeWithImage:(UIImage *)self.image constrainedToSize:(CGSize)self.imageView.frame.size];
-    self.image = [self.image imageToFitSize:size method:MGImageResizeScale];
-    CGRect frame = self.imageView.frame;
-    frame.size = self.image.size;
-    [self.imageView setFrame:frame];
     frame = self.scroll.frame;
-    frame.size = self.image.size;
-    frame.origin.x = self.view.frame.size.width/2 - frame.size.width/2;
-    [self.scroll setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_papper.png"]]];
+    frame.size = self.imageView.frame.size;
+    frame.origin.x = required.size.width/2 - frame.size.width/2;
+    frame.origin.y = (self.botomView.frame.origin.y + startY)/2 - frame.size.height/2;
     [self.scroll setFrame:frame];
+    NSLog (@"Real height is %f",self.image.size.height);
+}
+
+- (UIImage*)scaleImage:(UIImage*)image toSize:(CGSize)newSize {
+    CGSize scaledSize = newSize;
+    float scaleFactor = 1.0;
+    if( image.size.width > image.size.height ) {
+        scaleFactor = image.size.width / image.size.height;
+        scaledSize.width = newSize.width;
+        scaledSize.height = newSize.height / scaleFactor;
+    }
+    else {
+        scaleFactor = image.size.height / image.size.width;
+        scaledSize.height = newSize.height;
+        scaledSize.width = newSize.width / scaleFactor;
+    }
+    
+    UIGraphicsBeginImageContextWithOptions( scaledSize, NO, 0.0 );
+    CGRect scaledImageRect = CGRectMake( 0.0, 0.0, scaledSize.width, scaledSize.height );
+    [image drawInRect:scaledImageRect];
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return scaledImage;
 }
 
 -(CGSize)sizeWithImage:(UIImage *)image constrainedToSize:(CGSize)maxSize{
@@ -119,14 +146,14 @@
     CGFloat newHeight = size.height;
     CGFloat newWidth = size.width;
     CGFloat factor = 1;
-    if (newHeight > maxSize.height){
-        factor = maxSize.height/newHeight;
-    }
-    newHeight *= factor;
-    newWidth *= factor;
-    factor = 1;
     if (newWidth > maxSize.width){
         factor = maxSize.width/newWidth;
+    }
+    newHeight = newHeight*factor;
+    newWidth = newWidth*factor;
+    factor = 1;
+    if (newHeight > maxSize.height){
+        factor = maxSize.height/newHeight;
     }
     CGSize newSize;
     newSize.width = newWidth*factor;

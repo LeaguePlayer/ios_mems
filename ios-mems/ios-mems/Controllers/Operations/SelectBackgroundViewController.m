@@ -71,7 +71,9 @@
 
 -(void)colorPickerControllerDidFinish:(InfColorPickerController *)controller{
     UIColor *resultColor = controller.resultColor;
-    UIImage *image = [UIImage blankImage:self.view.bounds.size withColor:resultColor];
+    CGSize size = self.view.bounds.size;
+    size.width += 1;
+    UIImage *image = [UIImage blankImage:size withColor:resultColor];
     resultImage = image;
     [self performSegueWithIdentifier:@"Next" sender:self];
 }
