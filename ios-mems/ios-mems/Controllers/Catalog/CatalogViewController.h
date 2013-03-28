@@ -22,11 +22,11 @@ typedef enum {
 @interface CatalogViewController : BaseViewController<SSCollectionViewDataSource,SSCollectionViewDelegate>{
     MEMemCategory *selectedCategory;
     MEMem *selectedMem;
-    NSArray *categories;
     NSArray *favourites;
     NSArray *recents;
     SSCollectionView *collectionView;
     CatalogOutputMode currentMode;
+    NSArray *categories;
 }
 - (IBAction)tabBarClicked:(id)sender;
 

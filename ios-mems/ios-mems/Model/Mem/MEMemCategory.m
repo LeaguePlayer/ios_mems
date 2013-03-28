@@ -31,26 +31,30 @@
 }
 
 +(NSArray *)allCategories{
-    NSArray *names = [MEMemCategory categoryNames];
-    NSMutableArray *result = [NSMutableArray array];
-    for (int i = 0; i < 17; i++){
-        NSMutableArray *images = [NSMutableArray array];
-        int j = 0;
-        NSString *file = [NSString stringWithFormat:@"%d_%d.png",i,j];
-        UIImage *image = [UIImage imageNamed:file];
-        UIImage *mainImage = image;
-        while (image){
-            MEMem *mem = [[MEMem alloc] initWithName:file id:(i*10+j)];
-            [images addObject:mem];
-            file = [NSString stringWithFormat:@"%d_%d.png",i,++j];
-            image = [UIImage imageNamed:file];
+    static NSArray *categories;
+    if (!categories){
+        NSArray *names = [MEMemCategory categoryNames];
+        NSMutableArray *result = [NSMutableArray array];
+        for (int i = 0; i < 17; i++){
+            NSMutableArray *images = [NSMutableArray array];
+            int j = 0;
+            NSString *file = [NSString stringWithFormat:@"%d_%d.png",i,j];
+            UIImage *image = [UIImage imageNamed:file];
+            UIImage *mainImage = image;
+            while (image){
+                MEMem *mem = [[MEMem alloc] initWithName:file id:(i*10+j)];
+                [images addObject:mem];
+                file = [NSString stringWithFormat:@"%d_%d.png",i,++j];
+                image = [UIImage imageNamed:file];
+            }
+            MEMemCategory *category = [[MEMemCategory alloc] initWithName:[names objectAtIndex:i] image:mainImage];
+            category.id = i;
+            category.mems = images;
+            [result addObject:category];
         }
-        MEMemCategory *category = [[MEMemCategory alloc] initWithName:[names objectAtIndex:i] image:mainImage];
-        category.id = i;
-        category.mems = images;
-        [result addObject:category];
+        categories = result;
     }
-    return result;
+    return categories;
 }
 
 +(NSArray *)categoryNames{

@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+Blank.h"
 #import "MEUtils.h"
+#import "MEMem.h"
+#import "SelectCatViewController.h"
 
 @interface EditPhotoViewController ()
 
@@ -18,6 +20,7 @@
 @implementation EditPhotoViewController
 
 @synthesize currentView = _currentView;
+@synthesize selectedCategory = _selectedCategory;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,12 +54,20 @@
     actionSheet = [[UIActionSheet alloc] initWithTitle:@"Выберите действие" delegate:self cancelButtonTitle:@"Отмена" destructiveButtonTitle:nil otherButtonTitles:@"Отправить ММС", @"Сохранить на телефон", nil];
 }
 
--(void)initItems{
+-(void)updateItems{
+    for (UIView *view in self.itemsScroll.subviews){
+        if ([view isMemberOfClass:[DraggableImageView class]]){
+            [view removeFromSuperview];
+        }
+    }
+    MEMemCategory *cat = [categories objectAtIndex:self.selectedCategory];
     CGFloat content = 0;
-    for (int i = 0; i <= 50; i++){
-        NSString *name = [NSString stringWithFormat:@"17_%d.png",i];
+    for (int i = 0; i < cat.mems.count; i++){
+        MEMem *mem = [cat.mems objectAtIndex:i];
+        NSString *name = mem.fileName;
         UIImage *image = [UIImage imageNamed:name];
         DraggableImageView *imageView = [[DraggableImageView alloc] initWithImage:image];
+        [imageView setContentMode:UIViewContentModeScaleAspectFit];
         [imageView setDelegate:self];
         [imageView setTag:i + 1];
         CGSize size = CGSizeMake(44, 44);
@@ -73,6 +84,11 @@
     content -= 5;
     CGSize size = CGSizeMake(content, self.itemsScroll.frame.size.height);
     [self.itemsScroll setContentSize:size];
+}
+
+-(void)initItems{
+    categories = [MEMemCategory allCategories];
+    self.selectedCategory = 0;
 }
 
 -(void)startDragging:(id)sender{
@@ -172,6 +188,7 @@
 -(void) touchEndedInRightWay:(DraggableImageView *)image{
     CGPoint location = [self.scroll convertPoint:image.center fromView:self.view];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image.image];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
     CGRect frame = imageView.frame;
     frame.size = image.frame.size;
     [imageView setFrame:frame];
@@ -248,6 +265,10 @@
     [self performSegueWithIdentifier:@"AddText" sender:self];
 }
 
+- (IBAction)selectCategory:(id)sender {
+    [self performSegueWithIdentifier:@"SelectCategory" sender:self];
+}
+
 - (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer {
     if (self.currentView){
         if (!started){
@@ -301,6 +322,15 @@
     return _currentView;
 }
 
+-(int)selectedCategory{
+    return _selectedCategory;
+}
+
+-(void)setSelectedCategory:(int)selectedCategory{
+    _selectedCategory = selectedCategory;
+    [self updateItems];
+}
+
 -(void)setCurrentView:(UIView *)acurrentView{
     if (self.currentView){
         _currentView.layer.borderColor = [UIColor clearColor].CGColor;
@@ -344,11 +374,22 @@
     [self setCurrentView:view];
 }
 
+#pragma mark - select category delegate
+
+-(void)categorySelected:(MEMemCategory *)category{
+    self.selectedCategory = [categories indexOfObject:category];
+}
+
 #pragma mark - segue delegates
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    AddTextViewController *controller = (AddTextViewController *)segue.destinationViewController;
-    controller.delegate = self;
+    if ([segue.identifier isEqualToString:@"AddText"]){
+        AddTextViewController *controller = (AddTextViewController *)segue.destinationViewController;
+        controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"SelectCategory"]){
+        SelectCatViewController *controller = (SelectCatViewController *)segue.destinationViewController;
+        controller.delegate = self;
+    }
 }
 
 @end

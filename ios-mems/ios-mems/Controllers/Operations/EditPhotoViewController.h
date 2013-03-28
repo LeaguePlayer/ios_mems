@@ -10,8 +10,9 @@
 #import "DraggableImageView.h"
 #import "MECommandReciever.h"
 #import "AddTextViewController.h"
+#import "SelectCatViewController.h"
 
-@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate, UIGestureRecognizerDelegate,DraggableDelegate,MEAddTextDelegate>{
+@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate, UIGestureRecognizerDelegate,DraggableDelegate,MEAddTextDelegate,SelectCategoryDelegate>{
     UIActionSheet *actionSheet;
     CGFloat firstX, firstY;
     NSMutableArray *images;
@@ -20,8 +21,10 @@
     CGPoint point;
     BOOL started;
     MECommand *command;
+    NSArray *categories;
 }
 
+@property (nonatomic) int selectedCategory;
 @property (nonatomic, retain) UIView *currentView;
 @property (nonatomic,retain) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIView *scroll;
@@ -33,6 +36,7 @@
 - (IBAction)deleteControl:(id)sender;
 - (IBAction)undo:(id)sender;
 - (IBAction)addText:(id)sender;
+- (IBAction)selectCategory:(id)sender;
 
 - (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer;
 @end
