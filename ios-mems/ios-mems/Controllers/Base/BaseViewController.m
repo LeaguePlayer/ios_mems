@@ -30,10 +30,12 @@
 }
 
 -(void)initInfoItemWithTarget:(BaseViewController *)target{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    UIImage *image = [UIImage imageNamed:@"info_button.png"];
+    CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    UIButton *button = [[UIButton alloc] initWithFrame:frame];
+    [button setBackgroundImage:image forState:UIControlStateNormal];
     [button addTarget:target action:@selector(leftItemClicked:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
-    item.style = UIBarButtonItemStyleBordered;
     [self.navigationItem setLeftBarButtonItem:item];
 }
 

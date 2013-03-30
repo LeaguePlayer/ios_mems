@@ -47,14 +47,14 @@
 
 - (IBAction)fbShare:(id)sender {
 	UIImage *image = [UIImage imageNamed:@"mem.png"];
-	SHKItem *item = [SHKItem image:image title:@"Приложение для iPhone"];
+	SHKItem *item = [SHKItem image:image title:@"Отличное приложение для iPhone, рекомендую!"];
     
     [SHKFacebook shareItem:item];
 }
 
 - (IBAction)vkShare:(id)sender {
     UIImage *image = [UIImage imageNamed:@"mem.png"];
-    SHKItem *item = [SHKItem image:image title:@"Приложение для iPhone"];
+    SHKItem *item = [SHKItem image:image title:@"Отличное приложение для iPhone, рекомендую!"];
     
     [SHKVkontakte shareItem:item];
 }

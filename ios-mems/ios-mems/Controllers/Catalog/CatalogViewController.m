@@ -11,6 +11,7 @@
 #import "CategoryMemsViewController.h"
 #import "MemViewController.h"
 #import "FavouriteMem.h"
+#import "MECategoryItem.h"
 
 @interface CatalogViewController ()
 
@@ -43,6 +44,21 @@
     [self.navigationItem setTitle:@"Приложение"];
     currentMode = CatalogOutputModeCatalog;
     [self initUI];
+    [self initTabBarItems];
+}
+
+-(void)initTabBarItems{
+    self.tabBarItems = [self orderCollectionByTagWithArray:self.tabBarItems];
+    UIButton *first = [self.tabBarItems objectAtIndex:0];
+    UIButton *second = [self.tabBarItems objectAtIndex:1];
+    UIButton *third = [self.tabBarItems objectAtIndex:2];
+    [first setImage:[UIImage imageNamed:@"tab1.png"] forState:UIControlStateNormal];
+    [first setImage:[UIImage imageNamed:@"tab1_current.png"] forState:UIControlStateSelected];
+    [second setImage:[UIImage imageNamed:@"tab2.png"] forState:UIControlStateNormal];
+    [second setImage:[UIImage imageNamed:@"tab2_current.png"] forState:UIControlStateSelected];
+    [third setImage:[UIImage imageNamed:@"tab3.png"] forState:UIControlStateNormal];
+    [third setImage:[UIImage imageNamed:@"tab3_current.png"] forState:UIControlStateSelected];
+    
 }
 
 -(void)initContent{
@@ -112,17 +128,30 @@
     return count;
 }
 
+-(CGFloat)collectionView:(SSCollectionView *)aCollectionView heightForHeaderInSection:(NSUInteger)section{
+    return 20;
+}
+
+-(UIView *)collectionView:(SSCollectionView *)aCollectionView viewForHeaderInSection:(NSUInteger)section{
+    UIView *view = [[UIView alloc] init];
+    [view setBackgroundColor:[UIColor clearColor]];
+    return view;
+}
+
 - (SSCollectionViewItem *)collectionView:(SSCollectionView *)aCollectionView itemForIndexPath:(NSIndexPath *)indexPath {
     static NSString *const itemIdentifier = @"itemIdentifier";
+    SSCollectionViewItem *item;
     
-    SSCollectionViewItem *item = [aCollectionView dequeueReusableItemWithIdentifier:itemIdentifier];
-    if (!item) {
-		item = [[SSCollectionViewItem alloc] initWithStyle:SSCollectionViewItemStyleImage reuseIdentifier:itemIdentifier];
-	}
     if (currentMode == CatalogOutputModeCatalog){
+        MECategoryItem *catItem = [[MECategoryItem alloc] initWithReuseIdentifier:itemIdentifier];
         MEMemCategory *category = categories[indexPath.row];
-        [item.imageView setImage:category.mainImage];
+        [catItem.iconView setImage:category.mainImage];
+        [catItem.titleLbl setText:category.name];
+        item = catItem;
     } else {
+        if (!item) {
+            item = [[SSCollectionViewItem alloc] initWithStyle:SSCollectionViewItemStyleImage reuseIdentifier:itemIdentifier];
+        }
         NSArray *array = (currentMode == CatalogOutputModeFavourites) ? favourites : recents;
         MEMem *mem = [array objectAtIndex:indexPath.row];
         UIImage *image = [UIImage imageNamed:mem.fileName];
@@ -136,7 +165,7 @@
 #pragma mark - SSCollectionViewDelegate
 
 - (CGSize)collectionView:(SSCollectionView *)aCollectionView itemSizeForSection:(NSUInteger)section {
-    return CGSizeMake(85.0f, 86.0f);
+    return CGSizeMake(95.0f, 99.0f);
 }
 
 -(void)collectionView:(SSCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -184,6 +213,10 @@
             break;
     }
     if (newMode == currentMode) return;
+    for (UIButton *butt in self.tabBarItems){
+        [butt setSelected:NO];
+    }
+    [((UIButton *)sender) setSelected:YES];
     [self createStored];
     currentMode = newMode;
     [collectionView reloadData];

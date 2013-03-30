@@ -95,7 +95,15 @@
 		308D16FF16F204D60095957B /* small_mem3.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16F916F204D60095957B /* small_mem3.png */; };
 		308D170016F204D60095957B /* small_mem3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D16FA16F204D60095957B /* small_mem3@2x.png */; };
 		309565EE17009CDC008767E7 /* MESHKConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 309565ED17009CDC008767E7 /* MESHKConfiguration.m */; };
-		309565F417048546008767E7 /* SelectCatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309565F317048546008767E7 /* SelectCatViewController.m */; };
+		309565F7170618AD008767E7 /* info_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 309565F5170618AD008767E7 /* info_button.png */; };
+		309565F8170618AD008767E7 /* info_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309565F6170618AD008767E7 /* info_button@2x.png */; };
+		309565FC17061975008767E7 /* MECategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 309565FB17061975008767E7 /* MECategoryItem.m */; };
+		3095660317062008008767E7 /* tab1_current.png in Resources */ = {isa = PBXBuildFile; fileRef = 309565FD17062008008767E7 /* tab1_current.png */; };
+		3095660417062008008767E7 /* tab1_current@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309565FE17062008008767E7 /* tab1_current@2x.png */; };
+		3095660517062008008767E7 /* tab2_current.png in Resources */ = {isa = PBXBuildFile; fileRef = 309565FF17062008008767E7 /* tab2_current.png */; };
+		3095660617062008008767E7 /* tab2_current@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095660017062008008767E7 /* tab2_current@2x.png */; };
+		3095660717062008008767E7 /* tab3_current.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095660117062008008767E7 /* tab3_current.png */; };
+		3095660817062008008767E7 /* tab3_current@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095660217062008008767E7 /* tab3_current@2x.png */; };
 		30DEA87A16F5D40300A0BDF3 /* DraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */; };
 		30DEA87E16F7828600A0BDF3 /* MECommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA87D16F7828600A0BDF3 /* MECommand.m */; };
 		30DEA88116F784AC00A0BDF3 /* MEMoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88016F784AC00A0BDF3 /* MEMoveCommand.m */; };
@@ -378,8 +386,16 @@
 		308D16FA16F204D60095957B /* small_mem3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small_mem3@2x.png"; sourceTree = "<group>"; };
 		309565EC17009CDC008767E7 /* MESHKConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESHKConfiguration.h; sourceTree = "<group>"; };
 		309565ED17009CDC008767E7 /* MESHKConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESHKConfiguration.m; sourceTree = "<group>"; };
-		309565F217048546008767E7 /* SelectCatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCatViewController.h; sourceTree = "<group>"; };
-		309565F317048546008767E7 /* SelectCatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCatViewController.m; sourceTree = "<group>"; };
+		309565F5170618AD008767E7 /* info_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_button.png; sourceTree = "<group>"; };
+		309565F6170618AD008767E7 /* info_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_button@2x.png"; sourceTree = "<group>"; };
+		309565FA17061975008767E7 /* MECategoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MECategoryItem.h; sourceTree = "<group>"; };
+		309565FB17061975008767E7 /* MECategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MECategoryItem.m; sourceTree = "<group>"; };
+		309565FD17062008008767E7 /* tab1_current.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab1_current.png; sourceTree = "<group>"; };
+		309565FE17062008008767E7 /* tab1_current@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab1_current@2x.png"; sourceTree = "<group>"; };
+		309565FF17062008008767E7 /* tab2_current.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab2_current.png; sourceTree = "<group>"; };
+		3095660017062008008767E7 /* tab2_current@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab2_current@2x.png"; sourceTree = "<group>"; };
+		3095660117062008008767E7 /* tab3_current.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab3_current.png; sourceTree = "<group>"; };
+		3095660217062008008767E7 /* tab3_current@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab3_current@2x.png"; sourceTree = "<group>"; };
 		30DEA87816F5D40300A0BDF3 /* DraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableImageView.h; sourceTree = "<group>"; };
 		30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableImageView.m; sourceTree = "<group>"; };
 		30DEA87C16F7828600A0BDF3 /* MECommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MECommand.h; sourceTree = "<group>"; };
@@ -678,6 +694,12 @@
 		308D15CD16EB18E20095957B /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				309565FD17062008008767E7 /* tab1_current.png */,
+				309565FE17062008008767E7 /* tab1_current@2x.png */,
+				309565FF17062008008767E7 /* tab2_current.png */,
+				3095660017062008008767E7 /* tab2_current@2x.png */,
+				3095660117062008008767E7 /* tab3_current.png */,
+				3095660217062008008767E7 /* tab3_current@2x.png */,
 				308D15CE16EB18E20095957B /* bar-back.png */,
 				308D15CF16EB18E20095957B /* bar-back@2x.png */,
 				308D15D016EB18E20095957B /* tab1.png */,
@@ -754,6 +776,8 @@
 		308D15FB16EB3CF30095957B /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
+				309565F5170618AD008767E7 /* info_button.png */,
+				309565F6170618AD008767E7 /* info_button@2x.png */,
 				308D161416EC5B980095957B /* back_button.png */,
 				308D161516EC5B980095957B /* back_button@2x.png */,
 				308D160516EB82080095957B /* photo_button.png */,
@@ -821,8 +845,6 @@
 				308D16D216F0E01E0095957B /* EditPhotoViewController.m */,
 				30DEA89116F8BEA600A0BDF3 /* AddTextViewController.h */,
 				30DEA89216F8BEA600A0BDF3 /* AddTextViewController.m */,
-				309565F217048546008767E7 /* SelectCatViewController.h */,
-				309565F317048546008767E7 /* SelectCatViewController.m */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -830,6 +852,7 @@
 		308D16B216EF787A0095957B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				309565F917061961008767E7 /* SSCollectionViewItems */,
 				309565EB17009CC4008767E7 /* SHKConfig */,
 				30DEAAF516FDA07200A0BDF3 /* SSCollectinViewItems */,
 				30DEA87716F5D27100A0BDF3 /* Draggable */,
@@ -914,6 +937,15 @@
 				309565ED17009CDC008767E7 /* MESHKConfiguration.m */,
 			);
 			path = SHKConfig;
+			sourceTree = "<group>";
+		};
+		309565F917061961008767E7 /* SSCollectionViewItems */ = {
+			isa = PBXGroup;
+			children = (
+				309565FA17061975008767E7 /* MECategoryItem.h */,
+				309565FB17061975008767E7 /* MECategoryItem.m */,
+			);
+			path = SSCollectionViewItems;
 			sourceTree = "<group>";
 		};
 		30DEA87716F5D27100A0BDF3 /* Draggable */ = {
@@ -1546,6 +1578,14 @@
 				30DEAA0C16FA290600A0BDF3 /* 9_4@2x.png in Resources */,
 				30DEAA0D16FA290600A0BDF3 /* 9_5.png in Resources */,
 				30DEAA0E16FA290600A0BDF3 /* 9_5@2x.png in Resources */,
+				309565F7170618AD008767E7 /* info_button.png in Resources */,
+				309565F8170618AD008767E7 /* info_button@2x.png in Resources */,
+				3095660317062008008767E7 /* tab1_current.png in Resources */,
+				3095660417062008008767E7 /* tab1_current@2x.png in Resources */,
+				3095660517062008008767E7 /* tab2_current.png in Resources */,
+				3095660617062008008767E7 /* tab2_current@2x.png in Resources */,
+				3095660717062008008767E7 /* tab3_current.png in Resources */,
+				3095660817062008008767E7 /* tab3_current@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1605,7 +1645,7 @@
 				30DEAAFF16FF11B700A0BDF3 /* FavouriteMem.m in Sources */,
 				30DEAB0416FF17D300A0BDF3 /* MEUtils.m in Sources */,
 				309565EE17009CDC008767E7 /* MESHKConfiguration.m in Sources */,
-				309565F417048546008767E7 /* SelectCatViewController.m in Sources */,
+				309565FC17061975008767E7 /* MECategoryItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

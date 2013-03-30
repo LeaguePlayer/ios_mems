@@ -10,8 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+Blank.h"
 #import "MEUtils.h"
+#import "MEMemCategory.h"
 #import "MEMem.h"
-#import "SelectCatViewController.h"
 
 @interface EditPhotoViewController ()
 
@@ -88,6 +88,17 @@
 
 -(void)initItems{
     categories = [MEMemCategory allCategories];
+    MEMemCategory *all = [[MEMemCategory alloc] initWithName:@"All" image:[[UIImage alloc] init]];
+    NSMutableArray *mems = [NSMutableArray array];
+    for (MEMemCategory *cat in categories){
+        for (MEMem *mem in cat.mems){
+            [mems addObject:mem];
+        }
+    }
+    all.mems = mems;
+    NSMutableArray *cats = [NSMutableArray arrayWithObject:all];
+    [cats addObjectsFromArray:categories];
+    categories = cats;
     self.selectedCategory = 0;
 }
 
@@ -250,7 +261,7 @@
 }
 
 - (IBAction)undo:(id)sender { //оказывается, это горизонтальное зеркальное отображение объекта
-//    [undator undo]; //оставим шаблон Команда до лучших времен
+//    [undator undo]; //оставим шаблон Командo до лучших времен
     if ([self.currentView isKindOfClass:[UIImageView class]]){
         UIImageView *imageView = (UIImageView *)self.currentView;
         UIImage *image = imageView.image;
@@ -266,7 +277,15 @@
 }
 
 - (IBAction)selectCategory:(id)sender {
-    [self performSegueWithIdentifier:@"SelectCategory" sender:self];
+    [self.pickerView setAlpha:0.0];
+    [self.pickerView setFrame:self.view.frame];
+    CGRect frame = self.categoryPicker.frame;
+    frame.origin.y = self.view.frame.size.height - frame.size.height;
+    [UIView animateWithDuration:0.4 animations:^{
+        [self.pickerView setAlpha:0.5];
+        [self.categoryPicker setFrame:frame];
+    }];
+//    [self performSegueWithIdentifier:@"SelectCategory" sender:self];
 }
 
 - (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer {
@@ -314,6 +333,41 @@
 
 -(void)touchUp{
     
+}
+
+- (IBAction)categorySelected:(UITapGestureRecognizer *)sender{
+    self.selectedCategory = selectedPickerItem;
+    CGRect pframe = self.categoryPicker.frame;
+    pframe.origin.y = self.view.frame.size.height;
+    [UIView animateWithDuration:0.4 animations:^{
+        [self.pickerView setAlpha:0];
+        [self.categoryPicker setFrame:pframe];
+    } completion:^(BOOL finished) {
+        CGRect frame = self.view.frame;
+        frame.origin.y = frame.size.height;
+        [self.pickerView setFrame:frame];
+    }];
+}
+
+#pragma mark - picker view data source methods
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return categories.count;
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    MEMemCategory *cat = [categories objectAtIndex:row];
+    return cat.name;
+}
+
+#pragma mark - picker view delegate
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    selectedPickerItem = row;
 }
 
 #pragma mark - getters, setters
@@ -374,20 +428,11 @@
     [self setCurrentView:view];
 }
 
-#pragma mark - select category delegate
-
--(void)categorySelected:(MEMemCategory *)category{
-    self.selectedCategory = [categories indexOfObject:category];
-}
-
 #pragma mark - segue delegates
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"AddText"]){
         AddTextViewController *controller = (AddTextViewController *)segue.destinationViewController;
-        controller.delegate = self;
-    } else if ([segue.identifier isEqualToString:@"SelectCategory"]){
-        SelectCatViewController *controller = (SelectCatViewController *)segue.destinationViewController;
         controller.delegate = self;
     }
 }

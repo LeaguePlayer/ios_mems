@@ -36,7 +36,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dix-aB-NIi">
-                                        <rect key="frame" x="31" y="15" width="71" height="25"/>
+                                        <rect key="frame" x="41" y="13" width="50" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="tab1.png">
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SQn-tb-3Zh">
-                                        <rect key="frame" x="125" y="15" width="71" height="26"/>
+                                        <rect key="frame" x="125" y="12" width="71" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="tab2.png">
@@ -66,7 +66,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vhf-7B-W35">
-                                        <rect key="frame" x="225" y="15" width="66" height="27"/>
+                                        <rect key="frame" x="220" y="10" width="71" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="tab3.png">
@@ -109,6 +109,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="tFl-i3-aPR"/>
                     <connections>
+                        <outletCollection property="tabBarItems" destination="vhf-7B-W35" id="lsO-e6-Ka1"/>
+                        <outletCollection property="tabBarItems" destination="SQn-tb-3Zh" id="M4T-ff-wi3"/>
+                        <outletCollection property="tabBarItems" destination="Dix-aB-NIi" id="Zkz-Le-Ckv"/>
                         <segue destination="E60-7t-zAZ" kind="push" identifier="About" id="NbJ-a3-hrJ"/>
                         <segue destination="gJB-7x-XhT" kind="push" identifier="Mems" id="6ta-kh-9Gk"/>
                         <segue destination="Rdr-Fn-g1q" kind="push" identifier="Background" id="UpH-fn-IBV"/>
@@ -304,18 +307,34 @@
                                     <action selector="selectCategory:" destination="3e4-DO-hLL" eventType="touchUpInside" id="Z3i-o6-veL"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="047-cQ-8T9">
+                                <rect key="frame" x="0.0" y="417" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <pickerView contentMode="scaleToFill" id="VHk-EN-BQX">
+                                <rect key="frame" x="0.0" y="415" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3e4-DO-hLL" id="JgY-KU-3NW"/>
+                                    <outlet property="delegate" destination="3e4-DO-hLL" id="Aih-Km-MuZ"/>
+                                    <outletCollection property="gestureRecognizers" destination="bM7-RL-UbA" appends="YES" id="3WY-rM-DVr"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="WON-qb-4tz"/>
                     <connections>
                         <outlet property="botomView" destination="WCx-gH-hPa" id="Dw1-E1-brG"/>
+                        <outlet property="categoryPicker" destination="VHk-EN-BQX" id="FHm-Jt-5Op"/>
                         <outlet property="imageView" destination="lyk-Ii-9MR" id="2VS-9k-9Q9"/>
                         <outlet property="itemsScroll" destination="5nX-N6-Wue" id="YKQ-7Z-Kxc"/>
+                        <outlet property="pickerView" destination="047-cQ-8T9" id="LWt-zU-1vl"/>
                         <outlet property="scroll" destination="4Ym-i0-Go4" id="YQj-xK-pIz"/>
                         <outlet property="topView" destination="f8d-Np-NVJ" id="9lP-cE-IKf"/>
                         <segue destination="2Wp-Zc-75c" kind="modal" identifier="AddText" id="Cdu-LM-uOj"/>
-                        <segue destination="feM-s1-or9" kind="modal" identifier="SelectCategory" id="uRJ-Pd-jy2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAI-6Q-SQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,39 +348,13 @@
                         <action selector="handlePinch:" destination="3e4-DO-hLL" id="WfX-Wm-qTz"/>
                     </connections>
                 </pinchGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="2533" y="-2135"/>
-        </scene>
-        <!--Select Cat View Controller-->
-        <scene sceneID="saL-2T-ICV">
-            <objects>
-                <viewController id="feM-s1-or9" customClass="SelectCatViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wNW-TS-hph">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" id="Xqw-dY-Ad4">
-                                <rect key="frame" x="0.0" y="244" width="320" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outlet property="dataSource" destination="feM-s1-or9" id="c44-5s-4DH"/>
-                                    <outlet property="delegate" destination="feM-s1-or9" id="TAv-uw-301"/>
-                                    <outletCollection property="gestureRecognizers" destination="kz0-3t-YjG" appends="YES" id="Qmp-CI-3qE"/>
-                                </connections>
-                            </pickerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xj2-Jl-z5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="kz0-3t-YjG">
+                <tapGestureRecognizer id="bM7-RL-UbA">
                     <connections>
-                        <action selector="tapRecognized:" destination="feM-s1-or9" id="lf3-ad-vKX"/>
+                        <action selector="categorySelected:" destination="3e4-DO-hLL" id="m6r-DR-Q2k"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2533" y="-1446"/>
+            <point key="canvasLocation" x="2533" y="-2135"/>
         </scene>
         <!--Add Text View Controller-->
         <scene sceneID="ZuG-0R-FN4">
@@ -864,6 +857,108 @@
         <image name="tab3.png" width="26" height="26"/>
         <image name="vk.png" width="133" height="45"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="fbShare:"/>
+                <relationship kind="action" name="vkShare:"/>
+            </relationships>
+        </class>
+        <class className="AddTextViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTextViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="discardView:"/>
+                <relationship kind="action" name="selectColor:"/>
+                <relationship kind="action" name="selectProperties:"/>
+                <relationship kind="outlet" name="fontSize" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="selectColorButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BaseNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseNavigationController.h"/>
+        </class>
+        <class className="BaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
+        </class>
+        <class className="CatalogViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatalogViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tabBarClicked:"/>
+                <relationship kind="outletCollection" name="tabBarItems" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="CategoryMemsViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryMemsViewController.h"/>
+        </class>
+        <class className="EditPhotoViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditPhotoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addText:"/>
+                <relationship kind="action" name="categorySelected:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="action" name="deleteControl:"/>
+                <relationship kind="action" name="handlePinch:" candidateClass="UIPinchGestureRecognizer"/>
+                <relationship kind="action" name="handleRotate:" candidateClass="UIRotationGestureRecognizer"/>
+                <relationship kind="action" name="selectCategory:"/>
+                <relationship kind="action" name="undo:"/>
+                <relationship kind="outlet" name="botomView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="categoryPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="itemsScroll" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="scroll" candidateClass="UIView"/>
+                <relationship kind="outlet" name="topView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="InfColorBarPicker" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorBarPicker.h"/>
+        </class>
+        <class className="InfColorBarView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorBarView.h"/>
+        </class>
+        <class className="InfColorPickerController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorPickerController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="doneClicked:"/>
+                <relationship kind="action" name="takeBackgroundColor:" candidateClass="UIView"/>
+                <relationship kind="action" name="takeBarValue:"/>
+                <relationship kind="action" name="takeSquareValue:"/>
+                <relationship kind="outlet" name="barPicker" candidateClass="InfColorBarPicker"/>
+                <relationship kind="outlet" name="barView" candidateClass="InfColorBarView"/>
+                <relationship kind="outlet" name="navController" candidateClass="UINavigationController"/>
+                <relationship kind="outlet" name="resultColorView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sourceColorView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="squarePicker" candidateClass="InfColorSquarePicker"/>
+                <relationship kind="outlet" name="squareView" candidateClass="InfColorSquareView"/>
+            </relationships>
+        </class>
+        <class className="InfColorSquarePicker" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorSquarePicker.h"/>
+        </class>
+        <class className="InfColorSquareView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorSquareView.h"/>
+        </class>
+        <class className="InfSourceColorView" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfSourceColorView.h"/>
+        </class>
+        <class className="MemViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="toFavourite:"/>
+                <relationship kind="outlet" name="favouriteBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SelectBackgroundViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectBackgroundViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectFromCamera:"/>
+                <relationship kind="action" name="selectFromGallery:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

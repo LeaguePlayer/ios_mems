@@ -45,7 +45,7 @@
     image = [UIImage imageNamed:self.mem.fileName];
     [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.imageView setImage:image];
-    NSString *title = [self.mem isFavourite] ? @"Удалить из избранного" : @"Добавить в избранное";
+    NSString *title = [self.mem isFavourite] ? @"Убрать из избранного" : @"Добавить в избранное";
     [self.favouriteBtn setTitle:title forState:UIControlStateNormal];
 }
 

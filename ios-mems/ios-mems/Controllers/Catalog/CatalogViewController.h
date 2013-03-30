@@ -29,6 +29,7 @@ typedef enum {
     NSArray *categories;
 }
 - (IBAction)tabBarClicked:(id)sender;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *tabBarItems;
 
 
 @end
