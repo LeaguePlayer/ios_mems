@@ -131,10 +131,11 @@
     CGRect required = CGRectMake(0, startY, self.view.bounds.size.width, self.botomView.frame.origin.y - startY);
     NSLog (@"Required height is %f", required.size.height);
 //    self.image = [self scaleImage:self.image toSize:required.size];
-    CGSize size = [self sizeWithImage:self.image constrainedToSize:required.size];
+//    CGSize size = [self sizeWithImage:self.image constrainedToSize:required.size];
+    CGSize size = self.image.size;
     CGRect frame = self.imageView.frame;
     frame.size = size;
-    [self.imageView setFrame:frame];
+//    [self.imageView setFrame:frame];
     [self.imageView setImage:self.image];
     [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
     frame = self.scroll.frame;
@@ -143,29 +144,6 @@
     frame.origin.y = (self.botomView.frame.origin.y + startY)/2 - frame.size.height/2;
     [self.scroll setFrame:frame];
     NSLog (@"Real height is %f",self.image.size.height);
-}
-
-- (UIImage*)scaleImage:(UIImage*)image toSize:(CGSize)newSize {
-    CGSize scaledSize = newSize;
-    float scaleFactor = 1.0;
-    if( image.size.width > image.size.height ) {
-        scaleFactor = image.size.width / image.size.height;
-        scaledSize.width = newSize.width;
-        scaledSize.height = newSize.height / scaleFactor;
-    }
-    else {
-        scaleFactor = image.size.height / image.size.width;
-        scaledSize.height = newSize.height;
-        scaledSize.width = newSize.width / scaleFactor;
-    }
-    
-    UIGraphicsBeginImageContextWithOptions( scaledSize, NO, 0.0 );
-    CGRect scaledImageRect = CGRectMake( 0.0, 0.0, scaledSize.width, scaledSize.height );
-    [image drawInRect:scaledImageRect];
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return scaledImage;
 }
 
 -(CGSize)sizeWithImage:(UIImage *)image constrainedToSize:(CGSize)maxSize{
@@ -201,7 +179,10 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image.image];
     [imageView setContentMode:UIViewContentModeScaleAspectFit];
     CGRect frame = imageView.frame;
-    frame.size = image.frame.size;
+    CGSize size = image.image.size;
+    size.height = size.height/2;
+    size.width = size.width/2;
+    frame.size = image.image.size;
     [imageView setFrame:frame];
     imageView.center = location;
     UILongPressGestureRecognizer *moving = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(moveImage:)];
@@ -217,7 +198,8 @@
     [undator pushCommand:[[MEAddCommand alloc] initWithView:self.currentView]];
 }
 
--(void)moveImage:(id)sender{
+-(void)moveImage:(UILongPressGestureRecognizer *)sender{
+    if (sender.numberOfTouches > 1) return;
     if (!started){
         UIView *view = [sender view];
         command = [[MEMoveCommand alloc] initWithView:view andPoint:view.center];
