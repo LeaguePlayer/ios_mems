@@ -8,12 +8,14 @@
 
 #import "BaseViewController.h"
 #import "MEMem.h"
+#import <MessageUI/MFMessageComposeViewController.h>
 
-@interface MemViewController : BaseViewController
+@interface MemViewController : BaseViewController <MFMessageComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic,retain) MEMem *mem;
 @property (weak, nonatomic) IBOutlet UIButton *favouriteBtn;
 - (IBAction)toFavourite:(id)sender;
+- (IBAction)sendMessage:(id)sender;
 
 @end

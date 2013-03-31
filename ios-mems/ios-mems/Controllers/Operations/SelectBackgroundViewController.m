@@ -70,11 +70,9 @@
 }
 
 -(void)colorPickerControllerDidFinish:(InfColorPickerController *)controller{
-    UIColor *resultColor = controller.resultColor;
+    resultColor = controller.resultColor;
     CGSize size = self.view.bounds.size;
     size.width += 1;
-    UIImage *image = [UIImage blankImage:size withColor:resultColor];
-    resultImage = image;
     [self performSegueWithIdentifier:@"Next" sender:self];
 }
 
@@ -86,7 +84,10 @@
     } else if ([segue.identifier isEqualToString:@"Next"]){
         [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeEditPhoto];
         EditPhotoViewController *controller = (EditPhotoViewController *)segue.destinationViewController;
-        controller.image = resultImage;
+        if (resultColor)
+            controller.color = resultColor;
+        else
+            controller.image = resultImage;
     } else if ([segue.identifier isEqualToString:@"Photo"]){
         UIImagePickerController *controller = (UIImagePickerController *)segue.destinationViewController;
         controller.delegate = self;

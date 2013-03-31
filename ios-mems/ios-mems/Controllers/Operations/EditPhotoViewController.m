@@ -44,10 +44,17 @@
 -(void)initUI{
     [self initBackButtonWithTarget:self];
     [self initOptionsButtonWithTarget:self];
-    [self initImageView];
+    if (self.color)
+        [self initColor];
+    else
+        [self initImageView];
     [self initItems];
     [self initActions];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_papper.png"]]];
+}
+
+-(void)initColor{
+    [self.scroll setBackgroundColor:self.color];
 }
 
 -(void)initActions{
@@ -129,13 +136,9 @@
 -(void)initImageView{
     CGFloat startY = self.topView.frame.origin.y + self.topView.frame.size.height;
     CGRect required = CGRectMake(0, startY, self.view.bounds.size.width, self.botomView.frame.origin.y - startY);
-    NSLog (@"Required height is %f", required.size.height);
-//    self.image = [self scaleImage:self.image toSize:required.size];
-//    CGSize size = [self sizeWithImage:self.image constrainedToSize:required.size];
     CGSize size = self.image.size;
     CGRect frame = self.imageView.frame;
     frame.size = size;
-//    [self.imageView setFrame:frame];
     [self.imageView setImage:self.image];
     [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
     frame = self.scroll.frame;
@@ -143,7 +146,6 @@
     frame.origin.x = required.size.width/2 - frame.size.width/2;
     frame.origin.y = (self.botomView.frame.origin.y + startY)/2 - frame.size.height/2;
     [self.scroll setFrame:frame];
-    NSLog (@"Real height is %f",self.image.size.height);
 }
 
 -(CGSize)sizeWithImage:(UIImage *)image constrainedToSize:(CGSize)maxSize{
@@ -199,7 +201,6 @@
 }
 
 -(void)moveImage:(UILongPressGestureRecognizer *)sender{
-    if (sender.numberOfTouches > 1) return;
     if (!started){
         UIView *view = [sender view];
         command = [[MEMoveCommand alloc] initWithView:view andPoint:view.center];
@@ -249,6 +250,7 @@
         UIImage *image = imageView.image;
         UIImageOrientation orientation = image.imageOrientation;
         UIImageOrientation newOrientation = orientation == UIImageOrientationUp ? UIImageOrientationUpMirrored : UIImageOrientationUp;
+        
         UIImage *newImage = [UIImage imageWithCGImage:image.CGImage scale:image.scale orientation:newOrientation];
         [imageView setImage:newImage];
     }

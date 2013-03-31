@@ -24,6 +24,7 @@
     int selectedPickerItem;
 }
 
+@property (nonatomic, retain) UIColor *color;
 @property (nonatomic) int selectedCategory;
 @property (nonatomic, retain) UIView *currentView;
 @property (nonatomic,retain) UIImage *image;
