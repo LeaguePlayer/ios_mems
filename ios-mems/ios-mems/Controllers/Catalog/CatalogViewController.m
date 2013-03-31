@@ -41,10 +41,22 @@
     [self initContent];
     [self initPhotoItemWithTarget:self];
     [self initInfoItemWithTarget:self];
-    [self.navigationItem setTitle:@"Приложение"];
+    [self initTitle];
     currentMode = CatalogOutputModeCatalog;
     [self initUI];
     [self initTabBarItems];
+}
+
+-(void)initTitle{
+    UIFont *font = [UIFont fontWithName:@"v_BD_Cartoon_Shout Cyr" size:18];
+    UILabel *label = [[UILabel alloc] init];
+    [label setText:@"Приложение"];
+    [label setFont:font];
+    [label setNumberOfLines:1];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setTextColor:[UIColor darkGrayColor]];
+    [label sizeToFit];
+    [self.navigationItem setTitleView:label];
 }
 
 -(void)initTabBarItems{

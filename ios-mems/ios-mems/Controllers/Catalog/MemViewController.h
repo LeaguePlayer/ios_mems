@@ -8,9 +8,8 @@
 
 #import "BaseViewController.h"
 #import "MEMem.h"
-#import <MessageUI/MFMessageComposeViewController.h>
 
-@interface MemViewController : BaseViewController <MFMessageComposeViewControllerDelegate>
+@interface MemViewController : BaseViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic,retain) MEMem *mem;

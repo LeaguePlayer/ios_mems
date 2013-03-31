@@ -26,8 +26,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>DOMINO.TTF</string>
-		<string>v_bd_cartoon_shout_cyr.ttf</string>
+		<string>a_DomIno.ttf</string>
+		<string>v_BD_Cartoon_Shout Cyr.ttf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>iPhone</string>

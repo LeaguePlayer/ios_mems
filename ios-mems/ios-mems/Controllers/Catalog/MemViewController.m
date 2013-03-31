@@ -74,15 +74,11 @@
 }
 
 - (IBAction)sendMessage:(id)sender {
-    MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
-    [controller setMessageComposeDelegate:self];
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.persistent = YES;
-    pasteboard.image = [UIImage imageNamed:self.mem.fileName];
-}
-
--(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
-    
+//    MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+//    [controller setMessageComposeDelegate:self];
+//    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+//    pasteboard.persistent = YES;
+//    pasteboard.image = [UIImage imageNamed:self.mem.fileName];
 }
 
 @end

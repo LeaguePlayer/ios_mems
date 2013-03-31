@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface AboutViewController : BaseViewController
+@interface AboutViewController : BaseViewController <MFMailComposeViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 - (IBAction)fbShare:(id)sender;
 - (IBAction)vkShare:(id)sender;
+- (IBAction)sendFeedback:(id)sender;
 
 
 @end

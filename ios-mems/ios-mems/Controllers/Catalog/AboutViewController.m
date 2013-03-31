@@ -32,7 +32,11 @@
 	// Do any additional setup after loading the view.
     [self initBackButtonWithTarget:self];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_papper.png"]];
-//    [self initPhotoItemWithTarget:self];
+    [self initLabels];
+}
+
+-(void)initLabels{
+    [self.titleLabel setFont:[UIFont fontWithName:@"v_BD_Cartoon_Shout Cyr" size:20]];
 }
 
 -(void)leftItemClicked:(id)sender{
@@ -57,5 +61,23 @@
     SHKItem *item = [SHKItem image:image title:@"Отличное приложение для iPhone, рекомендую!"];
     
     [SHKVkontakte shareItem:item];
+}
+
+- (IBAction)sendFeedback:(id)sender {
+    if ([MFMailComposeViewController canSendMail]){
+        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+        [controller setMailComposeDelegate:self];
+        [controller setSubject:@"Обратная связь iOS-Mems"];
+        [controller setToRecipients:[NSArray arrayWithObject:@"fuks.jacob.com@gmail.com"]];
+        [controller setMessageBody:@"" isHTML:NO];
+        [self presentViewController:controller animated:YES completion:nil];
+    } else {
+        [self showAlertWithStatus:@"Устройство не обладает возможностью отправки электронной почты"];
+    }
+    
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 @end
