@@ -188,7 +188,7 @@
     [imageView setFrame:frame];
     imageView.center = location;
     UILongPressGestureRecognizer *moving = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(moveImage:)];
-    [moving setMinimumPressDuration:0.1];
+    [moving setMinimumPressDuration:0.0];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTap:)];
     [tap setNumberOfTapsRequired:1];
     tap.delegate = self;
@@ -213,12 +213,13 @@
     CGPoint translatedPoint = [(UILongPressGestureRecognizer*)sender locationInView:self.scroll];
     
     if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
-        firstX = [[sender view] center].x;
-        firstY = [[sender view] center].y;
+        firstX = sender.view.frame.origin.x - translatedPoint.x;
+        firstY = sender.view.frame.origin.y - translatedPoint.y;
     }
     
     translatedPoint = CGPointMake(translatedPoint.x, translatedPoint.y);
-    [[sender view] setCenter:translatedPoint];
+    CGRect frame = CGRectMake(translatedPoint.x + firstX, translatedPoint.y + firstY, sender.view.frame.size.width, sender.view.frame.size.height);
+    [[sender view] setFrame:frame];
     self.currentView = [sender view];
 }
 
