@@ -7,6 +7,7 @@
 //
 
 #import "MemViewController.h"
+#import "MEUtils.h"
 
 @interface MemViewController ()
 
@@ -74,8 +75,22 @@
 }
 
 - (IBAction)sendMessage:(id)sender {
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.image = [UIImage imageNamed:self.mem.fileName];
+    if ([MFMessageComposeViewController canSendText]){
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.image = [UIImage imageNamed:self.mem.fileName];
+        MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+        [self presentViewController:controller animated:YES completion:nil];
+    } else {
+        [self showAlertWithStatus:@"Устройство не поддерживает данную функциональность"];
+    }
+}
+
+- (IBAction)saeImage:(id)sender {
+    [MEUtils saveImageToGallery:[UIImage imageNamed:self.mem.fileName]];
+}
+
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

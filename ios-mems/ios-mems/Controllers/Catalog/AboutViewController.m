@@ -37,6 +37,9 @@
 
 -(void)initLabels{
     [self.titleLabel setFont:[UIFont fontWithName:@"v_BD_Cartoon_Shout Cyr" size:20]];
+    UIFont *font = [UIFont fontWithName:@"a_DomIno" size:17];
+    [self.versionLabel setFont:font];
+    [self.infoLabel setFont:font];
 }
 
 -(void)leftItemClicked:(id)sender{

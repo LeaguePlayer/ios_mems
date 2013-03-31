@@ -12,6 +12,8 @@
 
 @interface AboutViewController : BaseViewController <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 
 - (IBAction)fbShare:(id)sender;
 - (IBAction)vkShare:(id)sender;

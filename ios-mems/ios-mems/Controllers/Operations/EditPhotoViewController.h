@@ -9,9 +9,10 @@
 #import "BaseViewController.h"
 #import "DraggableImageView.h"
 #import "MECommandReciever.h"
+#import <MessageUI/MFMessageComposeViewController.h>
 #import "AddTextViewController.h"
 
-@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate, UIGestureRecognizerDelegate,DraggableDelegate,MEAddTextDelegate,UIPickerViewDataSource,UIPickerViewDelegate>{
+@interface EditPhotoViewController : BaseViewController <UIActionSheetDelegate, UIGestureRecognizerDelegate,DraggableDelegate,MEAddTextDelegate,UIPickerViewDataSource,UIPickerViewDelegate,MFMessageComposeViewControllerDelegate>{
     UIActionSheet *actionSheet;
     CGFloat firstX, firstY;
     NSMutableArray *images;

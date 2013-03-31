@@ -296,10 +296,17 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     if (buttonIndex == 0){
-        
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.image = image;
+        MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+        [self presentViewController:controller animated:YES completion:nil];
     } else {
         [MEUtils saveImageToGallery:image];
     }
+}
+
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

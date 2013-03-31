@@ -36,7 +36,7 @@
         self.titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 82, 95, 16)];
         [self.titleLbl setBackgroundColor:[UIColor clearColor]];
         [self.titleLbl setTextAlignment:NSTextAlignmentCenter];
-        [self.titleLbl setFont:[UIFont systemFontOfSize:16]];
+        [self.titleLbl setFont:[UIFont fontWithName:@"a_DomIno" size:17]];
         [self.titleLbl setAdjustsFontSizeToFitWidth:YES];
         [self addSubview:self.titleLbl];
         self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 0, 80, 80)];
