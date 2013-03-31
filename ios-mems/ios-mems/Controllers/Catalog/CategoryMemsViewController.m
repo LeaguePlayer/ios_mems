@@ -65,6 +65,14 @@
     return 1;
 }
 
+-(CGFloat)collectionView:(SSCollectionView *)aCollectionView heightForHeaderInSection:(NSUInteger)section{
+    return 20;
+}
+
+-(UIView *)collectionView:(SSCollectionView *)aCollectionView viewForHeaderInSection:(NSUInteger)section{
+    return [[UIView alloc] init];
+}
+
 -(SSCollectionViewItem *)collectionView:(SSCollectionView *)aCollectionView itemForIndexPath:(NSIndexPath *)indexPath{
     static NSString *const itemIdentifier = @"itemIdentifier";
     
@@ -83,7 +91,7 @@
 #pragma mark - SSCollectionViewDelegate
 
 - (CGSize)collectionView:(SSCollectionView *)aCollectionView itemSizeForSection:(NSUInteger)section {
-    return CGSizeMake(85.0f, 86.0f);
+    return CGSizeMake(95.0f, 95.0f);
 }
 
 -(void)collectionView:(SSCollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

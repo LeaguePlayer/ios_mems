@@ -104,6 +104,8 @@
 		3095660717062008008767E7 /* tab3_current.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095660117062008008767E7 /* tab3_current.png */; };
 		3095660817062008008767E7 /* tab3_current@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095660217062008008767E7 /* tab3_current@2x.png */; };
 		3095660A1708295A008767E7 /* v_BD_Cartoon_Shout Cyr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 309566091708295A008767E7 /* v_BD_Cartoon_Shout Cyr.ttf */; };
+		3095660C17085E41008767E7 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095660B17085E41008767E7 /* icon57.png */; };
+		3095660E17085E49008767E7 /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095660D17085E49008767E7 /* icon114.png */; };
 		30DEA87A16F5D40300A0BDF3 /* DraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */; };
 		30DEA87E16F7828600A0BDF3 /* MECommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA87D16F7828600A0BDF3 /* MECommand.m */; };
 		30DEA88116F784AC00A0BDF3 /* MEMoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88016F784AC00A0BDF3 /* MEMoveCommand.m */; };
@@ -396,6 +398,8 @@
 		3095660117062008008767E7 /* tab3_current.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab3_current.png; sourceTree = "<group>"; };
 		3095660217062008008767E7 /* tab3_current@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab3_current@2x.png"; sourceTree = "<group>"; };
 		309566091708295A008767E7 /* v_BD_Cartoon_Shout Cyr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "v_BD_Cartoon_Shout Cyr.ttf"; sourceTree = "<group>"; };
+		3095660B17085E41008767E7 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		3095660D17085E49008767E7 /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
 		30DEA87816F5D40300A0BDF3 /* DraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableImageView.h; sourceTree = "<group>"; };
 		30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableImageView.m; sourceTree = "<group>"; };
 		30DEA87C16F7828600A0BDF3 /* MECommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MECommand.h; sourceTree = "<group>"; };
@@ -599,6 +603,8 @@
 		308D159416EB185A0095957B = {
 			isa = PBXGroup;
 			children = (
+				3095660D17085E49008767E7 /* icon114.png */,
+				3095660B17085E41008767E7 /* icon57.png */,
 				A448CDE816F9D89700767ADA /* Default-568h@2x.png */,
 				308D15A616EB185A0095957B /* ios-mems */,
 				308D159F16EB185A0095957B /* Frameworks */,
@@ -1586,6 +1592,8 @@
 				3095660717062008008767E7 /* tab3_current.png in Resources */,
 				3095660817062008008767E7 /* tab3_current@2x.png in Resources */,
 				3095660A1708295A008767E7 /* v_BD_Cartoon_Shout Cyr.ttf in Resources */,
+				3095660C17085E41008767E7 /* icon57.png in Resources */,
+				3095660E17085E49008767E7 /* icon114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
