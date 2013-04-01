@@ -12,6 +12,7 @@
 #import "MEUtils.h"
 #import "MEMemCategory.h"
 #import "MEMem.h"
+#import "BaseNavigationController.h"
 
 @interface EditPhotoViewController ()
 
@@ -39,6 +40,16 @@
     undator = [[MECommandReciever alloc] init];
     images = [NSMutableArray array];
     [self initUI];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeEditPhoto];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeNormal];
 }
 
 -(void)initUI{

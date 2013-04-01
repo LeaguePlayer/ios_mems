@@ -106,6 +106,7 @@
 		3095660A1708295A008767E7 /* v_BD_Cartoon_Shout Cyr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 309566091708295A008767E7 /* v_BD_Cartoon_Shout Cyr.ttf */; };
 		3095660C17085E41008767E7 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095660B17085E41008767E7 /* icon57.png */; };
 		3095660E17085E49008767E7 /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095660D17085E49008767E7 /* icon114.png */; };
+		309566111709F2F1008767E7 /* CropImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309566101709F2F0008767E7 /* CropImageViewController.m */; };
 		30DEA87A16F5D40300A0BDF3 /* DraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */; };
 		30DEA87E16F7828600A0BDF3 /* MECommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA87D16F7828600A0BDF3 /* MECommand.m */; };
 		30DEA88116F784AC00A0BDF3 /* MEMoveCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DEA88016F784AC00A0BDF3 /* MEMoveCommand.m */; };
@@ -400,6 +401,8 @@
 		309566091708295A008767E7 /* v_BD_Cartoon_Shout Cyr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "v_BD_Cartoon_Shout Cyr.ttf"; sourceTree = "<group>"; };
 		3095660B17085E41008767E7 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
 		3095660D17085E49008767E7 /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
+		3095660F1709F2F0008767E7 /* CropImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropImageViewController.h; sourceTree = "<group>"; };
+		309566101709F2F0008767E7 /* CropImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropImageViewController.m; sourceTree = "<group>"; };
 		30DEA87816F5D40300A0BDF3 /* DraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableImageView.h; sourceTree = "<group>"; };
 		30DEA87916F5D40300A0BDF3 /* DraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableImageView.m; sourceTree = "<group>"; };
 		30DEA87C16F7828600A0BDF3 /* MECommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MECommand.h; sourceTree = "<group>"; };
@@ -851,6 +854,8 @@
 				308D16D216F0E01E0095957B /* EditPhotoViewController.m */,
 				30DEA89116F8BEA600A0BDF3 /* AddTextViewController.h */,
 				30DEA89216F8BEA600A0BDF3 /* AddTextViewController.m */,
+				3095660F1709F2F0008767E7 /* CropImageViewController.h */,
+				309566101709F2F0008767E7 /* CropImageViewController.m */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -1654,6 +1659,7 @@
 				30DEAB0416FF17D300A0BDF3 /* MEUtils.m in Sources */,
 				309565EE17009CDC008767E7 /* MESHKConfiguration.m in Sources */,
 				309565FC17061975008767E7 /* MECategoryItem.m in Sources */,
+				309566111709F2F1008767E7 /* CropImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
