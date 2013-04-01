@@ -213,13 +213,12 @@
     CGPoint translatedPoint = [(UILongPressGestureRecognizer*)sender locationInView:self.scroll];
     
     if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
-        firstX = sender.view.frame.origin.x - translatedPoint.x;
-        firstY = sender.view.frame.origin.y - translatedPoint.y;
+        firstX = sender.view.center.x - translatedPoint.x;
+        firstY = sender.view.center.y - translatedPoint.y;
     }
     
     translatedPoint = CGPointMake(translatedPoint.x, translatedPoint.y);
-    CGRect frame = CGRectMake(translatedPoint.x + firstX, translatedPoint.y + firstY, sender.view.frame.size.width, sender.view.frame.size.height);
-    [[sender view] setFrame:frame];
+    [[sender view] setCenter:CGPointMake(translatedPoint.x + firstX, translatedPoint.y + firstY)];
     self.currentView = [sender view];
 }
 
@@ -296,10 +295,14 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     if (buttonIndex == 0){
-        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        pasteboard.image = image;
-        MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
-        [self presentViewController:controller animated:YES completion:nil];
+        if ([MFMessageComposeViewController canSendText]){
+            UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+            pasteboard.image = image;
+            MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+            [self presentViewController:controller animated:YES completion:nil];
+        } else {
+            [self showAlertWithStatus:@"Устройство не обладает такой функциональностью"];
+        }
     } else {
         [MEUtils saveImageToGallery:image];
     }
