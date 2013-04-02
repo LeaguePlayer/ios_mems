@@ -195,7 +195,7 @@
     CGSize size = image.image.size;
     size.height = size.height/2;
     size.width = size.width/2;
-    frame.size = image.image.size;
+    frame.size = size;
     [imageView setFrame:frame];
     imageView.center = location;
     UILongPressGestureRecognizer *moving = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(moveImage:)];
