@@ -310,7 +310,8 @@
     if (buttonIndex == 0){
         if ([MFMessageComposeViewController canSendText]){
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-            pasteboard.image = image;
+            NSData *imageData = UIImagePNGRepresentation(image);
+            [pasteboard setData:imageData forPasteboardType:@"public.jpeg"];
             MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
             [self presentViewController:controller animated:YES completion:nil];
         } else {
