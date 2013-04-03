@@ -1740,6 +1740,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios-mems/ios-mems-Prefix.pch";
 				INFOPLIST_FILE = "ios-mems/ios-mems-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../mobile-SKA-iOS-recreated/fcska/Vendor/GPO\"",
@@ -1757,6 +1758,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios-mems/ios-mems-Prefix.pch";
 				INFOPLIST_FILE = "ios-mems/ios-mems-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../mobile-SKA-iOS-recreated/fcska/Vendor/GPO\"",

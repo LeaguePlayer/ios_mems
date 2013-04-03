@@ -80,7 +80,8 @@
         NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:self.mem.fileName]);
         [pasteboard setData:imageData forPasteboardType:@"public.jpeg"];
         MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
-        [self presentViewController:controller animated:YES completion:nil];
+        controller.messageComposeDelegate = self;
+        [self presentModalViewController:controller animated:YES];
     } else {
         [self showAlertWithStatus:@"Устройство не поддерживает данную функциональность"];
     }
