@@ -310,13 +310,12 @@
     if (buttonIndex == 0){
         if ([MFMessageComposeViewController canSendText]){
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-            NSString *imagePath = @"temp.png";
+            pasteboard.persistent = YES;
             NSData *imageData = UIImagePNGRepresentation(image);
-            [imageData writeToFile:imagePath atomically:YES];
-            imageData = [NSData dataWithContentsOfFile:imagePath];
             [pasteboard setData:imageData forPasteboardType:@"public.jpeg"];
-            MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
-            [self presentViewController:controller animated:YES completion:nil];
+            NSString *phoneToCall = @"sms:";
+            NSURL *url = [[NSURL alloc] initWithString:phoneToCall];
+            [[UIApplication sharedApplication] openURL:url];
         } else {
             [self showAlertWithStatus:@"Устройство не обладает такой функциональностью"];
         }
@@ -327,10 +326,6 @@
 }
 
 #pragma mark - message composer delegate methods
-
--(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
-    [controller dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void)didReceiveMemoryWarning
 {

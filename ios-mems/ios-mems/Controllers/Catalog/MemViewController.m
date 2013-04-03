@@ -77,11 +77,16 @@
 - (IBAction)sendMessage:(id)sender {
     if ([MFMessageComposeViewController canSendText]){
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        NSData *imageData = [NSData dataWithContentsOfFile:self.mem.fileName];
-        [pasteboard setData:imageData forPasteboardType:@"public.jpeg"];
-        MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
-        controller.messageComposeDelegate = self;
-        [self presentModalViewController:controller animated:YES];
+        pasteboard.persistent = YES;
+        NSString *filename = [self.mem.fileName substringToIndex:self.mem.fileName.length - 4];
+        NSString *filePath =[[NSBundle mainBundle] pathForResource:filename ofType:@"png"];
+        NSData *data = [NSData dataWithContentsOfFile:filePath];
+        [pasteboard setData:data forPasteboardType:@"public.jpeg"];
+        
+        NSString *phoneToCall = @"sms:";
+        NSURL *url = [[NSURL alloc] initWithString:phoneToCall];
+        [[UIApplication sharedApplication] openURL:url];
+        
     } else {
         [self showAlertWithStatus:@"Устройство не поддерживает данную функциональность"];
     }
@@ -90,10 +95,6 @@
 - (IBAction)saeImage:(id)sender {
     [MEUtils saveImageToGallery:[UIImage imageNamed:self.mem.fileName]];
     [self showAlertWithStatus:@"Изображение сохранено!"];
-}
-
--(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
-    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
