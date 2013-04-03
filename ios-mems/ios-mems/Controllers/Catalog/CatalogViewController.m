@@ -70,7 +70,7 @@
     [second setImage:[UIImage imageNamed:@"tab2_current.png"] forState:UIControlStateSelected];
     [third setImage:[UIImage imageNamed:@"tab3.png"] forState:UIControlStateNormal];
     [third setImage:[UIImage imageNamed:@"tab3_current.png"] forState:UIControlStateSelected];
-    
+    [first setSelected:YES];
 }
 
 -(void)initContent{

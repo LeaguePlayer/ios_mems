@@ -87,6 +87,7 @@
 
 - (IBAction)saeImage:(id)sender {
     [MEUtils saveImageToGallery:[UIImage imageNamed:self.mem.fileName]];
+    [self showAlertWithStatus:@"Изображение сохранено!"];
 }
 
 -(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{

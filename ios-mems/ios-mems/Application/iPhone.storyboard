@@ -205,7 +205,7 @@
             </objects>
             <point key="canvasLocation" x="1991" y="-2135"/>
         </scene>
-        <!--Edit Photo View Controller - Title-->
+        <!--Edit Photo View Controller-->
         <scene sceneID="oLS-nW-0WU">
             <objects>
                 <viewController id="3e4-DO-hLL" customClass="EditPhotoViewController" sceneMemberID="viewController">
@@ -341,7 +341,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="WON-qb-4tz"/>
+                    <navigationItem key="navigationItem" id="WON-qb-4tz"/>
                     <connections>
                         <outlet property="botomView" destination="WCx-gH-hPa" id="Dw1-E1-brG"/>
                         <outlet property="categoryPicker" destination="VHk-EN-BQX" id="FHm-Jt-5Op"/>
@@ -567,7 +567,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Htg-Wl-NRj">
-                                        <rect key="frame" x="23" y="15" width="275" height="45"/>
+                                        <rect key="frame" x="23" y="24" width="275" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Отправить ММС" backgroundImage="button-background.png">
@@ -580,20 +580,8 @@
                                             <action selector="sendMessage:" destination="a8s-SV-dwB" eventType="touchUpInside" id="Xa6-6C-r44"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RmD-Lh-chY">
-                                        <rect key="frame" x="23" y="65" width="275" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Открыть через" backgroundImage="button-background.png">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l0B-aJ-8hn">
-                                        <rect key="frame" x="23" y="115" width="275" height="45"/>
+                                        <rect key="frame" x="23" y="84" width="275" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Сохранить на телефон" backgroundImage="button-background.png">
@@ -608,7 +596,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h8t-ZY-Jld">
-                                        <rect key="frame" x="23" y="165" width="275" height="45"/>
+                                        <rect key="frame" x="23" y="145" width="275" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Добавить в избранное" backgroundImage="button-background.png">

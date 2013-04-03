@@ -298,6 +298,8 @@
     }
 }
 
+#pragma mark - action sheet delegate methods
+
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 2) return;
     [self setCurrentView:nil];
@@ -316,8 +318,11 @@
         }
     } else {
         [MEUtils saveImageToGallery:image];
+        [self showAlertWithStatus:@"Изображение сохранено!"];
     }
 }
+
+#pragma mark - message composer delegate methods
 
 -(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
     [controller dismissViewControllerAnimated:YES completion:nil];
@@ -434,7 +439,7 @@
     [self setCurrentView:view];
 }
 
-#pragma mark - segue delegates
+#pragma mark - segue delegate methods
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"AddText"]){
