@@ -77,7 +77,7 @@
 - (IBAction)sendMessage:(id)sender {
     if ([MFMessageComposeViewController canSendText]){
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:self.mem.fileName]);
+        NSData *imageData = [NSData dataWithContentsOfFile:self.mem.fileName];
         [pasteboard setData:imageData forPasteboardType:@"public.jpeg"];
         MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
         controller.messageComposeDelegate = self;
