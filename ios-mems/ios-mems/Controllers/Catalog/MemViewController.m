@@ -69,7 +69,7 @@
         [self.mem removeFromFavourites];
     } else {
         [self.mem addToFavourites];
-    }
+    }п
     NSString *title = [self.mem isFavourite] ? @"Удалить из избранного" : @"Добавить в избранное";
     [self.favouriteBtn setTitle:title forState:UIControlStateNormal];
 }
