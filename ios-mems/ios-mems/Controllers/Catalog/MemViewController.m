@@ -79,7 +79,8 @@
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.image = [UIImage imageNamed:self.mem.fileName];
         MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
-        [self presentViewController:controller animated:YES completion:nil];
+        controller.messageComposeDelegate = self;
+        [self presentModalViewController:controller animated:YES];
     } else {
         [self showAlertWithStatus:@"Устройство не поддерживает данную функциональность"];
     }
