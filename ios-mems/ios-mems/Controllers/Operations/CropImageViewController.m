@@ -9,6 +9,7 @@
 #import "CropImageViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "EditPhotoViewController.h"
+#import "BaseNavigationController.h"
 
 @interface CropImageViewController ()
 
@@ -23,6 +24,11 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeNormal];
 }
 
 - (void)viewDidLoad

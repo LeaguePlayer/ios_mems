@@ -47,11 +47,6 @@
     [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeEditPhoto];
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeNormal];
-}
-
 -(void)initUI{
     [self initBackButtonWithTarget:self];
     [self initOptionsButtonWithTarget:self];

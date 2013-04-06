@@ -26,6 +26,11 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [((BaseNavigationController *)self.navigationController) initNavigationBarWithType:BaseNavigationTypeNormal];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
