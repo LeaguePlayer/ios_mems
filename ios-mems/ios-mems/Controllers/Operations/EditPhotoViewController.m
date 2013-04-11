@@ -297,13 +297,14 @@
     UIImageView *helpView = [[UIImageView alloc] init];
     UIImage *image;
     if ([UIDevice currentResolution] == UIDevice_iPhoneTallerHiRes){
-        image = [UIImage imageNamed:@"help_iphone5.png"];
+        image = [UIImage imageNamed:@"help_iphone5"];
+        [helpView setFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
     } else {
-        image = [UIImage imageNamed:@"help.png"];
+        image = [UIImage imageNamed:@"help"];
+        [helpView setFrame:CGRectMake(0, self.view.frame.size.height, image.size.width, image.size.height)];
     }
     [helpView setImage:image];
     [helpView setUserInteractionEnabled:YES];
-    [helpView setFrame:CGRectMake(0, self.view.frame.size.height, image.size.width, image.size.height)];
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissHelpView:)];
     [helpView addGestureRecognizer:recognizer];
     [self.view addSubview:helpView];
