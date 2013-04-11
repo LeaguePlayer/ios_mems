@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="V35-Hg-ivq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="V35-Hg-ivq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -277,6 +277,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showHelp:" destination="3e4-DO-hLL" eventType="touchUpInside" id="mNA-lC-tan"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -308,7 +311,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XoR-63-TTa">
-                                <rect key="frame" x="0.0" y="417" width="97" height="34"/>
+                                <rect key="frame" x="112" y="417" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -900,121 +903,6 @@
         <image name="tab3.png" width="26" height="26"/>
         <image name="vk.png" width="133" height="45"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="fbShare:"/>
-                <relationship kind="action" name="sendFeedback:"/>
-                <relationship kind="action" name="vkShare:"/>
-                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="versionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AddTextViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddTextViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="discardView:"/>
-                <relationship kind="action" name="selectColor:"/>
-                <relationship kind="action" name="selectProperties:"/>
-                <relationship kind="outlet" name="fontSize" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectColorButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="BaseNavigationController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseNavigationController.h"/>
-        </class>
-        <class className="BaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
-        </class>
-        <class className="CatalogViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatalogViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tabBarClicked:"/>
-                <relationship kind="outletCollection" name="tabBarItems" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CategoryMemsViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryMemsViewController.h"/>
-        </class>
-        <class className="CropImageViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CropImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="EditPhotoViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditPhotoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addText:"/>
-                <relationship kind="action" name="categorySelected:" candidateClass="UITapGestureRecognizer"/>
-                <relationship kind="action" name="deleteControl:"/>
-                <relationship kind="action" name="handlePinch:" candidateClass="UIPinchGestureRecognizer"/>
-                <relationship kind="action" name="handleRotate:" candidateClass="UIRotationGestureRecognizer"/>
-                <relationship kind="action" name="selectCategory:"/>
-                <relationship kind="action" name="undo:"/>
-                <relationship kind="outlet" name="botomView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="categoryPicker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="itemsScroll" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="pickerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scroll" candidateClass="UIView"/>
-                <relationship kind="outlet" name="topView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="InfColorBarPicker" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorBarPicker.h"/>
-        </class>
-        <class className="InfColorBarView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorBarView.h"/>
-        </class>
-        <class className="InfColorPickerController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorPickerController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="doneClicked:"/>
-                <relationship kind="action" name="takeBackgroundColor:" candidateClass="UIView"/>
-                <relationship kind="action" name="takeBarValue:"/>
-                <relationship kind="action" name="takeSquareValue:"/>
-                <relationship kind="outlet" name="barPicker" candidateClass="InfColorBarPicker"/>
-                <relationship kind="outlet" name="barView" candidateClass="InfColorBarView"/>
-                <relationship kind="outlet" name="navController" candidateClass="UINavigationController"/>
-                <relationship kind="outlet" name="resultColorView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sourceColorView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="squarePicker" candidateClass="InfColorSquarePicker"/>
-                <relationship kind="outlet" name="squareView" candidateClass="InfColorSquareView"/>
-            </relationships>
-        </class>
-        <class className="InfColorSquarePicker" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorSquarePicker.h"/>
-        </class>
-        <class className="InfColorSquareView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfColorSquareView.h"/>
-        </class>
-        <class className="InfSourceColorView" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfSourceColorView.h"/>
-        </class>
-        <class className="MemViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="saeImage:"/>
-                <relationship kind="action" name="sendMessage:"/>
-                <relationship kind="action" name="toFavourite:"/>
-                <relationship kind="outlet" name="favouriteBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="SelectBackgroundViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectBackgroundViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cropImage:"/>
-                <relationship kind="action" name="selectFromCamera:"/>
-                <relationship kind="action" name="selectFromGallery:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

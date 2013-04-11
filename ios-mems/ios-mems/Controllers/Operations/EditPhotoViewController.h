@@ -43,4 +43,6 @@
 - (IBAction)selectCategory:(id)sender;
 - (IBAction)categorySelected:(UITapGestureRecognizer *)sender;
 - (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer;
+- (IBAction)showHelp:(id)sender;
+
 @end

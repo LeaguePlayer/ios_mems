@@ -293,6 +293,37 @@
     }
 }
 
+- (IBAction)showHelp:(id)sender {
+    UIImageView *helpView = [[UIImageView alloc] init];
+    UIImage *image;
+    if ([UIDevice currentResolution] == UIDevice_iPhoneTallerHiRes){
+        image = [UIImage imageNamed:@"help_iphone5.png"];
+    } else {
+        image = [UIImage imageNamed:@"help.png"];
+    }
+    [helpView setImage:image];
+    [helpView setUserInteractionEnabled:YES];
+    [helpView setFrame:CGRectMake(0, self.view.frame.size.height, image.size.width, image.size.height)];
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissHelpView:)];
+    [helpView addGestureRecognizer:recognizer];
+    [self.view addSubview:helpView];
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect frame = helpView.frame;
+        frame.origin.y = 0;
+        [helpView setFrame:frame];
+    }];
+}
+
+-(void)dismissHelpView:(UITapGestureRecognizer *)sender{
+    [UIView animateWithDuration:0.4 animations:^{
+        CGRect frame = sender.view.frame;
+        frame.origin.y = self.view.frame.size.height;
+        [sender.view setFrame:frame];
+    } completion:^(BOOL finished) {
+        [sender.view removeFromSuperview];
+    }];
+}
+
 #pragma mark - action sheet delegate methods
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -442,4 +473,7 @@
     }
 }
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
 @end

@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
     #import "CoreData+MagicalRecord.h"
     #import "GeneralDefines.h"
+    #import "UIDevice+Resolutions.h"
 #endif
