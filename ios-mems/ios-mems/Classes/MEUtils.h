@@ -13,5 +13,5 @@
 +(id)transformedValue:(id)value;
 +(id)reverseTransformedValue:(id)value;
 +(void)saveImageToGallery:(UIImage *)image;
-
++(UIImage *)imageFromView:(UIView *)view;
 @end

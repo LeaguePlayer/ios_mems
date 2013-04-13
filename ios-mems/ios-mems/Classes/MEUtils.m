@@ -7,6 +7,7 @@
 //
 
 #import "MEUtils.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation MEUtils
 
@@ -30,6 +31,24 @@
 
 +(void)saveImageToGallery:(UIImage *)image{
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+}
+
++(UIImage *)imageFromView:(UIView *)view {
+    UIView *captureView = view;
+    /* Capture the screen shoot at native resolution */
+    UIGraphicsBeginImageContextWithOptions(captureView.bounds.size, captureView.opaque, 0.0);
+    [captureView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage * screenshot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    /* Render the screen shot at custom resolution */
+    CGRect cropRect = CGRectMake(0 ,0 ,captureView.frame.size.width * 2,captureView.frame.size.height * 2);
+    UIGraphicsBeginImageContextWithOptions(cropRect.size, captureView.opaque, 1.0f);
+    [screenshot drawInRect:cropRect];
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 @end

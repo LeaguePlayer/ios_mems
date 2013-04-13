@@ -330,10 +330,8 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 2) return;
     [self setCurrentView:nil];
-    UIGraphicsBeginImageContext(self.scroll.bounds.size);
-    [self.scroll.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    
+    UIImage *image = [MEUtils imageFromView:self.scroll];
     if (buttonIndex == 0){
         if ([MFMessageComposeViewController canSendText]){
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
