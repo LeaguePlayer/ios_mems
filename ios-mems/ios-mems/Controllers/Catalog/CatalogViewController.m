@@ -50,7 +50,7 @@
 -(void)initTitle{
     UIFont *font = [UIFont fontWithName:@"v_BD_Cartoon_Shout Cyr" size:18];
     UILabel *label = [[UILabel alloc] init];
-    [label setText:@"Приложение"];
+    [label setText:@"Happy sms"];
     [label setFont:font];
     [label setNumberOfLines:1];
     [label setBackgroundColor:[UIColor clearColor]];
