@@ -18,6 +18,7 @@
 - (IBAction)fbShare:(id)sender;
 - (IBAction)vkShare:(id)sender;
 - (IBAction)sendFeedback:(id)sender;
+- (IBAction)rateApp:(id)sender;
 
 
 @end

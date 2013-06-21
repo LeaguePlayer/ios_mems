@@ -7,3 +7,4 @@
 //
 
 #define CurrentContext [NSManagedObjectContext MR_defaultContext]
+#define APPSTORE_LINK @"https://itunes.apple.com/ru/app/trollfaces/id655671160"

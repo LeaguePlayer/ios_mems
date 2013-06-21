@@ -54,14 +54,18 @@
 
 - (IBAction)fbShare:(id)sender {
 	UIImage *image = [UIImage imageNamed:@"mem.png"];
-	SHKItem *item = [SHKItem image:image title:@"Отличное приложение для iPhone, рекомендую!"];
+    NSURL *url = [NSURL URLWithString:APPSTORE_LINK];
+    SHKItem *item = [SHKItem URL:url title:@"Новое приложение для iPhone, рекомендую!" contentType:SHKURLContentTypeWebpage];
+    [item setImage:image];
     
     [SHKFacebook shareItem:item];
 }
 
 - (IBAction)vkShare:(id)sender {
     UIImage *image = [UIImage imageNamed:@"mem.png"];
-    SHKItem *item = [SHKItem image:image title:@"Отличное приложение для iPhone, рекомендую!"];
+    NSURL *url = [NSURL URLWithString:APPSTORE_LINK];
+    SHKItem *item = [SHKItem URL:url title:@"Новое приложение для iPhone, рекомендую!" contentType:SHKURLContentTypeWebpage];
+    [item setImage:image];
     
     [SHKVkontakte shareItem:item];
 }
@@ -78,6 +82,12 @@
         [self showAlertWithStatus:@"Устройство не обладает возможностью отправки электронной почты"];
     }
     
+}
+
+- (IBAction)rateApp:(id)sender {
+    NSString *urlString = APPSTORE_LINK;
+    NSURL *url = [NSURL URLWithString:urlString];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
