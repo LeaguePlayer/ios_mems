@@ -331,7 +331,7 @@
     if (buttonIndex == 2) return;
     [self setCurrentView:nil];
     
-    UIImage *image = [MEUtils imageFromView:self.scroll];
+    UIImage *image = [MEUtils imageFromView:self.scroll inRect:[self photoRect]];
     if (buttonIndex == 0){
         if ([MFMessageComposeViewController canSendText]){
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
@@ -348,6 +348,33 @@
         [MEUtils saveImageToGallery:image];
         [self showAlertWithStatus:@"Изображение сохранено!"];
     }
+}
+
+-(CGSize)realImageSize{
+    CGSize scrollSize = self.scroll.frame.size;
+    CGSize imageSize = self.image.size;
+    CGSize resultSize = imageSize;
+    float rq = 1;
+    if (imageSize.height > scrollSize.height){
+        rq = scrollSize.height / imageSize.height;
+        resultSize.height = scrollSize.height;
+        resultSize.width = rq * imageSize.width;
+    }
+    if (resultSize.width > scrollSize.width){
+        rq = scrollSize.width / imageSize.width;
+        resultSize.width = scrollSize.width;
+        resultSize.height = rq * imageSize.height;
+    }
+    return resultSize;
+}
+
+-(CGRect)photoRect{
+    CGRect resultRect = CGRectZero;
+    resultRect.size = [self realImageSize];
+    resultRect.origin.x = (self.scroll.frame.size.width - resultRect.size.width)/2;
+    resultRect.origin.y = (self.scroll.frame.size.height - resultRect.size.height)/2;
+    NSLog(@"Scroll %f %f, image %f %f",self.scroll.frame.size.width, self.scroll.frame.size.height, resultRect.size.width, resultRect.size.height);
+    return resultRect;
 }
 
 #pragma mark - message composer delegate methods

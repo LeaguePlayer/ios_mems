@@ -51,4 +51,14 @@
     return screenshot;
 }
 
++(UIImage *)imageFromView:(UIView *)view inRect:(CGRect)rect{
+    UIGraphicsBeginImageContextWithOptions(rect.size, view.opaque, 8.0);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(ctx, -rect.origin.x, -rect.origin.y);
+    [view.layer renderInContext:ctx];
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return viewImage;
+}
+
 @end
