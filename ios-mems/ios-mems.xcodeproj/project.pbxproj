@@ -1755,6 +1755,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51F86B86283C42B0888E4938 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios-mems/ios-mems-Prefix.pch";
 				INFOPLIST_FILE = "ios-mems/ios-mems-Info.plist";
@@ -1765,6 +1766,7 @@
 					"\"$(SRCROOT)/../../mobile-SKA-iOS-recreated/ShareKit/Submodules/evernote-ios-sdk/UnitTests/3rdParty/OCMock\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1773,6 +1775,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51F86B86283C42B0888E4938 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tatiyana Kudina (HMF526KCZ8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios-mems/ios-mems-Prefix.pch";
 				INFOPLIST_FILE = "ios-mems/ios-mems-Info.plist";
@@ -1783,6 +1786,7 @@
 					"\"$(SRCROOT)/../../mobile-SKA-iOS-recreated/ShareKit/Submodules/evernote-ios-sdk/UnitTests/3rdParty/OCMock\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
